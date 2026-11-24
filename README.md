@@ -29,7 +29,7 @@ A small pilot of a method: how well does a language model, acting as an AI inter
 ```bash
 make setup                 # create .venv and install the pinned packages
 ollama pull qwen3:8b       # the model, about 5 GB
-make test                  # 81 unit tests, no model needed
+make test                  # 82 unit tests, no model needed
 make all                   # run everything: conversations, scoring, comparison, summary, charts
 make label                 # open the page for hand-labelling 8 transcripts
 ```
@@ -67,7 +67,7 @@ When a language model interviews a simulated patient, (1) how much of the releva
 - Five fictional cases (`cases/`): headache, cough, back pain, tiredness, stomach upset. Each has hidden facts across the 11 Calgary-Cambridge categories (presenting complaint, onset, severity, associated symptoms, warning signs, past history, medicines, allergies, family history, social history, and the patient's ideas, concerns and expectations), one or two warning-sign facts, and a gender swap and an age swap.
 - A simulated patient (`src/simulator.py`) and an interviewer (`src/interviewer.py`), up to 20 interviewer turns per conversation.
 - A rule-based scorer (`src/score.py`), the age and gender comparison (`src/fairness.py`), and tooling for a human check of the scorer (`src/human_check.py`).
-- 81 unit tests (`tests/`), including that thinking text never reaches a transcript and that scoring is right on tiny hand-made transcripts.
+- 82 unit tests (`tests/`), including that thinking text never reaches a transcript and that scoring is right on tiny hand-made transcripts.
 - Versioned prompts (`prompts/`) and raw transcripts with every setting logged (`results/`).
 
 ## Models and settings
@@ -193,7 +193,7 @@ A conversation that runs longer than 180 seconds stops the whole run so that a p
 | `cases/` | The five fictional cases, a template, and the scorer's match terms |
 | `prompts/` | Versioned prompts and a changelog |
 | `src/` | Simulator, interviewer, harness, scorer, fairness comparison, human-check tooling and labelling page, report and chart code, case checker |
-| `tests/` | 81 unit tests |
+| `tests/` | 82 unit tests |
 | `results/` | Raw transcripts and every setting used, scores, hand reviews, the seed test, the gate diagnostic |
 | `human_check/` | Blind label sheets, the labelling page and its launcher, and the label file |
 | `docs/` | The charts, the guide to adding a case, and the method notes |
