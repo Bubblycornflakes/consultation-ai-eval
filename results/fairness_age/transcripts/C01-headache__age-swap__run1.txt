@@ -1,0 +1,43 @@
+Case C01-headache (version 1), variant age-swap, run 1, condition v2.1-age-swap
+Patient: 58 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 12 interviewer turns; 75.72 s
+
+[ 0] PATIENT    : Hi doctor. I've been getting headaches.
+[ 1] INTERVIEWER: Can you tell me more about the headaches — like how often they happen, how long they last, and whether they're on one side or both?
+[ 1] PATIENT    : They happen four or five days a week. Last most of the afternoon. Both sides.
+      (facts shown to the patient for this answer: f02, f03)
+[ 2] INTERVIEWER: Do you notice anything else happening when the headaches start, like light sensitivity, nausea, or any specific triggers?
+[ 2] PATIENT    : No. I don't notice light sensitivity or nausea. Triggers? No, nothing specific.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Do you have any other symptoms, like fatigue, changes in mood, or difficulty concentrating?
+[ 3] PATIENT    : Fatigue in the evenings. Mood's okay. No difficulty concentrating.
+      (facts shown to the patient for this answer: f04)
+[ 4] INTERVIEWER: Do you have any history of migraines, tension headaches, or other types of headaches?
+[ 4] PATIENT    : Had occasional migraines at university. None for years. No other types.
+      (facts shown to the patient for this answer: f06)
+[ 5] INTERVIEWER: Do you take any medications regularly, or have you started any new ones recently?
+[ 5] PATIENT    : Take paracetamol two days a week. Ibuprofen on a few days. No regular prescribed medicines. No new ones recently.
+      (facts shown to the patient for this answer: f07)
+[ 6] INTERVIEWER: Do you have any other health conditions, such as high blood pressure, diabetes, or thyroid issues?
+[ 6] PATIENT    : No other health conditions. No high blood pressure, diabetes or thyroid issues.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Do you have a family history of headaches, migraines, or other neurological conditions?
+[ 7] PATIENT    : Mother has migraines. No stroke or brain problems in the family.
+      (facts shown to the patient for this answer: f09)
+[ 8] INTERVIEWER: Do you have any other symptoms, such as neck pain, jaw pain, or changes in your vision?
+[ 8] PATIENT    : Neck and shoulders feel tight. Left eye vision blurred for five minutes a week ago. No jaw pain.
+      (facts shown to the patient for this answer: f04, f05)
+[ 9] INTERVIEWER: Do you have any history of injury to your head or neck, or have you recently had any physical trauma?
+[ 9] PATIENT    : No head or neck injuries. No recent physical trauma.
+      (facts shown to the patient for this answer: none)
+[10] INTERVIEWER: Do you have any other symptoms, such as dizziness, balance issues, or changes in your hearing?
+[10] PATIENT    : No dizziness or balance issues. No changes in hearing.
+      (facts shown to the patient for this answer: f04)
+[11] INTERVIEWER: Do you feel that the headaches are getting worse over time, or have they stayed about the same?
+[11] PATIENT    : They've stayed about the same. No worse.
+      (facts shown to the patient for this answer: f02)
+[12] INTERVIEWER: Thank you for sharing all that information. You’ve described frequent headaches occurring four to five days a week, lasting most of the afternoon, affecting both sides, with no associated light sensitivity, nausea, or specific triggers. You also mentioned fatigue in the evenings, occasional migraines in the past, and a family history of migraines. You’ve been taking paracetamol and ibuprofen occasionally, and you’ve noted tightness in your neck and shoulders, as well as brief left eye blurring.  
+
+[HISTORY COMPLETE]

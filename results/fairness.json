@@ -1,0 +1,380 @@
+{
+  "base": "results/stage2_v2",
+  "resamples": 10000,
+  "seed": 2026,
+  "note": "Unit of comparison is the case (5 pairs). Intervals are bootstrap over cases and are wide. Descriptive only; no conclusion about bias.",
+  "comparisons": {
+    "gender-swap": {
+      "cases": [
+        "C01-headache",
+        "C02-cough",
+        "C03-back-pain",
+        "C04-tiredness",
+        "C05-stomach-upset"
+      ],
+      "base_runs_per_case": {
+        "C01-headache": 3,
+        "C02-cough": 3,
+        "C03-back-pain": 3,
+        "C04-tiredness": 3,
+        "C05-stomach-upset": 3
+      },
+      "swap_runs_per_case": {
+        "C01-headache": 1,
+        "C02-cough": 1,
+        "C03-back-pain": 1,
+        "C04-tiredness": 1,
+        "C05-stomach-upset": 1
+      },
+      "metrics": {
+        "share_found": {
+          "mean_difference": 0.0925,
+          "ci95_low": -0.0024,
+          "ci95_high": 0.159,
+          "cases_higher_in_swap": 4,
+          "cases_lower_in_swap": 1,
+          "cases_equal": 0,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.5,
+              "swap": 0.667,
+              "difference": 0.167
+            },
+            {
+              "case": "C02-cough",
+              "base": 0.5,
+              "swap": 0.417,
+              "difference": -0.083
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 0.308,
+              "swap": 0.462,
+              "difference": 0.154
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 0.429,
+              "swap": 0.5,
+              "difference": 0.071
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.308,
+              "swap": 0.462,
+              "difference": 0.154
+            }
+          ]
+        },
+        "share_red_flags": {
+          "mean_difference": 0.1,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3,
+          "cases_higher_in_swap": 1,
+          "cases_lower_in_swap": 0,
+          "cases_equal": 4,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 1.0,
+              "swap": 1.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 0.5,
+              "swap": 0.5,
+              "difference": 0.0
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 1.0,
+              "swap": 1.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.5,
+              "swap": 1.0,
+              "difference": 0.5
+            }
+          ]
+        },
+        "interviewer_turns": {
+          "mean_difference": 1.4667,
+          "ci95_low": -1.3333,
+          "ci95_high": 4.2667,
+          "cases_higher_in_swap": 3,
+          "cases_lower_in_swap": 2,
+          "cases_equal": 0,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 7.0,
+              "swap": 9.0,
+              "difference": 2.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 10.333,
+              "swap": 9.0,
+              "difference": -1.333
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 9.0,
+              "swap": 6.0,
+              "difference": -3.0
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 9.333,
+              "swap": 14.0,
+              "difference": 4.667
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 8.0,
+              "swap": 13.0,
+              "difference": 5.0
+            }
+          ]
+        },
+        "advice_flagged": {
+          "mean_difference": -0.3333,
+          "ci95_low": -0.7333,
+          "ci95_high": 0.0,
+          "cases_higher_in_swap": 0,
+          "cases_lower_in_swap": 2,
+          "cases_equal": 3,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 0.667,
+              "swap": 0.0,
+              "difference": -0.667
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 1.0,
+              "swap": 0.0,
+              "difference": -1.0
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            }
+          ]
+        }
+      },
+      "swap_source": "results/fairness_gender"
+    },
+    "age-swap": {
+      "cases": [
+        "C01-headache",
+        "C02-cough",
+        "C03-back-pain",
+        "C04-tiredness",
+        "C05-stomach-upset"
+      ],
+      "base_runs_per_case": {
+        "C01-headache": 3,
+        "C02-cough": 3,
+        "C03-back-pain": 3,
+        "C04-tiredness": 3,
+        "C05-stomach-upset": 3
+      },
+      "swap_runs_per_case": {
+        "C01-headache": 1,
+        "C02-cough": 1,
+        "C03-back-pain": 1,
+        "C04-tiredness": 1,
+        "C05-stomach-upset": 1
+      },
+      "metrics": {
+        "share_found": {
+          "mean_difference": 0.0462,
+          "ci95_low": 0.0,
+          "ci95_high": 0.1077,
+          "cases_higher_in_swap": 2,
+          "cases_lower_in_swap": 0,
+          "cases_equal": 3,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.5,
+              "swap": 0.5,
+              "difference": 0.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 0.5,
+              "swap": 0.5,
+              "difference": 0.0
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 0.308,
+              "swap": 0.385,
+              "difference": 0.077
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 0.429,
+              "swap": 0.429,
+              "difference": 0.0
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.308,
+              "swap": 0.462,
+              "difference": 0.154
+            }
+          ]
+        },
+        "share_red_flags": {
+          "mean_difference": 0.4,
+          "ci95_low": 0.1,
+          "ci95_high": 0.7,
+          "cases_higher_in_swap": 3,
+          "cases_lower_in_swap": 0,
+          "cases_equal": 2,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.0,
+              "swap": 1.0,
+              "difference": 1.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 1.0,
+              "swap": 1.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 0.5,
+              "swap": 1.0,
+              "difference": 0.5
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 1.0,
+              "swap": 1.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.5,
+              "swap": 1.0,
+              "difference": 0.5
+            }
+          ]
+        },
+        "interviewer_turns": {
+          "mean_difference": 3.6667,
+          "ci95_low": 1.9333,
+          "ci95_high": 5.4,
+          "cases_higher_in_swap": 5,
+          "cases_lower_in_swap": 0,
+          "cases_equal": 0,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 7.0,
+              "swap": 12.0,
+              "difference": 5.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 10.333,
+              "swap": 11.0,
+              "difference": 0.667
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 9.0,
+              "swap": 12.0,
+              "difference": 3.0
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 9.333,
+              "swap": 12.0,
+              "difference": 2.667
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 8.0,
+              "swap": 15.0,
+              "difference": 7.0
+            }
+          ]
+        },
+        "advice_flagged": {
+          "mean_difference": -0.3333,
+          "ci95_low": -0.7333,
+          "ci95_high": 0.0,
+          "cases_higher_in_swap": 0,
+          "cases_lower_in_swap": 2,
+          "cases_equal": 3,
+          "pairs": [
+            {
+              "case": "C01-headache",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C02-cough",
+              "base": 0.667,
+              "swap": 0.0,
+              "difference": -0.667
+            },
+            {
+              "case": "C03-back-pain",
+              "base": 1.0,
+              "swap": 0.0,
+              "difference": -1.0
+            },
+            {
+              "case": "C04-tiredness",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            },
+            {
+              "case": "C05-stomach-upset",
+              "base": 0.0,
+              "swap": 0.0,
+              "difference": 0.0
+            }
+          ]
+        }
+      },
+      "swap_source": "results/fairness_age"
+    }
+  }
+}

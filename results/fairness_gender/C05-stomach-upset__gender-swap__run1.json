@@ -1,0 +1,638 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T13:00:58+00:00",
+    "condition": "v2.1-gender-swap",
+    "case_id": "C05-stomach-upset",
+    "case_version": 1,
+    "variant": "gender-swap",
+    "run_index": 1,
+    "persona": {
+      "age": 41,
+      "gender": "female",
+      "communication_style": "Vague and casual. Uses everyday words (\"my belly\", \"feeling rough\"), is unsure about dates and details (\"I think\", \"maybe a few weeks\"), and needs the question to be clear. Vagueness is style only; the facts are still given correctly when the question is clear.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 12,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "harness": {
+      "version": "v2.1",
+      "lenient_end": true,
+      "note": "v2.1 (2026-11-24) also accepts HISTORY COMPLETE without brackets as the end; the model's prompt is unchanged"
+    },
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 13,
+    "duration_seconds": 50.49,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Alright, doctor. My stomach's been playing up."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "It's a burning pain in the upper middle of my tummy, about 5 out of 10. It gets worse an hour after meals and sometimes at night. I feel sick after eating and bloated, but I haven't thrown up.",
+      "gate_selected_fact_ids": [
+        "f03",
+        "f04"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Does the pain get better when you take antacids or drink milk?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "The antacids help a little, but not much. Milk makes it feel worse, like it's burning even more.",
+      "gate_selected_fact_ids": [
+        "f08"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in your bowel movements, like diarrhea, constipation, or black, tarry stools?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I passed black, sticky, smelly stools twice this week. I haven't had diarrhea or constipation, though I've been feeling like I need to go more often.",
+      "gate_selected_fact_ids": [
+        "f05"
+      ]
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you been taking any medications, supplements, or herbal remedies recently?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "I've been taking ibuprofen 400 mg three times a day for my knee, and I chew antacid tablets a few times a day. I don't take any supplements or herbal remedies.",
+      "gate_selected_fact_ids": [
+        "f08"
+      ]
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you had any recent injuries, falls, or changes in your activity level that might have affected your stomach or digestion?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "I haven't had any falls or injuries. My activity level's been pretty normal, though I've been feeling run down lately.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you experienced any weight loss, changes in appetite, or feelings of weakness recently?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I've lost about 5 pounds in the last month without trying. I don't have much of an appetite, and I feel weak, especially in the afternoons.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you noticed any other symptoms, such as dizziness, fatigue, or a feeling of fullness even after eating small amounts?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "I feel dizzy when I stand up fast, and I'm really tired all the time. I also feel full even after eating just a little, like my stomach's swollen.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f06"
+      ]
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your diet, such as eating more spicy, fatty, or acidic foods?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "I've been eating more spicy takeaways and fatty foods because I'm working late a lot. I think it's contributing to my stomach issues.",
+      "gate_selected_fact_ids": [
+        "f12"
+      ]
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Have you had any symptoms like nausea, vomiting, or a feeling of something stuck in your throat?"
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "text": "I feel nauseous after eating, but I haven't vomited. Sometimes I get a weird feeling like something's stuck in my throat, especially when I lie down.",
+      "gate_selected_fact_ids": [
+        "f04"
+      ]
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "text": "Have you noticed any symptoms like chest pain, shortness of breath, or a racing heart?"
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "text": "I've had a tight, burning feeling in my chest, especially after eating. I don't think it's heart-related, but it worries me a bit. I haven't had shortness of breath or a racing heart.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "text": "Have you had any symptoms like abdominal swelling, visible veins, or a feeling of pressure in your abdomen?"
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "text": "My belly feels swollen, like there's air inside. I don't see any veins, but there's a pressure-like feeling when I press on it.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "text": "Have you had any symptoms like fever, chills, or night sweats?"
+    },
+    {
+      "turn": 12,
+      "role": "patient",
+      "text": "I haven't had a fever, but I've been sweating a lot at night, especially after my stomach pains. I don't think I've had chills.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 13,
+      "role": "interviewer",
+      "text": "Have you had any symptoms like jaundice (yellowing of the skin or eyes), dark urine, or light-colored stools?  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 1.273,
+      "prompt_tokens": 177,
+      "reply_tokens": 31,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 1.014,
+      "prompt_tokens": 641,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 2.875,
+      "prompt_tokens": 533,
+      "reply_tokens": 52,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.825,
+      "prompt_tokens": 268,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 0.831,
+      "prompt_tokens": 701,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 1.896,
+      "prompt_tokens": 597,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.846,
+      "prompt_tokens": 318,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 0.731,
+      "prompt_tokens": 668,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 2.235,
+      "prompt_tokens": 633,
+      "reply_tokens": 36,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.741,
+      "prompt_tokens": 386,
+      "reply_tokens": 15,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 0.82,
+      "prompt_tokens": 677,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 2.698,
+      "prompt_tokens": 714,
+      "reply_tokens": 43,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.969,
+      "prompt_tokens": 452,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 0.748,
+      "prompt_tokens": 685,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 2.391,
+      "prompt_tokens": 765,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 0.804,
+      "prompt_tokens": 512,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "gate",
+      "seconds": 0.655,
+      "prompt_tokens": 672,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 1.263,
+      "prompt_tokens": 818,
+      "reply_tokens": 36,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 1.048,
+      "prompt_tokens": 574,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "gate",
+      "seconds": 0.943,
+      "prompt_tokens": 683,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 3.595,
+      "prompt_tokens": 909,
+      "reply_tokens": 36,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 0.937,
+      "prompt_tokens": 645,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "gate",
+      "seconds": 0.821,
+      "prompt_tokens": 688,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 3.549,
+      "prompt_tokens": 960,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 0.891,
+      "prompt_tokens": 706,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "gate",
+      "seconds": 0.732,
+      "prompt_tokens": 676,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "seconds": 3.866,
+      "prompt_tokens": 1020,
+      "reply_tokens": 35,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "seconds": 0.869,
+      "prompt_tokens": 770,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "gate",
+      "seconds": 0.657,
+      "prompt_tokens": 678,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "seconds": 2.096,
+      "prompt_tokens": 1078,
+      "reply_tokens": 46,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "seconds": 0.928,
+      "prompt_tokens": 844,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "gate",
+      "seconds": 0.746,
+      "prompt_tokens": 690,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "seconds": 1.19,
+      "prompt_tokens": 1154,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "seconds": 0.802,
+      "prompt_tokens": 906,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "gate",
+      "seconds": 0.67,
+      "prompt_tokens": 673,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "patient",
+      "seconds": 1.24,
+      "prompt_tokens": 1211,
+      "reply_tokens": 34,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 13,
+      "role": "interviewer",
+      "seconds": 1.178,
+      "prompt_tokens": 965,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

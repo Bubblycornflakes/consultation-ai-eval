@@ -1,0 +1,521 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T23:39:47+00:00",
+    "case_id": "C05-stomach-upset",
+    "case_version": 1,
+    "variant": "base",
+    "run_index": 1,
+    "persona": {
+      "age": 41,
+      "gender": "male",
+      "communication_style": "Vague and casual. Uses everyday words (\"my belly\", \"feeling rough\"), is unsure about dates and details (\"I think\", \"maybe a few weeks\"), and needs the question to be clear. Vagueness is style only; the facts are still given correctly when the question is clear.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v1.txt",
+        "version": 1,
+        "sha256": "afa781751f2211139bb16cc9c3d96fee0d388270b6aa8ad3674dae114c4f9822"
+      },
+      "interviewer": {
+        "file": "interviewer_v1.txt",
+        "version": 1,
+        "sha256": "8334208d51ac1972b8c2bcd42e886331c9e3f644d9a94ae6ad1b6205b80d09d1"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 15,
+    "duration_seconds": 38.11,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Alright, doctor. My stomach's been playing up."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "It's a burning pain in the middle of my tummy, like someone's got a match under my ribs. It comes and goes, worse after eating, and sometimes when I'm lying down. Feels like it's all full up, but not sure if it's bloated or just tight."
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Does the burning pain ever spread to your back or shoulders?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "Not that I've noticed. It stays in the middle, maybe a bit higher when I'm lying down, but not spreading to my back or shoulders."
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Does the pain feel better or worse with certain foods, or does it seem to happen at specific times of day?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "It feels worse after spicy takeaways or heavy meals, and especially an hour later. Sometimes it's there in the morning when I wake up, but not always. The antacid helps a bit, but not much."
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in your bowel movements, such as diarrhea, constipation, or black stools?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "I passed black, sticky, smelly stools twice this week. Not sure if it's from the food or something else, but it's been happening."
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you experienced any weight loss, vomiting, or feeling faint recently?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "I've been feeling faint when I stand up quick, like I'm about to pass out. No vomiting, but I've lost a bit of weight without trying."
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you had any recent injuries or trauma to your abdomen that might have caused the pain?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "No, nothing like that. I've been pretty careful, and I don't remember any hits or falls to my tummy."
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your diet, stress levels, or medication use?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "I've been eating more takeaways and less proper meals, and work's been really stressful. I've been taking ibuprofen three times a day for my knee, and some antacids. Not sure if it's the meds or the food or the stress."
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Does the pain feel different when you take ibuprofen or antacids, or does it stay about the same?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "The antacid helps a bit, like it takes the edge off, but the ibuprofen doesn't seem to make much difference. The pain's still there, just maybe a little less when I take the antacid."
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your sleep patterns or feel unusually tired during the day?"
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "text": "I've been tired a lot, even though I'm getting enough sleep. Sometimes I feel like I'm not awake all the way, like my brain's foggy. Not sure if it's the pain or something else."
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "text": "Have you noticed any other symptoms, such as heartburn, nausea, or a feeling of fullness even after eating small amounts?"
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "text": "I feel sick after eating, like my stomach's churning, and there's this fullness even when I only have a bit to eat. Heartburn's been there too, like a hot wave going up my chest."
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "text": "Does the heartburn or fullness feel better when you sit up straight or lean forward?"
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "text": "Leaning forward helps a little with the heartburn, like it takes the pressure off. Sitting up straight doesn't make much difference, but I try it anyway. The fullness is still there, though."
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "text": "Does the fullness or discomfort feel better after you burp or pass gas?"
+    },
+    {
+      "turn": 12,
+      "role": "patient",
+      "text": "Burping or passing gas doesn't really help much. It's like the feeling stays, just maybe shifts a bit. I don't know if it's trapped wind or something else."
+    },
+    {
+      "turn": 13,
+      "role": "interviewer",
+      "text": "Have you noticed any improvement or worsening of symptoms after resting or engaging in light activity?"
+    },
+    {
+      "turn": 13,
+      "role": "patient",
+      "text": "Resting doesn't seem to help much, but sometimes moving around a bit makes it feel a little better. It's like the pain shifts or eases up for a while, but it comes back."
+    },
+    {
+      "turn": 14,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your urine color or frequency, or any other unusual symptoms?"
+    },
+    {
+      "turn": 14,
+      "role": "patient",
+      "text": "No, my urine's been normal, same as usual. I don't notice anything odd with it. Just the stomach stuff and the fainting when I stand up."
+    },
+    {
+      "turn": 15,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that. To summarize, you're experiencing a burning pain in your upper abdomen that worsens after eating, especially spicy or heavy meals, and is accompanied by heartburn, a feeling of fullness, and black, sticky stools. You also feel faint when standing up quickly and have noticed some weight loss. The antacid provides some relief, but ibuprofen doesn't help much. You've been eating more takeaways, experiencing stress, and have been taking ibuprofen and antacids. [HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 0.985,
+      "prompt_tokens": 143,
+      "reply_tokens": 31,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 3.522,
+      "prompt_tokens": 666,
+      "reply_tokens": 62,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.753,
+      "prompt_tokens": 244,
+      "reply_tokens": 13,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 1.172,
+      "prompt_tokens": 749,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.948,
+      "prompt_tokens": 297,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 1.503,
+      "prompt_tokens": 813,
+      "reply_tokens": 45,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.935,
+      "prompt_tokens": 374,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 1.18,
+      "prompt_tokens": 888,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.759,
+      "prompt_tokens": 436,
+      "reply_tokens": 15,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 1.236,
+      "prompt_tokens": 943,
+      "reply_tokens": 34,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 0.836,
+      "prompt_tokens": 493,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 1.048,
+      "prompt_tokens": 1004,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 0.809,
+      "prompt_tokens": 547,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 1.753,
+      "prompt_tokens": 1057,
+      "reply_tokens": 55,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 0.998,
+      "prompt_tokens": 628,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 1.658,
+      "prompt_tokens": 1145,
+      "reply_tokens": 46,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 0.849,
+      "prompt_tokens": 707,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "seconds": 1.56,
+      "prompt_tokens": 1218,
+      "reply_tokens": 46,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "seconds": 1.058,
+      "prompt_tokens": 780,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "seconds": 1.558,
+      "prompt_tokens": 1299,
+      "reply_tokens": 46,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "seconds": 0.861,
+      "prompt_tokens": 861,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "seconds": 1.477,
+      "prompt_tokens": 1372,
+      "reply_tokens": 43,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "seconds": 1.074,
+      "prompt_tokens": 931,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "patient",
+      "seconds": 1.512,
+      "prompt_tokens": 1440,
+      "reply_tokens": 38,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 13,
+      "role": "interviewer",
+      "seconds": 0.898,
+      "prompt_tokens": 994,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 13,
+      "role": "patient",
+      "seconds": 1.585,
+      "prompt_tokens": 1504,
+      "reply_tokens": 42,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 14,
+      "role": "interviewer",
+      "seconds": 0.907,
+      "prompt_tokens": 1062,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 14,
+      "role": "patient",
+      "seconds": 1.328,
+      "prompt_tokens": 1574,
+      "reply_tokens": 35,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 15,
+      "role": "interviewer",
+      "seconds": 3.247,
+      "prompt_tokens": 1125,
+      "reply_tokens": 111,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

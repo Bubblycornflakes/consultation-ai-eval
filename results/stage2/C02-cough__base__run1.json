@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T23:38:27+00:00",
+    "case_id": "C02-cough",
+    "case_version": 1,
+    "variant": "base",
+    "run_index": 1,
+    "persona": {
+      "age": 45,
+      "gender": "male",
+      "communication_style": "Anxious. Sounds worried and asks for reassurance about whatever topic is being discussed. The worry shows in tone only; it never introduces a new fact.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v1.txt",
+        "version": 1,
+        "sha256": "afa781751f2211139bb16cc9c3d96fee0d388270b6aa8ad3674dae114c4f9822"
+      },
+      "interviewer": {
+        "file": "interviewer_v1.txt",
+        "version": 1,
+        "sha256": "8334208d51ac1972b8c2bcd42e886331c9e3f644d9a94ae6ad1b6205b80d09d1"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 9,
+    "duration_seconds": 18.55,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Hello. I've had this cough for ages and I'm starting to worry about it."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "How long have you had this cough?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "Five weeks. It started after a heavy cold, and it's still not gone."
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Have you had any other symptoms along with the cough, like fever, chest pain, or shortness of breath?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "I've been a bit short of breath climbing two flights of stairs. No fever and no chest pain."
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in the color or amount of mucus you're coughing up?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I've coughed up some phlegm with a few streaks of blood twice this week."
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you been exposed to anyone with a cough or cold recently, or have you been in any environments that might irritate your lungs, like smoke or dust?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "I think the cough might be worse because of the dust in the van. I've been driving a lot lately."
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you experienced any recent weight loss, night sweats, or fatigue along with your cough?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "No, I haven't lost weight, and I don't get night sweats. I feel tired sometimes, but not really fatigued."
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your lifestyle, such as stress, lack of sleep, or changes in diet?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I've been working long hours driving, so I haven't been getting enough sleep. I'm not sure if that's making the cough worse."
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you smoked cigarettes or been exposed to secondhand smoke recently?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "I stopped smoking ten years ago, but I used to smoke ten a day. I don't smoke now, but I'm not sure if secondhand smoke from the van is affecting me."
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Have you had any recent medical tests, such as a chest X-ray or blood work, related to your cough?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "No, I haven't had any tests yet. I just want to know what's going on with my cough."
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that information. You've described a cough that has lasted five weeks, started after a cold, and has been accompanied by shortness of breath, occasional blood-tinged phlegm, and exposure to dust in a van. You also mentioned working long hours with limited sleep and a history of smoking.  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 0.401,
+      "prompt_tokens": 150,
+      "reply_tokens": 9,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 2.309,
+      "prompt_tokens": 640,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.846,
+      "prompt_tokens": 185,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 0.829,
+      "prompt_tokens": 690,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.834,
+      "prompt_tokens": 239,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 0.806,
+      "prompt_tokens": 740,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 1.069,
+      "prompt_tokens": 288,
+      "reply_tokens": 33,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 0.973,
+      "prompt_tokens": 802,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.846,
+      "prompt_tokens": 353,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 1.118,
+      "prompt_tokens": 854,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 1.003,
+      "prompt_tokens": 411,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 1.122,
+      "prompt_tokens": 916,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 0.717,
+      "prompt_tokens": 473,
+      "reply_tokens": 14,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 1.357,
+      "prompt_tokens": 968,
+      "reply_tokens": 39,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 0.957,
+      "prompt_tokens": 534,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 1.001,
+      "prompt_tokens": 1039,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 2.255,
+      "prompt_tokens": 590,
+      "reply_tokens": 72,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

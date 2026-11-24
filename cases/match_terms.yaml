@@ -1,0 +1,80 @@
+# Words a patient reply contains when it reveals a hidden fact. Used by src/score.py (rule-based scoring).
+# A fact counts as uncovered if ANY listed phrase appears (case-insensitive) in a patient reply after the
+# opening line. The presenting complaint (f01) is given in the opening line and is not scored.
+# Kept in its own file so the approved case files stay exactly as approved.
+# Limits: a phrase can match when the patient mentions the topic without giving the fact, and an invented
+# detail that happens to use one of these phrases would be credited. The hand-labelled check measures this.
+
+C01-headache:
+  f02: [four or five days, three weeks, most of the afternoon, gradual]
+  f03: [tight band, squeezing, not throbbing, five out of ten, 5 out of 10]
+  f04: [tired eyes, eyes feel tired, neck, shoulders, no nausea, not sick]
+  f05: [blurred, blurry, vision]
+  f06: [at university, as a student, no long-term conditions, no operations]
+  f07: [paracetamol, ibuprofen]
+  f08: [penicillin]
+  f09: [mother]
+  f10: [four coffees, eight to ten hours, five hours a night, sleeping about five]
+  f11: [stress, screen time]
+  f12: [brain tumour, brain tumor, colleague]
+  f13: [scan]
+
+C02-cough:
+  f02: [five weeks, after a heavy cold, after a cold, started after]
+  f03: [worse at night, wheez, wakes me, tickly]
+  f04: [short of breath, stairs]
+  f05: [streaks of blood, blood]
+  f06: [asthma]
+  f07: [honey, lemon, inhaler, cough sweets]
+  f08: [allergies, allergic]
+  f09: [father, my dad]
+  f10: [ten a day, stopped smoking, delivery driver, smoked]
+  f11: [dust in the van, left over from, made worse by dust]
+  f12: [lung cancer]
+  f13: [antibiotics]
+
+C03-back-pain:
+  f02: [six weeks, gardening, day after]
+  f03: [dull ache, six out of ten, 6 out of 10, sitting, when i'm walking, when walking]
+  f04: [stiff, twenty minutes, 20 minutes]
+  f05: [three in the morning, 3am, wakes me, at night]
+  f06: [pins and needles]
+  f07: [blood pressure]
+  f08: [amlodipine, ibuprofen]
+  f09: [allergies, allergic]
+  f10: [sister]
+  f11: [care assistant, lifting]
+  f12: [pulled muscle]
+  f13: [affecting my work, not be able to work, lose income, income]
+  f14: [stronger painkillers, x-ray, something stronger]
+
+C04-tiredness:
+  f02: [two months, slowly, gradually]
+  f03: [heavy, nine hours, unrefreshed, not refreshed, 3 out of 10]
+  f04: [low and flat, feeling low, feel low, concentrate, interest in my hobbies, lost interest]
+  f05: [thirsty, passing urine]
+  f06: [4 kg, four kg, without trying]
+  f07: [sweat, soaked]
+  f08: [eczema]
+  f09: [vitamin d, eczema cream, moisturising]
+  f10: [hay fever]
+  f11: [diabetes, thyroid]
+  f12: [night shift, warehouse, alcohol, part-time]
+  f13: [low iron, iron]
+  f14: [losing my job, losing the job, mistakes at work]
+  f15: [blood tests]
+
+C05-stomach-upset:
+  f02: [three weeks, comes and goes]
+  f03: [burning, 5 out of 10, an hour after, after meals]
+  f04: [sick after eating, bloated, feel sick, haven't thrown up, haven't vomited]
+  f05: [black, sticky, black sticky]
+  f06: [dizzy, feeling faint, faint when]
+  f07: [arthritis]
+  f08: [ibuprofen, antacid]
+  f09: [allergies, allergic]
+  f10: [uncle]
+  f11: [plumber, cigarettes, three pints]
+  f12: [spicy takeaways, spicy, stress at work]
+  f13: [ulcer]
+  f14: [something to settle, settle the pain]

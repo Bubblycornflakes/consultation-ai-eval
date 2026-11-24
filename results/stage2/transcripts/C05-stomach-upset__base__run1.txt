@@ -1,0 +1,36 @@
+Case C05-stomach-upset (version 1), variant base, run 1
+Patient: 41 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v1.txt, interviewer_v1.txt
+Stopped because: interviewer_finished; 15 interviewer turns; 38.11 s
+
+[ 0] PATIENT    : Alright, doctor. My stomach's been playing up.
+[ 1] INTERVIEWER: Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?
+[ 1] PATIENT    : It's a burning pain in the middle of my tummy, like someone's got a match under my ribs. It comes and goes, worse after eating, and sometimes when I'm lying down. Feels like it's all full up, but not sure if it's bloated or just tight.
+[ 2] INTERVIEWER: Does the burning pain ever spread to your back or shoulders?
+[ 2] PATIENT    : Not that I've noticed. It stays in the middle, maybe a bit higher when I'm lying down, but not spreading to my back or shoulders.
+[ 3] INTERVIEWER: Does the pain feel better or worse with certain foods, or does it seem to happen at specific times of day?
+[ 3] PATIENT    : It feels worse after spicy takeaways or heavy meals, and especially an hour later. Sometimes it's there in the morning when I wake up, but not always. The antacid helps a bit, but not much.
+[ 4] INTERVIEWER: Have you noticed any changes in your bowel movements, such as diarrhea, constipation, or black stools?
+[ 4] PATIENT    : I passed black, sticky, smelly stools twice this week. Not sure if it's from the food or something else, but it's been happening.
+[ 5] INTERVIEWER: Have you experienced any weight loss, vomiting, or feeling faint recently?
+[ 5] PATIENT    : I've been feeling faint when I stand up quick, like I'm about to pass out. No vomiting, but I've lost a bit of weight without trying.
+[ 6] INTERVIEWER: Have you had any recent injuries or trauma to your abdomen that might have caused the pain?
+[ 6] PATIENT    : No, nothing like that. I've been pretty careful, and I don't remember any hits or falls to my tummy.
+[ 7] INTERVIEWER: Have you had any recent changes in your diet, stress levels, or medication use?
+[ 7] PATIENT    : I've been eating more takeaways and less proper meals, and work's been really stressful. I've been taking ibuprofen three times a day for my knee, and some antacids. Not sure if it's the meds or the food or the stress.
+[ 8] INTERVIEWER: Does the pain feel different when you take ibuprofen or antacids, or does it stay about the same?
+[ 8] PATIENT    : The antacid helps a bit, like it takes the edge off, but the ibuprofen doesn't seem to make much difference. The pain's still there, just maybe a little less when I take the antacid.
+[ 9] INTERVIEWER: Have you had any recent changes in your sleep patterns or feel unusually tired during the day?
+[ 9] PATIENT    : I've been tired a lot, even though I'm getting enough sleep. Sometimes I feel like I'm not awake all the way, like my brain's foggy. Not sure if it's the pain or something else.
+[10] INTERVIEWER: Have you noticed any other symptoms, such as heartburn, nausea, or a feeling of fullness even after eating small amounts?
+[10] PATIENT    : I feel sick after eating, like my stomach's churning, and there's this fullness even when I only have a bit to eat. Heartburn's been there too, like a hot wave going up my chest.
+[11] INTERVIEWER: Does the heartburn or fullness feel better when you sit up straight or lean forward?
+[11] PATIENT    : Leaning forward helps a little with the heartburn, like it takes the pressure off. Sitting up straight doesn't make much difference, but I try it anyway. The fullness is still there, though.
+[12] INTERVIEWER: Does the fullness or discomfort feel better after you burp or pass gas?
+[12] PATIENT    : Burping or passing gas doesn't really help much. It's like the feeling stays, just maybe shifts a bit. I don't know if it's trapped wind or something else.
+[13] INTERVIEWER: Have you noticed any improvement or worsening of symptoms after resting or engaging in light activity?
+[13] PATIENT    : Resting doesn't seem to help much, but sometimes moving around a bit makes it feel a little better. It's like the pain shifts or eases up for a while, but it comes back.
+[14] INTERVIEWER: Have you had any recent changes in your urine color or frequency, or any other unusual symptoms?
+[14] PATIENT    : No, my urine's been normal, same as usual. I don't notice anything odd with it. Just the stomach stuff and the fainting when I stand up.
+[15] INTERVIEWER: Thank you for sharing all that. To summarize, you're experiencing a burning pain in your upper abdomen that worsens after eating, especially spicy or heavy meals, and is accompanied by heartburn, a feeling of fullness, and black, sticky stools. You also feel faint when standing up quickly and have noticed some weight loss. The antacid provides some relief, but ibuprofen doesn't help much. You've been eating more takeaways, experiencing stress, and have been taking ibuprofen and antacids. [HISTORY COMPLETE]

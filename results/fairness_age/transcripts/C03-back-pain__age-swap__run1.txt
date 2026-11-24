@@ -1,0 +1,43 @@
+Case C03-back-pain (version 1), variant age-swap, run 1, condition v2.1-age-swap
+Patient: 31 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 12 interviewer turns; 91.28 s
+
+[ 0] PATIENT    : Oh hello, doctor, thank you for seeing me. It's my back, you see.
+[ 1] INTERVIEWER: Can you tell me more about your back pain—like when it started, how often it happens, and if there's anything that makes it better or worse?
+[ 1] PATIENT    : Oh, it started six weeks ago, the day after a long afternoon of gardening. It’s been a dull ache low in my back, about 6 out of 10. It’s worse after sitting for a long time and better when I’m walking.
+      (facts shown to the patient for this answer: f02, f03)
+[ 2] INTERVIEWER: Have you noticed any numbness, tingling, or weakness in your legs?
+[ 2] PATIENT    : I’ve had pins and needles in my left foot for the last two weeks, but nothing else. My legs feel fine otherwise.
+      (facts shown to the patient for this answer: f04, f06)
+[ 3] INTERVIEWER: Have you had any recent injuries, falls, or heavy lifting that might have contributed to your back pain?
+[ 3] PATIENT    : I did lift a heavy box at work last week, and it felt like it made it worse. I also had a small fall a few days ago when I was rushing to get the door, but I didn’t hit anything.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Have you experienced any difficulty with bladder control, bowel movements, or sexual function?
+[ 4] PATIENT    : No, I haven’t noticed any problems with my bladder control, bowel movements, or sexual function. Everything’s been normal in that regard.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you had any fever, chills, or unexplained weight loss recently?
+[ 5] PATIENT    : No, I haven’t had any fever, chills, or unexplained weight loss. I’ve been eating and sleeping okay, though I’ve been a bit more tired than usual.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you had any recent changes in your posture, or do you have a history of back problems, such as previous injuries or surgeries?
+[ 6] PATIENT    : I’ve been slouching more lately, especially at my desk, and I think it’s making the pain worse. I had a back injury a few years ago from lifting something heavy, but no surgery—just a few weeks off work and some physio.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you noticed any changes in your balance or coordination recently?
+[ 7] PATIENT    : No, I haven’t noticed any changes in my balance or coordination. I feel fine when I walk or move around, though I do sometimes feel a bit wobbly when I stand up quickly.
+      (facts shown to the patient for this answer: none)
+[ 8] INTERVIEWER: Have you had any recent changes in your bowel or bladder habits, such as urgency, frequency, or difficulty emptying?
+[ 8] PATIENT    : No, I haven’t noticed any changes in my bowel or bladder habits. Everything’s been as usual—no urgency, no difficulty, and I go when I need to.
+      (facts shown to the patient for this answer: none)
+[ 9] INTERVIEWER: Have you been experiencing any radiating pain, such as shooting sensations down your legs or into your hips?
+[ 9] PATIENT    : No, I haven’t had any shooting pain down my legs or into my hips. It’s more of a dull ache in my lower back, though I do get that pins and needles in my left foot sometimes.
+      (facts shown to the patient for this answer: f04, f05, f06)
+[10] INTERVIEWER: Have you had any recent changes in your sleep patterns, such as difficulty falling asleep or staying asleep?
+[10] PATIENT    : I’ve been having trouble falling asleep properly lately, especially because the back pain wakes me up at night. I’ve been trying to sleep on my side with a pillow between my knees to see if that helps.
+      (facts shown to the patient for this answer: none)
+[11] INTERVIEWER: Have you noticed any improvement in your symptoms with the pillow between your knees, or has it made any difference in how you feel during the day?
+[11] PATIENT    : The pillow has made a slight difference—when I wake up, the pain isn’t as bad as it used to be, and I can usually get back to sleep. It’s helped a bit during the day too, though I still feel the ache when I’m sitting for too long.
+      (facts shown to the patient for this answer: f05)
+[12] INTERVIEWER: Thank you for sharing all that. To summarize, you’ve been experiencing lower back pain for six weeks, which started after gardening and has worsened with sitting and improved with walking. You’ve had pins and needles in your left foot for two weeks, but no weakness or numbness in your legs. You lifted a heavy box at work and had a minor fall, but no issues with bladder, bowel, or sexual function. You’ve been slouching more, have a history of a back injury, and have had trouble sleeping due to the pain. The pillow between your knees has slightly improved your symptoms.  
+
+[HISTORY COMPLETE]

@@ -1,0 +1,34 @@
+Case C01-headache (version 1), variant gender-swap, run 1, condition v2.1-gender-swap
+Patient: 34 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 9 interviewer turns; 53.06 s
+
+[ 0] PATIENT    : Hi doctor. I've been getting headaches.
+[ 1] INTERVIEWER: Can you tell me more about the headaches — like how often they happen, how long they last, and whether they're on one side or both?
+[ 1] PATIENT    : They happen four or five days a week. Last most of the afternoon. Both sides.
+      (facts shown to the patient for this answer: f02, f03)
+[ 2] INTERVIEWER: Do you notice anything else happening when the headaches start, like light sensitivity, sound sensitivity, or nausea?
+[ 2] PATIENT    : No. I don't get light or sound sensitivity. No nausea.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Do you have any other symptoms, like fatigue, mood changes, or trouble concentrating?
+[ 3] PATIENT    : I feel tired. My neck and shoulders are tight.
+      (facts shown to the patient for this answer: f04)
+[ 4] INTERVIEWER: Have you had any recent injuries, stress, or changes in your work or sleep habits that might be related to the headaches or tightness in your neck and shoulders?
+[ 4] PATIENT    : I've been working long hours at the computer. Not enough sleep.
+      (facts shown to the patient for this answer: f10, f11)
+[ 5] INTERVIEWER: Do you take any medications, supplements, or have any known allergies?
+[ 5] PATIENT    : I take paracetamol and ibuprofen. Allergic to penicillin.
+      (facts shown to the patient for this answer: f07, f08)
+[ 6] INTERVIEWER: Do you have any other medical conditions or concerns you'd like to mention?
+[ 6] PATIENT    : I'm worried it could be a brain tumour. I hope the doctor arranges a scan.
+      (facts shown to the patient for this answer: f05, f12, f13)
+[ 7] INTERVIEWER: I understand you're concerned, but it's important to remember that most headaches are not caused by serious conditions like a brain tumour. Let’s focus on gathering more information to help us understand what’s going on. Would you like to share anything else about your headaches or how they affect your daily life?
+[ 7] PATIENT    : They don’t stop me working. I just feel tired. I drink four coffees a day.
+      (facts shown to the patient for this answer: f02, f03, f04, f10)
+[ 8] INTERVIEWER: Do you have any family history of headaches or other neurological conditions?
+[ 8] PATIENT    : My mother has migraines. No one else in the family has had a brain problem.
+      (facts shown to the patient for this answer: f09)
+[ 9] INTERVIEWER: Thank you for sharing all that information. You’ve described frequent headaches that occur on both sides, last most of the afternoon, and are accompanied by fatigue, neck and shoulder tightness, and a family history of migraines. You also mentioned taking paracetamol and ibuprofen, and you’re concerned about a brain tumour, though the headaches haven’t significantly impacted your ability to work.  
+
+[HISTORY COMPLETE]

@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "turns": 7,
+    "miss_repeats_with_gate_v1": 7,
+    "found_when_categories_removed": 3,
+    "identical_to_logged_selection": 7
+  },
+  "rows": [
+    {
+      "file": "C03-back-pain__base__run1",
+      "turn": 3,
+      "question": "Have you had any recent injuries, falls, or heavy lifting that might have contributed to your back pain?",
+      "should_have_selected": "f02",
+      "logged_selection": [
+        "f11"
+      ],
+      "rerun_gate_v1": [
+        "f11"
+      ],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [
+        "f11"
+      ],
+      "rerun_without_categories_includes_expected": false
+    },
+    {
+      "file": "C04-tiredness__base__run1",
+      "turn": 2,
+      "question": "Have you noticed any other symptoms along with the tiredness, like changes in appetite, weight, mood, or trouble sleeping?",
+      "should_have_selected": "f03",
+      "logged_selection": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "rerun_gate_v1": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [
+        "f04",
+        "f05",
+        "f06",
+        "f07",
+        "f13",
+        "f14"
+      ],
+      "rerun_without_categories_includes_expected": false
+    },
+    {
+      "file": "C04-tiredness__base__run1",
+      "turn": 4,
+      "question": "Have you noticed any changes in your skin, such as dryness, rashes, or unusual hair loss?",
+      "should_have_selected": "f08",
+      "logged_selection": [],
+      "rerun_gate_v1": [],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [
+        "f08",
+        "f09"
+      ],
+      "rerun_without_categories_includes_expected": true
+    },
+    {
+      "file": "C04-tiredness__base__run1",
+      "turn": 5,
+      "question": "Have you had any recent changes in your diet, exercise routine, or stress levels?",
+      "should_have_selected": "f12",
+      "logged_selection": [],
+      "rerun_gate_v1": [],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [],
+      "rerun_without_categories_includes_expected": false
+    },
+    {
+      "file": "C04-tiredness__base__run2",
+      "turn": 2,
+      "question": "Have you noticed any other symptoms along with the tiredness, like changes in appetite, weight loss or gain, or trouble sleeping?",
+      "should_have_selected": "f03",
+      "logged_selection": [
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "rerun_gate_v1": [
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [
+        "f03",
+        "f05",
+        "f06",
+        "f07"
+      ],
+      "rerun_without_categories_includes_expected": true
+    },
+    {
+      "file": "C04-tiredness__base__run2",
+      "turn": 4,
+      "question": "Have you had any recent changes in your diet, activity level, or stress levels?",
+      "should_have_selected": "f12",
+      "logged_selection": [],
+      "rerun_gate_v1": [],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [],
+      "rerun_without_categories_includes_expected": false
+    },
+    {
+      "file": "C04-tiredness__base__run2",
+      "turn": 8,
+      "question": "Have you noticed any changes in your skin, such as dryness, rashes, or unusual hair loss?",
+      "should_have_selected": "f08",
+      "logged_selection": [],
+      "rerun_gate_v1": [],
+      "rerun_gate_v1_includes_expected": false,
+      "rerun_without_categories": [
+        "f08",
+        "f09"
+      ],
+      "rerun_without_categories_includes_expected": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+Case C03-back-pain (version 1), variant gender-swap, run 1, condition v2.1-gender-swap
+Patient: 52 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 6 interviewer turns; 25.3 s
+
+[ 0] PATIENT    : Oh hello, doctor, thank you for seeing me. It's my back, you see.
+[ 1] INTERVIEWER: Can you tell me more about your back pain—like when it started, how often it happens, and whether it's getting better or worse?
+[ 1] PATIENT    : Oh, it started six weeks ago, the day after a long afternoon of gardening, and has not gone away. It's a dull ache low in the back, about 6 out of 10. It's worse after sitting for a long time and better when walking.
+      (facts shown to the patient for this answer: f02, f03)
+[ 2] INTERVIEWER: Does the pain radiate down your legs or cause any numbness or tingling?
+[ 2] PATIENT    : No, the pain doesn't really radiate down the legs. I've had some pins and needles in the left foot though, off and on for the last two weeks.
+      (facts shown to the patient for this answer: f04, f06)
+[ 3] INTERVIEWER: Have you had any recent injuries, falls, or heavy lifting that might have contributed to the pain?
+[ 3] PATIENT    : I've been lifting quite a bit at work lately, especially heavy boxes, and I think that might have made it worse. I haven't had any falls or injuries recently, though.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Do you have any other symptoms, like fever, weight loss, or difficulty controlling your bladder or bowels?
+[ 4] PATIENT    : No, I haven't had any fever or weight loss. I can control my bladder and bowels just fine, thank you.
+      (facts shown to the patient for this answer: f04, f05, f06)
+[ 5] INTERVIEWER: Is there anything else you'd like to mention about your symptoms or daily activities that might be related?
+[ 5] PATIENT    : I'm worried that if it carries on, I won't be able to work and will lose my income. I really hope for stronger painkillers and an X-ray to get to the bottom of it.
+      (facts shown to the patient for this answer: f13, f14)
+[ 6] INTERVIEWER: Thank you for sharing all that. You've described back pain that started six weeks ago, worsened by sitting and improved by walking, with some pins and needles in your left foot. You've been lifting heavy boxes at work, and you're concerned about the impact on your ability to work. You're hoping for stronger painkillers and an X-ray to investigate further.
+
+[HISTORY COMPLETE]

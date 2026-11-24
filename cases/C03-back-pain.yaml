@@ -1,0 +1,111 @@
+id: C03-back-pain
+case_version: 1
+title: Low back pain for six weeks
+setting: GP appointment
+
+persona:
+  age: 52
+  gender: female
+  communication_style: >
+    Talkative and friendly. Gives long answers with chatty remarks, but the chat stays on the
+    topic being asked about and adds no clinical facts that were not asked for.
+
+opening_line: >
+  Oh hello, doctor, thank you for seeing me. It's my back, you see.
+
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Lower back pain
+    fact: >
+      Has pain in the lower back.
+    revealed_at_start: true
+  - id: f02
+    category: onset_duration
+    label: Six weeks, after gardening
+    fact: >
+      The pain began six weeks ago, the day after a long afternoon of gardening, and has not
+      gone away.
+  - id: f03
+    category: severity_character
+    label: Dull ache, worse sitting
+    fact: >
+      A dull ache low in the back, about 6 out of 10, worse after sitting for a long time and
+      better when walking.
+  - id: f04
+    category: associated_symptoms
+    label: Morning stiffness, no leg pain
+    fact: >
+      The back feels stiff for about twenty minutes after getting up. No pain travelling down the
+      legs.
+  - id: f05
+    category: red_flag_symptoms
+    label: Pain wakes the patient at night
+    fact: >
+      The pain wakes the patient most nights at around three in the morning and is not eased by
+      changing position.
+  - id: f06
+    category: red_flag_symptoms
+    label: Pins and needles in the left foot
+    fact: >
+      Has had pins and needles in the left foot for the last two weeks.
+  - id: f07
+    category: past_medical_history
+    label: Mild high blood pressure
+    fact: >
+      Was told three years ago that blood pressure was mildly high. No other conditions and no
+      operations.
+  - id: f08
+    category: medicines
+    label: Amlodipine; ibuprofen helped a little
+    fact: >
+      Takes amlodipine 5 mg once a day for blood pressure. Tried ibuprofen for the back, which
+      helped only a little.
+  - id: f09
+    category: allergies
+    label: None known
+    fact: >
+      No known allergies.
+  - id: f10
+    category: family_history
+    label: Sister had back surgery
+    fact: >
+      The patient's sister had an operation on a slipped disc in the back.
+  - id: f11
+    category: social_history
+    label: Care assistant, lifting at work
+    fact: >
+      Works as a care assistant, which involves a lot of lifting, and lives with a partner. Does
+      not smoke and drinks little alcohol.
+  - id: f12
+    category: ice
+    label: Idea - pulled muscle
+    fact: >
+      Thinks it is a pulled muscle from the gardening.
+  - id: f13
+    category: ice
+    label: Concern - losing work
+    fact: >
+      Is worried that if it carries on the patient will not be able to work and will lose income.
+  - id: f14
+    category: ice
+    label: Expectation - stronger painkillers and an X-ray
+    fact: >
+      Hopes for stronger painkillers and an X-ray.
+
+red_flags: [f05, f06]
+
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: male}
+  - id: age-swap
+    change: age
+    persona: {age: 31}
+
+author_notes: >
+  Most back pain is muscle-related and settles. A good history shows that and also looks for
+  warning signs. Pain that wakes the patient at night and tingling in a foot are both reasons
+  for the doctor to look further, so both are revealed only if the interviewer asks about night
+  pain, numbness or tingling, or other worrying symptoms. The lifting job and the fear of losing
+  income explain why the patient wants a quick fix.

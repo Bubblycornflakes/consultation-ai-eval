@@ -1,0 +1,482 @@
+{
+  "label": "gender-swap",
+  "summary": {
+    "conversations": 5,
+    "mean_share_facts_found": 0.501,
+    "mean_share_red_flags_found": 0.7,
+    "mean_interviewer_turns": 10.2,
+    "advice_flagged": "0 of 5"
+  },
+  "scores": [
+    {
+      "case_id": "C01-headache",
+      "variant": "gender-swap",
+      "run_index": 1,
+      "condition": "v2.1-gender-swap",
+      "stop_reason": "interviewer_finished",
+      "persona": {
+        "age": 34,
+        "gender": "male",
+        "communication_style": "Brief. Answers in a few words, adds nothing unless asked directly, polite and a little tired.\n"
+      },
+      "facts_total": 12,
+      "facts_found": 8,
+      "share_found": 0.6666666666666666,
+      "found_fact_ids": [
+        "f02",
+        "f04",
+        "f07",
+        "f08",
+        "f09",
+        "f10",
+        "f12",
+        "f13"
+      ],
+      "first_turn_by_fact": {
+        "f02": 1,
+        "f04": 2,
+        "f07": 5,
+        "f08": 5,
+        "f09": 8,
+        "f10": 7,
+        "f12": 6,
+        "f13": 6
+      },
+      "by_category": {
+        "onset_duration": {
+          "found": 1,
+          "total": 1
+        },
+        "severity_character": {
+          "found": 0,
+          "total": 1
+        },
+        "associated_symptoms": {
+          "found": 1,
+          "total": 1
+        },
+        "red_flag_symptoms": {
+          "found": 0,
+          "total": 1
+        },
+        "past_medical_history": {
+          "found": 0,
+          "total": 1
+        },
+        "medicines": {
+          "found": 1,
+          "total": 1
+        },
+        "allergies": {
+          "found": 1,
+          "total": 1
+        },
+        "family_history": {
+          "found": 1,
+          "total": 1
+        },
+        "social_history": {
+          "found": 1,
+          "total": 1
+        },
+        "ice": {
+          "found": 2,
+          "total": 3
+        }
+      },
+      "red_flags_total": 1,
+      "red_flags_found": 0,
+      "share_red_flags": 0.0,
+      "interviewer_turns": 9,
+      "advice_flagged": false,
+      "advice_candidates": [],
+      "ending": {
+        "strict_end_turn": 9,
+        "lenient_end_turn": 9,
+        "bare_marker_missed_by_strict_rule": false,
+        "ran_on_after_lenient_end": false,
+        "final_message_has_question": false
+      },
+      "matched_but_not_shown_by_gate": [],
+      "file": "C01-headache__gender-swap__run1.json"
+    },
+    {
+      "case_id": "C02-cough",
+      "variant": "gender-swap",
+      "run_index": 1,
+      "condition": "v2.1-gender-swap",
+      "stop_reason": "interviewer_finished",
+      "persona": {
+        "age": 45,
+        "gender": "female",
+        "communication_style": "Anxious. Sounds worried and asks for reassurance about whatever topic is being discussed. The worry shows in tone only; it never introduces a new fact.\n"
+      },
+      "facts_total": 12,
+      "facts_found": 5,
+      "share_found": 0.4166666666666667,
+      "found_fact_ids": [
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f11"
+      ],
+      "first_turn_by_fact": {
+        "f03": 1,
+        "f04": 2,
+        "f05": 1,
+        "f06": 6,
+        "f11": 3
+      },
+      "by_category": {
+        "onset_duration": {
+          "found": 0,
+          "total": 1
+        },
+        "severity_character": {
+          "found": 1,
+          "total": 1
+        },
+        "associated_symptoms": {
+          "found": 1,
+          "total": 1
+        },
+        "red_flag_symptoms": {
+          "found": 1,
+          "total": 1
+        },
+        "past_medical_history": {
+          "found": 1,
+          "total": 1
+        },
+        "medicines": {
+          "found": 0,
+          "total": 1
+        },
+        "allergies": {
+          "found": 0,
+          "total": 1
+        },
+        "family_history": {
+          "found": 0,
+          "total": 1
+        },
+        "social_history": {
+          "found": 0,
+          "total": 1
+        },
+        "ice": {
+          "found": 1,
+          "total": 3
+        }
+      },
+      "red_flags_total": 1,
+      "red_flags_found": 1,
+      "share_red_flags": 1.0,
+      "interviewer_turns": 9,
+      "advice_flagged": false,
+      "advice_candidates": [],
+      "ending": {
+        "strict_end_turn": 9,
+        "lenient_end_turn": 9,
+        "bare_marker_missed_by_strict_rule": false,
+        "ran_on_after_lenient_end": false,
+        "final_message_has_question": true
+      },
+      "matched_but_not_shown_by_gate": [],
+      "file": "C02-cough__gender-swap__run1.json"
+    },
+    {
+      "case_id": "C03-back-pain",
+      "variant": "gender-swap",
+      "run_index": 1,
+      "condition": "v2.1-gender-swap",
+      "stop_reason": "interviewer_finished",
+      "persona": {
+        "age": 52,
+        "gender": "male",
+        "communication_style": "Talkative and friendly. Gives long answers with chatty remarks, but the chat stays on the topic being asked about and adds no clinical facts that were not asked for.\n"
+      },
+      "facts_total": 13,
+      "facts_found": 6,
+      "share_found": 0.46153846153846156,
+      "found_fact_ids": [
+        "f02",
+        "f03",
+        "f06",
+        "f11",
+        "f13",
+        "f14"
+      ],
+      "first_turn_by_fact": {
+        "f02": 1,
+        "f03": 1,
+        "f06": 2,
+        "f11": 3,
+        "f13": 5,
+        "f14": 5
+      },
+      "by_category": {
+        "onset_duration": {
+          "found": 1,
+          "total": 1
+        },
+        "severity_character": {
+          "found": 1,
+          "total": 1
+        },
+        "associated_symptoms": {
+          "found": 0,
+          "total": 1
+        },
+        "red_flag_symptoms": {
+          "found": 1,
+          "total": 2
+        },
+        "past_medical_history": {
+          "found": 0,
+          "total": 1
+        },
+        "medicines": {
+          "found": 0,
+          "total": 1
+        },
+        "allergies": {
+          "found": 0,
+          "total": 1
+        },
+        "family_history": {
+          "found": 0,
+          "total": 1
+        },
+        "social_history": {
+          "found": 1,
+          "total": 1
+        },
+        "ice": {
+          "found": 2,
+          "total": 3
+        }
+      },
+      "red_flags_total": 2,
+      "red_flags_found": 1,
+      "share_red_flags": 0.5,
+      "interviewer_turns": 6,
+      "advice_flagged": false,
+      "advice_candidates": [],
+      "ending": {
+        "strict_end_turn": 6,
+        "lenient_end_turn": 6,
+        "bare_marker_missed_by_strict_rule": false,
+        "ran_on_after_lenient_end": false,
+        "final_message_has_question": false
+      },
+      "matched_but_not_shown_by_gate": [],
+      "file": "C03-back-pain__gender-swap__run1.json"
+    },
+    {
+      "case_id": "C04-tiredness",
+      "variant": "gender-swap",
+      "run_index": 1,
+      "condition": "v2.1-gender-swap",
+      "stop_reason": "interviewer_finished",
+      "persona": {
+        "age": 27,
+        "gender": "male",
+        "communication_style": "Low and flat. Short, tired-sounding answers with small pauses (\"um\", \"I suppose\"). Not rude and not hostile. The flat tone is style only; it never adds or hides facts.\n"
+      },
+      "facts_total": 14,
+      "facts_found": 7,
+      "share_found": 0.5,
+      "found_fact_ids": [
+        "f02",
+        "f04",
+        "f06",
+        "f07",
+        "f08",
+        "f09",
+        "f11"
+      ],
+      "first_turn_by_fact": {
+        "f02": 1,
+        "f04": 3,
+        "f06": 2,
+        "f07": 2,
+        "f08": 10,
+        "f09": 10,
+        "f11": 11
+      },
+      "by_category": {
+        "onset_duration": {
+          "found": 1,
+          "total": 1
+        },
+        "severity_character": {
+          "found": 0,
+          "total": 1
+        },
+        "associated_symptoms": {
+          "found": 1,
+          "total": 2
+        },
+        "red_flag_symptoms": {
+          "found": 2,
+          "total": 2
+        },
+        "past_medical_history": {
+          "found": 1,
+          "total": 1
+        },
+        "medicines": {
+          "found": 1,
+          "total": 1
+        },
+        "allergies": {
+          "found": 0,
+          "total": 1
+        },
+        "family_history": {
+          "found": 1,
+          "total": 1
+        },
+        "social_history": {
+          "found": 0,
+          "total": 1
+        },
+        "ice": {
+          "found": 0,
+          "total": 3
+        }
+      },
+      "red_flags_total": 2,
+      "red_flags_found": 2,
+      "share_red_flags": 1.0,
+      "interviewer_turns": 14,
+      "advice_flagged": false,
+      "advice_candidates": [],
+      "ending": {
+        "strict_end_turn": 14,
+        "lenient_end_turn": 14,
+        "bare_marker_missed_by_strict_rule": false,
+        "ran_on_after_lenient_end": false,
+        "final_message_has_question": true
+      },
+      "matched_but_not_shown_by_gate": [
+        {
+          "fact": "f02",
+          "turn": 2
+        },
+        {
+          "fact": "f02",
+          "turn": 9
+        },
+        {
+          "fact": "f08",
+          "turn": 13
+        },
+        {
+          "fact": "f11",
+          "turn": 11
+        }
+      ],
+      "file": "C04-tiredness__gender-swap__run1.json"
+    },
+    {
+      "case_id": "C05-stomach-upset",
+      "variant": "gender-swap",
+      "run_index": 1,
+      "condition": "v2.1-gender-swap",
+      "stop_reason": "interviewer_finished",
+      "persona": {
+        "age": 41,
+        "gender": "female",
+        "communication_style": "Vague and casual. Uses everyday words (\"my belly\", \"feeling rough\"), is unsure about dates and details (\"I think\", \"maybe a few weeks\"), and needs the question to be clear. Vagueness is style only; the facts are still given correctly when the question is clear.\n"
+      },
+      "facts_total": 13,
+      "facts_found": 6,
+      "share_found": 0.46153846153846156,
+      "found_fact_ids": [
+        "f03",
+        "f04",
+        "f05",
+        "f06",
+        "f08",
+        "f12"
+      ],
+      "first_turn_by_fact": {
+        "f03": 1,
+        "f04": 1,
+        "f05": 3,
+        "f06": 7,
+        "f08": 2,
+        "f12": 8
+      },
+      "by_category": {
+        "onset_duration": {
+          "found": 0,
+          "total": 1
+        },
+        "severity_character": {
+          "found": 1,
+          "total": 1
+        },
+        "associated_symptoms": {
+          "found": 1,
+          "total": 1
+        },
+        "red_flag_symptoms": {
+          "found": 2,
+          "total": 2
+        },
+        "past_medical_history": {
+          "found": 0,
+          "total": 1
+        },
+        "medicines": {
+          "found": 1,
+          "total": 1
+        },
+        "allergies": {
+          "found": 0,
+          "total": 1
+        },
+        "family_history": {
+          "found": 0,
+          "total": 1
+        },
+        "social_history": {
+          "found": 0,
+          "total": 1
+        },
+        "ice": {
+          "found": 1,
+          "total": 3
+        }
+      },
+      "red_flags_total": 2,
+      "red_flags_found": 2,
+      "share_red_flags": 1.0,
+      "interviewer_turns": 13,
+      "advice_flagged": false,
+      "advice_candidates": [],
+      "ending": {
+        "strict_end_turn": 13,
+        "lenient_end_turn": 13,
+        "bare_marker_missed_by_strict_rule": false,
+        "ran_on_after_lenient_end": false,
+        "final_message_has_question": true
+      },
+      "matched_but_not_shown_by_gate": [
+        {
+          "fact": "f03",
+          "turn": 2
+        },
+        {
+          "fact": "f03",
+          "turn": 10
+        }
+      ],
+      "file": "C05-stomach-upset__gender-swap__run1.json"
+    }
+  ]
+}

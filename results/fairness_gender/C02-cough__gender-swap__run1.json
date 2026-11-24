@@ -1,0 +1,474 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T12:58:50+00:00",
+    "condition": "v2.1-gender-swap",
+    "case_id": "C02-cough",
+    "case_version": 1,
+    "variant": "gender-swap",
+    "run_index": 1,
+    "persona": {
+      "age": 45,
+      "gender": "female",
+      "communication_style": "Anxious. Sounds worried and asks for reassurance about whatever topic is being discussed. The worry shows in tone only; it never introduces a new fact.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 8,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "harness": {
+      "version": "v2.1",
+      "lenient_end": true,
+      "note": "v2.1 (2026-11-24) also accepts HISTORY COMPLETE without brackets as the end; the model's prompt is unchanged"
+    },
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 9,
+    "duration_seconds": 51.16,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Hello. I've had this cough for ages and I'm starting to worry about it."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about your cough — for example, is it a dry cough or do you have phlegm?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "It's mostly a dry, tickly cough. I've coughed up phlegm with a few streaks of blood twice this week.",
+      "gate_selected_fact_ids": [
+        "f01",
+        "f03",
+        "f05"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Have you noticed any other symptoms, such as chest pain, shortness of breath, or fatigue?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "I've felt a little short of breath climbing two flights of stairs. I haven't noticed any chest pain or fatigue.",
+      "gate_selected_fact_ids": [
+        "f04"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you been exposed to any irritants, such as smoke, dust, or chemicals, recently?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I think the cough is left over from the cold and made worse by dust in the van. I haven't been exposed to smoke or chemicals recently.",
+      "gate_selected_fact_ids": [
+        "f11"
+      ]
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your health, such as weight loss, fever, or night sweats?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "I haven't had any recent changes in my health. No weight loss, fever, or night sweats.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your environment, such as moving house, changes in work, or new exposures?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "I've been working in a van, which has more dust than usual. I haven't moved house or had any other changes in my environment.",
+      "gate_selected_fact_ids": [
+        "f11"
+      ]
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you had any previous lung issues, such as asthma, bronchitis, or pneumonia?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I had asthma as a child and grew out of it as a teenager. I've never had bronchitis or pneumonia.",
+      "gate_selected_fact_ids": [
+        "f06"
+      ]
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you noticed if the cough is worse at certain times of day, or if it seems to be triggered by specific activities?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "It's worse at night and first thing in the morning. It seems to be triggered by lying down or waking up.",
+      "gate_selected_fact_ids": [
+        "f03"
+      ]
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Have you been exposed to any pets, animals, or allergens in the van or your home?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "I haven't been exposed to any pets or animals recently. I'm not sure about allergens in the van or my home, but I think the dust is the main issue.",
+      "gate_selected_fact_ids": [
+        "f11"
+      ]
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your diet, stress levels, or sleep patterns?  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 2.661,
+      "prompt_tokens": 184,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 2.379,
+      "prompt_tokens": 655,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 3.062,
+      "prompt_tokens": 522,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.962,
+      "prompt_tokens": 248,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 0.91,
+      "prompt_tokens": 691,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 1.943,
+      "prompt_tokens": 535,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.92,
+      "prompt_tokens": 302,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 0.784,
+      "prompt_tokens": 681,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 2.335,
+      "prompt_tokens": 590,
+      "reply_tokens": 31,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 1.073,
+      "prompt_tokens": 362,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 0.699,
+      "prompt_tokens": 689,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 2.241,
+      "prompt_tokens": 642,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 4.285,
+      "prompt_tokens": 416,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 5.142,
+      "prompt_tokens": 684,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 5.391,
+      "prompt_tokens": 707,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 2.347,
+      "prompt_tokens": 478,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "gate",
+      "seconds": 0.986,
+      "prompt_tokens": 688,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 3.306,
+      "prompt_tokens": 764,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 1.6,
+      "prompt_tokens": 532,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "gate",
+      "seconds": 0.735,
+      "prompt_tokens": 686,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 3.134,
+      "prompt_tokens": 841,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 0.881,
+      "prompt_tokens": 591,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "gate",
+      "seconds": 0.741,
+      "prompt_tokens": 686,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 1.59,
+      "prompt_tokens": 879,
+      "reply_tokens": 37,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 0.933,
+      "prompt_tokens": 657,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

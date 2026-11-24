@@ -1,0 +1,28 @@
+Case C04-tiredness (version 1), variant base, run 1
+Patient: 27 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v1.txt, interviewer_v1.txt
+Stopped because: interviewer_finished; 10 interviewer turns; 19.07 s
+
+[ 0] PATIENT    : Um, hi. I just feel really tired all the time.
+[ 1] INTERVIEWER: How long have you been feeling this way?
+[ 1] PATIENT    : Two months. It started slowly and has gotten worse.
+[ 2] INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like weight changes, trouble sleeping, or mood changes?
+[ 2] PATIENT    : I've lost about four kg in two months. I sleep nine hours but wake up not refreshed. I feel low and can't concentrate.
+[ 3] INTERVIEWER: Have you experienced any changes in your appetite or eating habits besides the weight loss?
+[ 3] PATIENT    : Not really. I just feel like I'm not hungry, but I'm not eating less. I'm more thirsty than usual.
+[ 4] INTERVIEWER: Have you noticed any changes in your energy levels during the day, like feeling sluggish or having trouble staying awake?
+[ 4] PATIENT    : I feel really sluggish. My arms and legs feel heavy. I can't stay awake through shifts.
+[ 5] INTERVIEWER: Have you noticed any changes in your bowel movements or skin condition, like dryness or changes in stool consistency?
+[ 5] PATIENT    : My skin is the same as before. I have eczema, but it's not worse. I don't think my stools have changed.
+[ 6] INTERVIEWER: Have you had any recent illnesses, injuries, or changes in your medication or supplements?
+[ 6] PATIENT    : No recent illnesses. I take vitamin D most days and eczema cream. No changes in medication.
+[ 7] INTERVIEWER: Have you noticed any neck swelling, heat intolerance, or cold intolerance lately?
+[ 7] PATIENT    : No. I don't think I've noticed anything with my neck. I feel cold sometimes, but not sure if it's new.
+[ 8] INTERVIEWER: Have you had any changes in your menstrual cycle, if you're a woman, or any changes in sexual function, if you're a man?
+[ 8] PATIENT    : I'm a woman. My periods have been irregular. I'm not sure if it's because of this or something else.
+[ 9] INTERVIEWER: Have you experienced any unexplained weight loss, changes in your voice, or difficulty swallowing or breathing?
+[ 9] PATIENT    : I've lost about four kg without trying. I don't think my voice has changed. I can swallow and breathe fine.
+[10] INTERVIEWER: Have you noticed any changes in your mood, like feeling anxious, irritable, or having trouble focusing?  
+
+[HISTORY COMPLETE]

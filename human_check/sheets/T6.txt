@@ -1,0 +1,43 @@
+TRANSCRIPT T6
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Hi doctor. I've been getting headaches.
+INTERVIEWER: Can you tell me more about the headaches — like how often they happen, how long they last, and what they feel like?
+PATIENT    : They happen four or five days a week. Last most of the afternoon. Feel like a tight band squeezing around the head. Not throbbing.
+INTERVIEWER: Do you have any other symptoms along with the headaches, like nausea, sensitivity to light or sound, or fatigue?
+PATIENT    : No nausea. No sensitivity to light or sound. Feel tired, but not sick.
+INTERVIEWER: Have you noticed anything that makes the headaches better or worse, like certain foods, stress, sleep patterns, or activities?
+PATIENT    : Stress seems to make them worse. Screen time too. Coffee helps a bit. Sleep is poor.
+INTERVIEWER: Do you have any other health conditions or take any medications regularly?
+PATIENT    : No long-term conditions. Take paracetamol most days and ibuprofen occasionally. No regular prescribed medicines.
+INTERVIEWER: Have you had any recent changes in your routine, such as work stress, lack of sleep, or changes in diet?
+PATIENT    : Work stress. Long hours at the computer. Sleep is poor. Drink four coffees a day.
+INTERVIEWER: Do you have any family history of headaches or migraines?
+PATIENT    : My mother has migraines. No one else in the family has had migraines or brain problems.
+INTERVIEWER: Thank you for sharing all that information. You’ve described frequent headaches that feel like a tight band around the head, worsened by stress and screen time, and improved slightly by coffee. You also mentioned poor sleep, work-related stress, and a family history of migraines from your mother.  
+
+[HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The headaches began about three weeks ago, gradually, with no injury. They now happen four or five days a week and last most of the afternoon.
+  f03: It feels like a tight band squeezing around the head, not throbbing. About 5 out of 10. It does not stop the patient working.
+  f04: Eyes feel tired and the neck and shoulders feel tight by the evening. No feeling sick and no vomiting.
+  f05: About a week ago the vision in the left eye went blurred for around five minutes, then returned to normal. It has not happened since.
+  f06: Had occasional migraines at university, none for years. No long-term conditions and no operations.
+  f07: Has taken two paracetamol on most days for three weeks, and ibuprofen on a few days. No regular prescribed medicines.
+  f08: Allergic to penicillin; it caused a rash in childhood.
+  f09: The patient's mother has migraines. Nobody in the family has had a stroke or a brain problem.
+  f10: Works at a computer eight to ten hours a day. Sleeps about five hours a night and drinks four coffees a day. Does not smoke and rarely drinks alcohol.
+  f11: Thinks the headaches come from stress and too much screen time.
+  f12: Is worried it could be a brain tumour, because a colleague had one.
+  f13: Hopes the doctor will arrange a scan to be sure.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

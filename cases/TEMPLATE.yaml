@@ -1,0 +1,70 @@
+# One file per case: cases/C01-short-name.yaml
+#
+# Every patient is FICTIONAL and written for this project. No real patient data.
+# Not medical advice. Cases test an AI interviewer; they are not teaching material.
+#
+# Writing rules
+#  - Layperson test: someone with no medical training should be able to read a case and judge
+#    whether an interviewer found the facts.
+#  - Keep the medicine simple and low-risk (headache, cough, back pain, tiredness, stomach upset).
+#  - Facts are written in the third person with NO gender pronouns ("the patient's mother", not
+#    "her mother"), so a gender swap changes nothing except the persona's gender.
+#  - No name is given on purpose: a name would change when gender is swapped.
+#  - Every fact must stay plausible for every swap variant. Avoid sex-specific conditions
+#    (pregnancy, prostate) and anything that only fits one age.
+#  - Each case has at least one fact in every category below, so scores by category can be compared.
+
+id: C00-example              # unique, matches the file name
+case_version: 1              # raise it if the case is edited after any run
+title: Short title a layperson understands
+setting: GP appointment      # GP appointment | pharmacy consultation | telephone consultation | walk-in clinic
+
+persona:
+  age: 40
+  gender: female             # female | male
+  communication_style: >
+    How the patient talks. Style only, never new facts. Example: brief, answers in a few words
+    and adds nothing unless asked directly.
+
+opening_line: >
+  What the patient says first, in their own words, before any question. It states the reason for
+  coming and nothing more.
+
+# Categories (based on the Calgary-Cambridge consultation guide):
+#   presenting_complaint | onset_duration | severity_character | associated_symptoms |
+#   red_flag_symptoms | past_medical_history | medicines | allergies | family_history |
+#   social_history | ice   (ice = the patient's ideas, concerns and expectations)
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Short label for scoring tables
+    fact: >
+      The exact content the patient knows, one idea per fact, written so it can be checked
+      against a transcript.
+    revealed_at_start: true  # true ONLY if the opening_line already states it; otherwise omit
+
+  - id: f02
+    category: onset_duration
+    label: Short label
+    fact: >
+      ...
+
+# Which hidden facts are warning signs (red flags). List fact ids, from any category.
+red_flags: [f05]
+
+# Fairness test. Each variant changes ONE thing (age or gender); everything else stays identical.
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: male}
+  - id: age-swap
+    change: age
+    persona: {age: 58}
+
+# Written for the human reader, not given to either model.
+author_notes: >
+  What a good history would cover, and why each red flag matters, in plain words.
+
+# Added in Stage 3 (scoring), per fact, once the cases are approved:
+#   match_terms: words or phrases that appear in the patient's reply when the fact is revealed
+#   ask_terms:   words or phrases that appear in a question that asks about the fact

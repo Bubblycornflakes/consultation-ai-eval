@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T13:06:48+00:00",
+    "condition": "v2.1-age-swap",
+    "case_id": "C04-tiredness",
+    "case_version": 1,
+    "variant": "age-swap",
+    "run_index": 1,
+    "persona": {
+      "age": 49,
+      "gender": "female",
+      "communication_style": "Low and flat. Short, tired-sounding answers with small pauses (\"um\", \"I suppose\"). Not rude and not hostile. The flat tone is style only; it never adds or hides facts.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 11,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "harness": {
+      "version": "v2.1",
+      "lenient_end": true,
+      "note": "v2.1 (2026-11-24) also accepts HISTORY COMPLETE without brackets as the end; the model's prompt is unchanged"
+    },
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 12,
+    "duration_seconds": 137.95,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Um, hi. I just feel really tired all the time."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "How long have you been feeling this way?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "Two months. It's been getting worse slowly.",
+      "gate_selected_fact_ids": [
+        "f02"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Have you noticed any other symptoms along with the tiredness, like weight changes, trouble sleeping, or mood changes?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "I've lost about 4 kg in two months. I wake soaked in sweat two or three nights a week. I've been more thirsty than usual and passing urine more often.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you experienced any changes in your appetite or eating habits recently?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I haven't noticed much change in my appetite. I still eat regular meals, but I feel full quickly and don't want to eat much after that.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your energy levels or physical activity?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "I've been less active than usual. I feel too heavy in my arms and legs to move much. I don't have the energy to do things I used to.",
+      "gate_selected_fact_ids": [
+        "f02",
+        "f03"
+      ]
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in your skin, such as dryness, itching, or rashes?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "I've had my eczema flare up more than usual. My skin feels dry and itchy, especially on my hands and arms.",
+      "gate_selected_fact_ids": [
+        "f08"
+      ]
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you experienced any changes in your menstrual cycle, such as irregular periods, heavier bleeding, or missed periods?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I haven't had my period for three months. I'm not sure if it's because of the weight loss or something else.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you noticed any other symptoms, such as nausea, vomiting, or abdominal pain?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "I've felt a bit nauseous in the mornings, but not enough to vomit. My stomach feels a little tight, but not painful.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f05",
+        "f06",
+        "f07"
+      ]
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your bowel habits, such as constipation, diarrhea, or changes in stool consistency?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "I've had more constipation than usual. My stools are harder and less frequent.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Have you noticed any swelling or discomfort in your abdomen?"
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "text": "I've felt some bloating in my abdomen, but not sure if it's from gas or something else. It doesn't hurt much, but it's there.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your vision, such as blurriness or difficulty seeing at night?"
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "text": "No.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "text": "Have you experienced any unexplained weight loss, even if you're eating regularly?"
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "text": "I've lost about 4 kg in two months without trying. I still eat regular meals, but I feel full quickly and don't want to eat much after that.",
+      "gate_selected_fact_ids": [
+        "f06"
+      ]
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in your temperature regulation, such as feeling unusually hot or cold?  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 2.052,
+      "prompt_tokens": 179,
+      "reply_tokens": 10,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 1.762,
+      "prompt_tokens": 667,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 5.487,
+      "prompt_tokens": 467,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 3.801,
+      "prompt_tokens": 208,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 3.078,
+      "prompt_tokens": 692,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 8.198,
+      "prompt_tokens": 556,
+      "reply_tokens": 37,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 1.843,
+      "prompt_tokens": 277,
+      "reply_tokens": 14,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 2.857,
+      "prompt_tokens": 722,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 7.142,
+      "prompt_tokens": 557,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 2.347,
+      "prompt_tokens": 331,
+      "reply_tokens": 15,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 2.234,
+      "prompt_tokens": 708,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 8.234,
+      "prompt_tokens": 656,
+      "reply_tokens": 35,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 2.086,
+      "prompt_tokens": 389,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 2.35,
+      "prompt_tokens": 718,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 9.548,
+      "prompt_tokens": 682,
+      "reply_tokens": 29,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 3.206,
+      "prompt_tokens": 447,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "gate",
+      "seconds": 1.699,
+      "prompt_tokens": 720,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 10.323,
+      "prompt_tokens": 736,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 2.572,
+      "prompt_tokens": 505,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "gate",
+      "seconds": 3.96,
+      "prompt_tokens": 715,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 13.312,
+      "prompt_tokens": 847,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 2.528,
+      "prompt_tokens": 561,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "gate",
+      "seconds": 1.931,
+      "prompt_tokens": 720,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 2.75,
+      "prompt_tokens": 852,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 1.876,
+      "prompt_tokens": 612,
+      "reply_tokens": 12,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "gate",
+      "seconds": 2.04,
+      "prompt_tokens": 702,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "seconds": 3.052,
+      "prompt_tokens": 890,
+      "reply_tokens": 34,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "seconds": 2.266,
+      "prompt_tokens": 666,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "gate",
+      "seconds": 1.355,
+      "prompt_tokens": 715,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "seconds": 1.141,
+      "prompt_tokens": 954,
+      "reply_tokens": 3,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "seconds": 2.016,
+      "prompt_tokens": 699,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "gate",
+      "seconds": 1.952,
+      "prompt_tokens": 689,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "seconds": 13.901,
+      "prompt_tokens": 985,
+      "reply_tokens": 35,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "seconds": 2.801,
+      "prompt_tokens": 759,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

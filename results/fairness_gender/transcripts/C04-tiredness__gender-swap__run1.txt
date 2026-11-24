@@ -1,0 +1,49 @@
+Case C04-tiredness (version 1), variant gender-swap, run 1, condition v2.1-gender-swap
+Patient: 27 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 14 interviewer turns; 52.42 s
+
+[ 0] PATIENT    : Um, hi. I just feel really tired all the time.
+[ 1] INTERVIEWER: How long have you been feeling this way?
+[ 1] PATIENT    : Two months. It's been getting worse slowly.
+      (facts shown to the patient for this answer: f02)
+[ 2] INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like changes in appetite, weight loss or gain, or trouble sleeping?
+[ 2] PATIENT    : I've lost about 4 kg in two months without trying. I wake soaked in sweat two or three nights a week.
+      (facts shown to the patient for this answer: f05, f06, f07)
+[ 3] INTERVIEWER: Have you experienced any changes in your energy levels during the day, such as feeling shaky, anxious, or having trouble concentrating?
+[ 3] PATIENT    : I feel low and flat. It's hard to concentrate. I can't focus on things.
+      (facts shown to the patient for this answer: f03, f04)
+[ 4] INTERVIEWER: Have you had any recent changes in your diet, exercise routine, or stress levels?
+[ 4] PATIENT    : No changes in diet or exercise. Work stress has been higher lately.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you noticed any changes in your mood, such as feeling more irritable, sad, or hopeless?
+[ 5] PATIENT    : I feel sad a lot. I don't have much hope for things. I'm irritable sometimes.
+      (facts shown to the patient for this answer: f04)
+[ 6] INTERVIEWER: Have you experienced any physical symptoms like headaches, stomach pain, or muscle aches that seem to go along with your mood changes?
+[ 6] PATIENT    : I get headaches when I'm feeling down. My stomach feels tight sometimes too.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you had any changes in your bowel movements or digestion, like constipation, diarrhea, or feeling full quickly?
+[ 7] PATIENT    : I've been constipated most of the time. I feel full even after small meals.
+      (facts shown to the patient for this answer: none)
+[ 8] INTERVIEWER: Have you noticed any changes in your menstrual cycle, or any other symptoms like dizziness, chest pain, or difficulty breathing?
+[ 8] PATIENT    : I haven't noticed anything about my menstrual cycle. I get dizzy sometimes. My chest feels tight. I don't have trouble breathing.
+      (facts shown to the patient for this answer: none)
+[ 9] INTERVIEWER: Have you had any recent changes in your weight, or do you feel like your weight is hard to control?
+[ 9] PATIENT    : I've lost about 4 kg in two months without trying. I feel like my weight is hard to control.
+      (facts shown to the patient for this answer: f06)
+[10] INTERVIEWER: Have you ever been diagnosed with any medical conditions, or are you currently taking any medications or supplements?
+[10] PATIENT    : I've had eczema since childhood. I take vitamin D most days and use moisturising cream for it.
+      (facts shown to the patient for this answer: f08, f09)
+[11] INTERVIEWER: Have you ever been tested for thyroid issues or other hormonal imbalances?
+[11] PATIENT    : No. I haven't been tested for thyroid issues or hormonal imbalances.
+      (facts shown to the patient for this answer: none)
+[12] INTERVIEWER: Have you noticed any changes in your skin, such as dryness, rashes, or flare-ups of your eczema, along with your other symptoms?
+[12] PATIENT    : My eczema has flared up more recently. My skin is drier than usual. I have rashes on my arms and chest.
+      (facts shown to the patient for this answer: f08)
+[13] INTERVIEWER: Have you felt any changes in your mood or energy levels when your eczema flares up?
+[13] PATIENT    : When my eczema flares up, I feel more low and tired. My energy is worse then.
+      (facts shown to the patient for this answer: f03, f04)
+[14] INTERVIEWER: Have you had any recent changes in your sleep patterns, such as waking up early, staying up late, or not feeling rested even after a full night’s sleep?  
+
+[HISTORY COMPLETE]

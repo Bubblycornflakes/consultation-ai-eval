@@ -1,0 +1,52 @@
+Case C05-stomach-upset (version 1), variant age-swap, run 1, condition v2.1-age-swap
+Patient: 63 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 15 interviewer turns; 110.14 s
+
+[ 0] PATIENT    : Alright, doctor. My stomach's been playing up.
+[ 1] INTERVIEWER: Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?
+[ 1] PATIENT    : It's a burning pain in the upper middle of my tummy, about 5 out of 10. It gets worse an hour after meals and sometimes at night. I feel sick after eating and bloated, but I haven't thrown up.
+      (facts shown to the patient for this answer: f03, f04)
+[ 2] INTERVIEWER: Does this pain ever feel like it's spreading to your back or shoulders?
+[ 2] PATIENT    : No, it doesn't spread to my back or shoulders. It stays in my upper middle tummy.
+      (facts shown to the patient for this answer: none)
+[ 3] INTERVIEWER: Have you noticed any changes in your bowel movements, like diarrhea, constipation, or black, tarry stools?
+[ 3] PATIENT    : I passed black, sticky, smelly stools twice this week. I haven't had diarrhea or constipation, just those stools.
+      (facts shown to the patient for this answer: f05)
+[ 4] INTERVIEWER: Have you been taking any medications, supplements, or herbal remedies recently?
+[ 4] PATIENT    : I've been taking ibuprofen 400 mg three times a day for my knee, and I chew antacid tablets, which help a little.
+      (facts shown to the patient for this answer: f08)
+[ 5] INTERVIEWER: Have you had any recent injuries, falls, or accidents that might have affected your abdomen?
+[ 5] PATIENT    : No, I haven't had any recent injuries or accidents. I've been moving around okay, though my knee is still bothering me.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you experienced any weight loss, changes in appetite, or feeling unusually tired lately?
+[ 6] PATIENT    : I've lost about 5 pounds in the last two months, but I'm not sure if it's from not eating much or just my body. I don't feel like eating much lately, and I do feel tired a lot.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you had any recent changes in your diet, such as eating more spicy, fatty, or acidic foods?
+[ 7] PATIENT    : I think it's from spicy takeaways and stress at work. I've been eating more fatty foods lately, and I haven't been drinking enough water.
+      (facts shown to the patient for this answer: f12)
+[ 8] INTERVIEWER: Have you noticed any improvement or worsening of symptoms when you avoid spicy or fatty foods?
+[ 8] PATIENT    : I haven't tried avoiding spicy or fatty foods yet, but I think it might help. I'm not sure how to track it properly.
+      (facts shown to the patient for this answer: f12)
+[ 9] INTERVIEWER: Have you had any recent changes in your sleep patterns or stress levels?
+[ 9] PATIENT    : I've been sleeping worse than usual, maybe because of the stress at work. I'm not getting enough rest, and it's making me feel even more tired.
+      (facts shown to the patient for this answer: none)
+[10] INTERVIEWER: Have you had any other symptoms, such as heartburn, nausea, or a feeling of fullness even after eating small amounts?
+[10] PATIENT    : I feel a burning in my chest, like heartburn, especially after eating. I also feel full even after just a little food, and I get that sick feeling again.
+      (facts shown to the patient for this answer: f04)
+[11] INTERVIEWER: Have you noticed any blood in your stool or dark, tarry stools that look like coffee grounds?
+[11] PATIENT    : I passed black, sticky, smelly stools twice this week. I don't think there was any blood in them, but I'm not sure.
+      (facts shown to the patient for this answer: f05)
+[12] INTERVIEWER: Have you had any other symptoms, such as vomiting, dizziness, or fainting?
+[12] PATIENT    : I feel dizzy when I stand up quickly, and it's been happening for the past few days. I haven't vomited.
+      (facts shown to the patient for this answer: f04, f06)
+[13] INTERVIEWER: Have you had any recent changes in your medication, or have you started any new medications, supplements, or herbal remedies?
+[13] PATIENT    : No, I haven't changed my medications. I've just been taking ibuprofen and antacids as usual.
+      (facts shown to the patient for this answer: f08)
+[14] INTERVIEWER: Have you had any recent changes in your activity level, such as starting or stopping exercise, or have you been feeling more fatigued than usual?
+[14] PATIENT    : I've been less active because my knee hurts a lot. I'm not able to walk as much as before, and I feel more tired than usual.
+      (facts shown to the patient for this answer: none)
+[15] INTERVIEWER: Have you had any recent changes in your weight, appetite, or energy levels that might be related to your symptoms?  
+
+[HISTORY COMPLETE]

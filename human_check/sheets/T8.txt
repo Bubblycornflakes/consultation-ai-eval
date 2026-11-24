@@ -1,0 +1,46 @@
+TRANSCRIPT T8
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Alright, doctor. My stomach's been playing up.
+INTERVIEWER: Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?
+PATIENT    : It's a burning pain in the upper middle of my tummy, about 5 out of 10. It gets worse an hour after meals and sometimes at night. I feel sick after eating and bloated, but I haven't thrown up.
+INTERVIEWER: Does this pain ever feel like it's spreading to your chest or back?
+PATIENT    : No, it stays in my stomach area. I don't feel it moving to my chest or back.
+INTERVIEWER: Have you noticed any changes in your bowel movements, like diarrhea, constipation, or black, tarry stools?
+PATIENT    : I passed black, sticky, smelly stools twice this week. I haven't had diarrhea or constipation, just those stools.
+INTERVIEWER: Have you been taking any medications, supplements, or herbal remedies recently?
+PATIENT    : I've been taking ibuprofen 400 mg three times a day for my knee, and I chew antacid tablets, which help a little.
+INTERVIEWER: Have you had any recent injuries, falls, or accidents that might have affected your abdomen?
+PATIENT    : No, I haven't had any recent injuries or accidents. I'm not sure if I fell or hit my stomach recently, but I don't think so.
+INTERVIEWER: Have you experienced any weight loss, changes in appetite, or feeling unusually tired lately?
+PATIENT    : I've lost about 5 pounds in the last month, but I'm not sure if it's from not eating much or just my body. I feel tired a lot, but I don't know if it's from the stomach or something else.
+INTERVIEWER: Have you had any other symptoms, such as heartburn, nausea, or a feeling of fullness even after eating small amounts?
+PATIENT    : I feel full even after eating small amounts, and I get heartburn sometimes, especially when I lie down. I also feel sick after eating, but I haven't vomited.
+INTERVIEWER: Have you noticed any changes in your energy levels or mood, such as feeling anxious, depressed, or irritable?  
+
+[HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The pain began about three weeks ago and comes and goes.
+  f03: A burning pain in the upper middle of the tummy, about 5 out of 10, worse an hour after meals and sometimes at night.
+  f04: Feels sick after eating and bloated. Has not vomited.
+  f05: Passed black, sticky, smelly stools twice this week.
+  f06: Feels dizzy when standing up quickly, for the past few days.
+  f07: Was told two years ago that the left knee has arthritis. No stomach problems before this.
+  f08: Takes ibuprofen 400 mg three times a day for the knee, for the last two months. Chews antacid tablets, which help a little.
+  f09: No known allergies.
+  f10: The patient's uncle had a stomach ulcer.
+  f11: Works as a plumber. Smokes five cigarettes a day and drinks about three pints at the weekend. Eats takeaways often.
+  f12: Thinks it comes from spicy takeaways and stress at work.
+  f13: Is worried it might be an ulcer, like the patient's uncle had.
+  f14: Hopes to leave with something to settle the pain.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

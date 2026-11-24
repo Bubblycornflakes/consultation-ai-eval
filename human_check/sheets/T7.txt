@@ -1,0 +1,53 @@
+TRANSCRIPT T7
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Hello. I've had this cough for ages and I'm starting to worry about it.
+INTERVIEWER: Can you tell me more about your cough — for example, is it a dry cough or do you have any phlegm?
+PATIENT    : It's mostly a dry cough, but I've coughed up some phlegm with a few streaks of blood twice this week.
+INTERVIEWER: Have you noticed any other symptoms, such as chest pain, shortness of breath, or fatigue?
+PATIENT    : I've felt a little short of breath climbing two flights of stairs. I haven't noticed any chest pain or fatigue.
+INTERVIEWER: Have you been exposed to any irritants, such as smoke, dust, or chemicals, recently?
+PATIENT    : I've been driving a van and think the cough might be left over from a cold, made worse by dust in the van.
+INTERVIEWER: Have you had any recent changes in your health, such as weight loss, fever, or night sweats?
+PATIENT    : I haven't had any recent changes in my health. No weight loss, fever, or night sweats.
+INTERVIEWER: Have you had any previous lung issues, such as asthma, bronchitis, or pneumonia?
+PATIENT    : I had asthma as a child and grew out of it as a teenager. I've never had bronchitis or pneumonia.
+INTERVIEWER: Have you been around anyone who has been sick recently, such as a cold or flu?
+PATIENT    : I've been around a few people who had colds, but I haven't been sick myself.
+INTERVIEWER: Have you noticed any changes in the frequency or severity of your cough over the past week?
+PATIENT    : It's been about the same — worse at night and in the morning, with a few wheezes. I've been coughing more since I started driving the van.
+INTERVIEWER: Have you tried any medications or remedies for the cough, such as over-the-counter cough suppressants or expectorants?
+PATIENT    : I've been taking honey and lemon drinks and cough sweets. I used an old blue inhaler twice, and it helped slightly.
+INTERVIEWER: Have you had any recent changes in your environment, such as moving house, changes in air quality, or new exposures?
+PATIENT    : I've been driving a van and think the cough might be left over from a cold, made worse by dust in the van.
+INTERVIEWER: Have you noticed any improvement or worsening of your symptoms when you are away from the van or in a cleaner environment?
+PATIENT    : I haven't been away from the van much, but when I was at home earlier this week, the cough was a bit better.
+INTERVIEWER: It sounds like your cough may be related to the environment in the van, possibly due to dust or other irritants. I’ll summarize what you’ve shared so far.  
+
+Thank you for sharing your symptoms and concerns. Based on what you’ve told me, your cough is dry but has produced some phlegm with streaks of blood, and it’s worse at night and in the morning. You’ve felt slightly short of breath with exertion, and you believe the cough may be related to driving the van, possibly due to dust exposure. You’ve tried honey, lemon drinks, cough sweets, and an old inhaler, which helped slightly. You noticed some improvement when you were at home earlier this week.  
+
+[HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The cough began five weeks ago after a heavy cold. The cold went away but the cough did not.
+  f03: Mostly a dry, tickly cough that is worse at night and first thing in the morning, with an occasional wheeze. It wakes the patient about twice a week.
+  f04: A little short of breath climbing two flights of stairs. No fever and no chest pain.
+  f05: Has coughed up phlegm with a few streaks of blood twice this week.
+  f06: Had asthma as a child and grew out of it as a teenager. No other conditions.
+  f07: Takes honey and lemon drinks and cough sweets. Used an old blue inhaler left over from a few years ago twice, and it helped slightly.
+  f08: No known allergies to medicines.
+  f09: The patient's father had a serious lung condition and died in his seventies.
+  f10: Smoked ten a day for about ten years and stopped five years ago. Works as a delivery driver and lives with a partner. Drinks alcohol at weekends.
+  f11: Thinks the cough is left over from the cold and made worse by dust in the van.
+  f12: Is worried it could be lung cancer, because of what happened to the patient's father.
+  f13: Hopes to be given antibiotics.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

@@ -1,0 +1,18 @@
+You help run a simulated consultation. A fictional patient knows the facts listed below. Your only job is to decide which of those facts directly answer the interviewer's latest question.
+
+Facts (id [category]: text):
+$facts
+
+Rules
+- Pick only the facts that directly answer what the question asks. Do not pick a fact just because it is related or would be useful.
+- The patient's own ideas about the cause, worries and hopes (category ice) are picked only if the question asks what the patient thinks, whether they are worried, or what they hope for.
+- A broad question such as "how does it feel?" or "tell me more" is answered by the facts about what was asked, not by everything. A question such as "any other symptoms?" or "anything worrying?" picks the facts about other symptoms or warning signs.
+- If the question asks about something none of the facts cover, pick nothing.
+- Use the previous exchange only to understand a short follow-up such as "and how often?".
+
+Previous exchange:
+$previous
+
+Interviewer's latest question: $question
+
+Answer with JSON only, for example {"relevant_fact_ids": ["f02", "f03"]}, or {"relevant_fact_ids": []} if nothing fits.

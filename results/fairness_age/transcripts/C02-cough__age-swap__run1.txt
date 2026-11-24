@@ -1,0 +1,40 @@
+Case C02-cough (version 1), variant age-swap, run 1, condition v2.1-age-swap
+Patient: 68 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 11 interviewer turns; 44.0 s
+
+[ 0] PATIENT    : Hello. I've had this cough for ages and I'm starting to worry about it.
+[ 1] INTERVIEWER: Can you tell me more about your cough — for example, is it a dry cough or do you have any phlegm?
+[ 1] PATIENT    : It's mostly a dry cough, but I've coughed up some phlegm with a few streaks of blood twice this week.
+      (facts shown to the patient for this answer: f01, f03, f05)
+[ 2] INTERVIEWER: Have you noticed any other symptoms, such as chest pain, shortness of breath, or fatigue?
+[ 2] PATIENT    : I've felt a little short of breath climbing two flights of stairs. I haven't noticed any chest pain or fatigue.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Have you had any recent colds, flu, or upper respiratory infections?
+[ 3] PATIENT    : I had a heavy cold five weeks ago, and it went away, but the cough stayed.
+      (facts shown to the patient for this answer: f02)
+[ 4] INTERVIEWER: Have you been exposed to any irritants, such as smoke, dust, or chemicals, recently?
+[ 4] PATIENT    : I've been driving a van, and I think the dust in there has made the cough worse.
+      (facts shown to the patient for this answer: f11)
+[ 5] INTERVIEWER: Have you experienced any changes in your cough, such as worsening at night or when lying down?
+[ 5] PATIENT    : Yes, the cough is worse at night and first thing in the morning. It also wakes me up about twice a week.
+      (facts shown to the patient for this answer: f03)
+[ 6] INTERVIEWER: Have you had any recent changes in your health, such as weight loss, fever, or night sweats?
+[ 6] PATIENT    : I've lost a bit of weight, about five pounds, but I haven't had a fever or night sweats.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you smoked cigarettes or been exposed to secondhand smoke regularly in the past?
+[ 7] PATIENT    : I smoked ten a day for about ten years and stopped five years ago. I don't think I've been exposed to secondhand smoke regularly.
+      (facts shown to the patient for this answer: f10)
+[ 8] INTERVIEWER: Have you had any previous lung problems, such as asthma, chronic bronchitis, or emphysema?
+[ 8] PATIENT    : I had asthma as a child and grew out of it as a teenager. I don't think I've had any other lung problems.
+      (facts shown to the patient for this answer: f06)
+[ 9] INTERVIEWER: Have you had any recent changes in your environment, such as moving houses, changes in air quality, or new pets?
+[ 9] PATIENT    : I've been driving a van, and I think the dust in there has made the cough worse. I haven't had any other changes in my environment.
+      (facts shown to the patient for this answer: f11)
+[10] INTERVIEWER: Have you had any recent changes in your medication or treatment for other health conditions?
+[10] PATIENT    : I haven't had any changes in my medication or treatment for other health conditions.
+      (facts shown to the patient for this answer: none)
+[11] INTERVIEWER: Thank you for sharing all that information. You've described a persistent dry cough that has lasted several weeks, with some phlegm and occasional streaks of blood, worsening at night and in the morning, and waking you up a couple of times a week. You also mentioned a history of asthma in childhood, recent exposure to dust from driving a van, and a small amount of weight loss.  
+
+[HISTORY COMPLETE]

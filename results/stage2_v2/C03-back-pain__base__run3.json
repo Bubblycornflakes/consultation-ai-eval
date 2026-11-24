@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T12:52:09+00:00",
+    "condition": "v2",
+    "case_id": "C03-back-pain",
+    "case_version": 1,
+    "variant": "base",
+    "run_index": 3,
+    "persona": {
+      "age": 52,
+      "gender": "female",
+      "communication_style": "Talkative and friendly. Gives long answers with chatty remarks, but the chat stays on the topic being asked about and adds no clinical facts that were not asked for.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 8,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 9,
+    "duration_seconds": 32.9,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Oh hello, doctor, thank you for seeing me. It's my back, you see."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about your back pain—like where exactly it is, how bad it's been, and if anything makes it better or worse?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "It's a dull ache low in the back, about six out of ten. It's worse after sitting for a long time and better when I'm walking.",
+      "gate_selected_fact_ids": [
+        "f01",
+        "f02",
+        "f03"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Have you noticed any numbness, tingling, or weakness in your legs?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "I've had pins and needles in my left foot for the last two weeks, but nothing else.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f06"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you had any recent injuries, falls, or heavy lifting that might have contributed to your back pain?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I've been lifting quite a bit at work lately, especially heavy boxes, and I think that's when it started hurting more.",
+      "gate_selected_fact_ids": [
+        "f11"
+      ]
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you experienced any difficulty with bladder control, bowel movements, or sexual function?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "No, I haven't noticed any problems with my bladder, bowels, or sexual function.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you had any previous back problems, surgeries, or injuries?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "No, I haven't had any previous back issues or surgeries. I've always kept myself pretty active, so I'm not sure what's going on now.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Have you noticed any changes in your posture or balance lately?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I haven't noticed any changes in my posture or balance. I walk just fine, and I feel pretty steady on my feet.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you had any fever, chills, or unexplained weight loss recently?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "No, I haven't had any fever, chills, or weight loss. I've been eating and sleeping okay, though I do feel a bit run-down lately.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your activity level or routine that might have affected your back?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "I've been working more hours lately at the care home, which means more lifting and standing. I also started gardening again a few weeks back, which I think has made the back pain worse.",
+      "gate_selected_fact_ids": [
+        "f02",
+        "f03",
+        "f11",
+        "f12"
+      ]
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that. You've described low back pain that's worse with sitting and improved with walking, along with pins and needles in your left foot. You've been lifting heavy boxes at work and gardening, which seems to have worsened your symptoms. You haven’t had any issues with bladder control, bowel movements, or sexual function, and you feel generally steady and active, though a bit run-down.  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 1.323,
+      "prompt_tokens": 185,
+      "reply_tokens": 32,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 2.602,
+      "prompt_tokens": 677,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 2.437,
+      "prompt_tokens": 528,
+      "reply_tokens": 33,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.756,
+      "prompt_tokens": 258,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 0.944,
+      "prompt_tokens": 711,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 1.78,
+      "prompt_tokens": 561,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.799,
+      "prompt_tokens": 304,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 0.727,
+      "prompt_tokens": 689,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 2.014,
+      "prompt_tokens": 604,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.769,
+      "prompt_tokens": 361,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 0.67,
+      "prompt_tokens": 695,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 1.956,
+      "prompt_tokens": 638,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.616,
+      "prompt_tokens": 406,
+      "reply_tokens": 14,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 0.661,
+      "prompt_tokens": 680,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 1.104,
+      "prompt_tokens": 680,
+      "reply_tokens": 33,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 0.679,
+      "prompt_tokens": 461,
+      "reply_tokens": 13,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "gate",
+      "seconds": 0.654,
+      "prompt_tokens": 689,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 1.114,
+      "prompt_tokens": 734,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 0.733,
+      "prompt_tokens": 509,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "gate",
+      "seconds": 0.662,
+      "prompt_tokens": 686,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 1.269,
+      "prompt_tokens": 786,
+      "reply_tokens": 35,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 0.877,
+      "prompt_tokens": 569,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "gate",
+      "seconds": 1.12,
+      "prompt_tokens": 701,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 3.909,
+      "prompt_tokens": 932,
+      "reply_tokens": 40,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 2.609,
+      "prompt_tokens": 637,
+      "reply_tokens": 90,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

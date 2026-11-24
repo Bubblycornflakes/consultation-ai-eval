@@ -1,0 +1,34 @@
+Case C03-back-pain (version 1), variant base, run 1, condition v2
+Patient: 52 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 9 interviewer turns; 27.18 s
+
+[ 0] PATIENT    : Oh hello, doctor, thank you for seeing me. It's my back, you see.
+[ 1] INTERVIEWER: Can you tell me more about your back pain—like where exactly it is, how bad it's been, and if anything makes it better or worse?
+[ 1] PATIENT    : It's a dull ache low in the back, about six out of ten. It's worse after sitting for a long time and better when I'm walking.
+      (facts shown to the patient for this answer: f01, f02, f03)
+[ 2] INTERVIEWER: Have you noticed any numbness, tingling, or weakness in your legs?
+[ 2] PATIENT    : I've had pins and needles in my left foot for the last two weeks, but nothing else.
+      (facts shown to the patient for this answer: f04, f06)
+[ 3] INTERVIEWER: Have you had any recent injuries, falls, or heavy lifting that might have contributed to your back pain?
+[ 3] PATIENT    : I've been lifting quite a bit at work lately, especially heavy boxes, and I think that's when it started hurting more.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Have you experienced any difficulty with bladder control, bowel movements, or sexual function?
+[ 4] PATIENT    : No, I haven't noticed any problems with my bladder, bowels, or sexual function.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you had any previous back problems, surgeries, or injuries?
+[ 5] PATIENT    : No, I haven't had any previous back issues or surgeries. I've always kept myself pretty active, so I'm not sure what's going on now.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you noticed any changes in your posture or balance lately?
+[ 6] PATIENT    : I haven't noticed any changes in my posture or balance. I walk just fine, and I feel pretty steady on my feet.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you had any fever, chills, or unexplained weight loss recently?
+[ 7] PATIENT    : No, I haven't had any fever, chills, or weight loss. I've been eating and sleeping okay, though I do feel a bit run-down lately.
+      (facts shown to the patient for this answer: none)
+[ 8] INTERVIEWER: Have you had any recent changes in your activity level or routine that might have affected your back?
+[ 8] PATIENT    : I've been working more hours lately at the care home, which means more lifting and standing. I also started gardening again a few weeks back, which I think has made the back pain worse.
+      (facts shown to the patient for this answer: f02, f03, f11, f12)
+[ 9] INTERVIEWER: Thank you for sharing all that. You've described low back pain that's worse with sitting and improved with walking, along with pins and needles in your left foot. You've been lifting heavy boxes at work and gardening, which seems to have worsened your symptoms. You haven’t had any issues with bladder control, bowel movements, or sexual function, and you feel generally steady and active, though a bit run-down.  
+
+[HISTORY COMPLETE]

@@ -1,0 +1,46 @@
+{
+  "note": "Links each blind sheet to its result file. Not for the labeller.",
+  "seed": 2026,
+  "sheets": {
+    "T1": {
+      "label": "v1",
+      "path": "results/stage2/C03-back-pain__base__run1.json",
+      "case_id": "C03-back-pain"
+    },
+    "T2": {
+      "label": "v2",
+      "path": "results/stage2_v2/C02-cough__base__run2.json",
+      "case_id": "C02-cough"
+    },
+    "T3": {
+      "label": "v1",
+      "path": "results/stage2/C04-tiredness__base__run1.json",
+      "case_id": "C04-tiredness"
+    },
+    "T4": {
+      "label": "v2",
+      "path": "results/stage2_v2/C04-tiredness__base__run2.json",
+      "case_id": "C04-tiredness"
+    },
+    "T5": {
+      "label": "v1",
+      "path": "results/stage2/C05-stomach-upset__base__run1.json",
+      "case_id": "C05-stomach-upset"
+    },
+    "T6": {
+      "label": "v1",
+      "path": "results/stage2/C01-headache__base__run1.json",
+      "case_id": "C01-headache"
+    },
+    "T7": {
+      "label": "v2",
+      "path": "results/stage2_v2/C02-cough__base__run1.json",
+      "case_id": "C02-cough"
+    },
+    "T8": {
+      "label": "v2",
+      "path": "results/stage2_v2/C05-stomach-upset__base__run1.json",
+      "case_id": "C05-stomach-upset"
+    }
+  }
+}

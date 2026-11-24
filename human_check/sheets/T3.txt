@@ -1,0 +1,51 @@
+TRANSCRIPT T3
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Um, hi. I just feel really tired all the time.
+INTERVIEWER: How long have you been feeling this way?
+PATIENT    : Two months. It started slowly and has gotten worse.
+INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like weight changes, trouble sleeping, or mood changes?
+PATIENT    : I've lost about four kg in two months. I sleep nine hours but wake up not refreshed. I feel low and can't concentrate.
+INTERVIEWER: Have you experienced any changes in your appetite or eating habits besides the weight loss?
+PATIENT    : Not really. I just feel like I'm not hungry, but I'm not eating less. I'm more thirsty than usual.
+INTERVIEWER: Have you noticed any changes in your energy levels during the day, like feeling sluggish or having trouble staying awake?
+PATIENT    : I feel really sluggish. My arms and legs feel heavy. I can't stay awake through shifts.
+INTERVIEWER: Have you noticed any changes in your bowel movements or skin condition, like dryness or changes in stool consistency?
+PATIENT    : My skin is the same as before. I have eczema, but it's not worse. I don't think my stools have changed.
+INTERVIEWER: Have you had any recent illnesses, injuries, or changes in your medication or supplements?
+PATIENT    : No recent illnesses. I take vitamin D most days and eczema cream. No changes in medication.
+INTERVIEWER: Have you noticed any neck swelling, heat intolerance, or cold intolerance lately?
+PATIENT    : No. I don't think I've noticed anything with my neck. I feel cold sometimes, but not sure if it's new.
+INTERVIEWER: Have you had any changes in your menstrual cycle, if you're a woman, or any changes in sexual function, if you're a man?
+PATIENT    : I'm a woman. My periods have been irregular. I'm not sure if it's because of this or something else.
+INTERVIEWER: Have you experienced any unexplained weight loss, changes in your voice, or difficulty swallowing or breathing?
+PATIENT    : I've lost about four kg without trying. I don't think my voice has changed. I can swallow and breathe fine.
+INTERVIEWER: Have you noticed any changes in your mood, like feeling anxious, irritable, or having trouble focusing?  
+
+[HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The tiredness began gradually about two months ago and has slowly got worse. It is there every day.
+  f03: Arms and legs feel heavy. Sleeps about nine hours a night but wakes unrefreshed. Rates the energy level 3 out of 10.
+  f04: Feels low and flat, finds it hard to concentrate and has lost interest in hobbies.
+  f05: Has been more thirsty than usual and passing urine more often for the past month.
+  f06: Has lost about 4 kg in two months without trying.
+  f07: Wakes soaked in sweat two or three nights a week and has to change the sheets.
+  f08: Has had eczema since childhood. No other conditions and no operations.
+  f09: Takes a vitamin D tablet most days and uses a moisturising cream for eczema. Nothing else.
+  f10: Gets hay fever in summer. No known allergies to medicines.
+  f11: The patient's mother has type 2 diabetes and the patient's grandmother had an underactive thyroid.
+  f12: Works night shifts as a warehouse operative three nights a week and studies part-time. Drinks alcohol two or three evenings a week, about three drinks each time. Does not smoke.
+  f13: Thinks it might be low iron, because friends suggested it.
+  f14: Is worried about making mistakes at work and losing the job.
+  f15: Hopes for blood tests to find the cause.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

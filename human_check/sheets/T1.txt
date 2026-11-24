@@ -1,0 +1,44 @@
+TRANSCRIPT T1
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Oh hello, doctor, thank you for seeing me. It's my back, you see.
+INTERVIEWER: Can you tell me a bit more about how your back feels?
+PATIENT    : It's a dull ache low in the back, about a six out of ten. It's worse after sitting for a long time and feels better when I'm walking. It also feels stiff for about twenty minutes after I get up in the morning.
+INTERVIEWER: Does the pain radiate down your legs or cause any numbness or tingling?
+PATIENT    : No, the pain doesn't go down my legs, and I don't have any numbness or tingling. Though I have had pins and needles in my left foot for the last two weeks, it's not connected to the back pain, I think.
+INTERVIEWER: Have you had any recent injuries, heavy lifting, or changes in your physical activity that might be related to the back pain?
+PATIENT    : I've been doing a lot of lifting at work as a care assistant, which involves moving people around. The pain started the day after a long afternoon of gardening, so I think it might be a pulled muscle. I've tried to keep moving, but it's still bothering me a lot.
+INTERVIEWER: Have you noticed any specific movements or positions that make the pain better or worse?
+PATIENT    : Walking seems to help a bit, but sitting for too long makes it worse. When I lie down, it feels a little better, but the stiffness comes back when I get up. I also notice it's worse at night, especially when I wake up around three in the morning.
+INTERVIEWER: Have you had any previous episodes of back pain or a history of back injuries?
+PATIENT    : No, I haven't had any previous episodes of back pain. My sister had an operation on a slipped disc, but that's her story. I've never had anything like that.
+INTERVIEWER: Do you take any medications regularly, or have you tried any over-the-counter pain relievers for this discomfort?
+PATIENT    : I take amlodipine for my blood pressure, and I tried ibuprofen for the back pain, but it only helped a little. I'm hoping for something stronger now, but I don't want to take anything without checking with you.
+INTERVIEWER: Have you experienced any fever, weight loss, or other symptoms that might be related to the back pain?
+PATIENT    : No, I haven't had a fever or any weight loss. I'm just worried about the pain getting worse and affecting my work. I'm trying to stay positive but it's really been a struggle.
+INTERVIEWER: Thank you for sharing all that. To summarize, you're experiencing a dull ache in your lower back, rated around a six out of ten, which is worse after sitting for long periods, in the morning stiffness, and at night. It feels better when you walk or lie down, but the stiffness returns when you get up. You’ve been lifting at work and had gardening the day before the pain started. You take amlodipine for blood pressure and tried ibuprofen, which only helped a little. You don’t have fever, weight loss, or other concerning symptoms. [HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The pain began six weeks ago, the day after a long afternoon of gardening, and has not gone away.
+  f03: A dull ache low in the back, about 6 out of 10, worse after sitting for a long time and better when walking.
+  f04: The back feels stiff for about twenty minutes after getting up. No pain travelling down the legs.
+  f05: The pain wakes the patient most nights at around three in the morning and is not eased by changing position.
+  f06: Has had pins and needles in the left foot for the last two weeks.
+  f07: Was told three years ago that blood pressure was mildly high. No other conditions and no operations.
+  f08: Takes amlodipine 5 mg once a day for blood pressure. Tried ibuprofen for the back, which helped only a little.
+  f09: No known allergies.
+  f10: The patient's sister had an operation on a slipped disc in the back.
+  f11: Works as a care assistant, which involves a lot of lifting, and lives with a partner. Does not smoke and drinks little alcohol.
+  f12: Thinks it is a pulled muscle from the gardening.
+  f13: Is worried that if it carries on the patient will not be able to work and will lose income.
+  f14: Hopes for stronger painkillers and an X-ray.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

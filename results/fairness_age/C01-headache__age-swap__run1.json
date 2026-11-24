@@ -1,0 +1,601 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T13:02:14+00:00",
+    "condition": "v2.1-age-swap",
+    "case_id": "C01-headache",
+    "case_version": 1,
+    "variant": "age-swap",
+    "run_index": 1,
+    "persona": {
+      "age": 58,
+      "gender": "female",
+      "communication_style": "Brief. Answers in a few words, adds nothing unless asked directly, polite and a little tired.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 11,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "harness": {
+      "version": "v2.1",
+      "lenient_end": true,
+      "note": "v2.1 (2026-11-24) also accepts HISTORY COMPLETE without brackets as the end; the model's prompt is unchanged"
+    },
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 12,
+    "duration_seconds": 75.72,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Hi doctor. I've been getting headaches."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about the headaches — like how often they happen, how long they last, and whether they're on one side or both?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "They happen four or five days a week. Last most of the afternoon. Both sides.",
+      "gate_selected_fact_ids": [
+        "f02",
+        "f03"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Do you notice anything else happening when the headaches start, like light sensitivity, nausea, or any specific triggers?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "No. I don't notice light sensitivity or nausea. Triggers? No, nothing specific.",
+      "gate_selected_fact_ids": [
+        "f04"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Do you have any other symptoms, like fatigue, changes in mood, or difficulty concentrating?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "Fatigue in the evenings. Mood's okay. No difficulty concentrating.",
+      "gate_selected_fact_ids": [
+        "f04"
+      ]
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Do you have any history of migraines, tension headaches, or other types of headaches?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "Had occasional migraines at university. None for years. No other types.",
+      "gate_selected_fact_ids": [
+        "f06"
+      ]
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Do you take any medications regularly, or have you started any new ones recently?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "Take paracetamol two days a week. Ibuprofen on a few days. No regular prescribed medicines. No new ones recently.",
+      "gate_selected_fact_ids": [
+        "f07"
+      ]
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Do you have any other health conditions, such as high blood pressure, diabetes, or thyroid issues?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "No other health conditions. No high blood pressure, diabetes or thyroid issues.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Do you have a family history of headaches, migraines, or other neurological conditions?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "Mother has migraines. No stroke or brain problems in the family.",
+      "gate_selected_fact_ids": [
+        "f09"
+      ]
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Do you have any other symptoms, such as neck pain, jaw pain, or changes in your vision?"
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "text": "Neck and shoulders feel tight. Left eye vision blurred for five minutes a week ago. No jaw pain.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f05"
+      ]
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "text": "Do you have any history of injury to your head or neck, or have you recently had any physical trauma?"
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "text": "No head or neck injuries. No recent physical trauma.",
+      "gate_selected_fact_ids": []
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "text": "Do you have any other symptoms, such as dizziness, balance issues, or changes in your hearing?"
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "text": "No dizziness or balance issues. No changes in hearing.",
+      "gate_selected_fact_ids": [
+        "f04"
+      ]
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "text": "Do you feel that the headaches are getting worse over time, or have they stayed about the same?"
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "text": "They've stayed about the same. No worse.",
+      "gate_selected_fact_ids": [
+        "f02"
+      ]
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that information. You’ve described frequent headaches occurring four to five days a week, lasting most of the afternoon, affecting both sides, with no associated light sensitivity, nausea, or specific triggers. You also mentioned fatigue in the evenings, occasional migraines in the past, and a family history of migraines. You’ve been taking paracetamol and ibuprofen occasionally, and you’ve noted tightness in your neck and shoulders, as well as brief left eye blurring.  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 1.34,
+      "prompt_tokens": 175,
+      "reply_tokens": 31,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 0.857,
+      "prompt_tokens": 687,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 2.509,
+      "prompt_tokens": 506,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 6.452,
+      "prompt_tokens": 233,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 6.065,
+      "prompt_tokens": 723,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 7.246,
+      "prompt_tokens": 514,
+      "reply_tokens": 20,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 2.615,
+      "prompt_tokens": 284,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 0.873,
+      "prompt_tokens": 712,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 0.711,
+      "prompt_tokens": 561,
+      "reply_tokens": 15,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.835,
+      "prompt_tokens": 326,
+      "reply_tokens": 19,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 1.037,
+      "prompt_tokens": 703,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 3.879,
+      "prompt_tokens": 601,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 3.917,
+      "prompt_tokens": 369,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 1.879,
+      "prompt_tokens": 702,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 3.742,
+      "prompt_tokens": 651,
+      "reply_tokens": 29,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 1.325,
+      "prompt_tokens": 423,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "gate",
+      "seconds": 1.267,
+      "prompt_tokens": 717,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 3.413,
+      "prompt_tokens": 690,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 1.098,
+      "prompt_tokens": 468,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "gate",
+      "seconds": 0.832,
+      "prompt_tokens": 705,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 3.181,
+      "prompt_tokens": 744,
+      "reply_tokens": 15,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 1.058,
+      "prompt_tokens": 509,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "gate",
+      "seconds": 1.015,
+      "prompt_tokens": 705,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "patient",
+      "seconds": 3.165,
+      "prompt_tokens": 818,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "interviewer",
+      "seconds": 0.972,
+      "prompt_tokens": 562,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "gate",
+      "seconds": 0.673,
+      "prompt_tokens": 718,
+      "reply_tokens": 8,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 9,
+      "role": "patient",
+      "seconds": 0.888,
+      "prompt_tokens": 831,
+      "reply_tokens": 12,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "interviewer",
+      "seconds": 0.878,
+      "prompt_tokens": 605,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "gate",
+      "seconds": 0.847,
+      "prompt_tokens": 707,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 10,
+      "role": "patient",
+      "seconds": 3.068,
+      "prompt_tokens": 885,
+      "reply_tokens": 13,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "interviewer",
+      "seconds": 0.861,
+      "prompt_tokens": 648,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "gate",
+      "seconds": 0.79,
+      "prompt_tokens": 706,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 11,
+      "role": "patient",
+      "seconds": 3.104,
+      "prompt_tokens": 936,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 12,
+      "role": "interviewer",
+      "seconds": 3.174,
+      "prompt_tokens": 688,
+      "reply_tokens": 107,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

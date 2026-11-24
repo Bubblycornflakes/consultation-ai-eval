@@ -1,0 +1,22 @@
+Case C01-headache (version 1), variant base, run 1
+Patient: 34 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v1.txt, interviewer_v1.txt
+Stopped because: interviewer_finished; 7 interviewer turns; 12.81 s
+
+[ 0] PATIENT    : Hi doctor. I've been getting headaches.
+[ 1] INTERVIEWER: Can you tell me more about the headaches — like how often they happen, how long they last, and what they feel like?
+[ 1] PATIENT    : They happen four or five days a week. Last most of the afternoon. Feel like a tight band squeezing around the head. Not throbbing.
+[ 2] INTERVIEWER: Do you have any other symptoms along with the headaches, like nausea, sensitivity to light or sound, or fatigue?
+[ 2] PATIENT    : No nausea. No sensitivity to light or sound. Feel tired, but not sick.
+[ 3] INTERVIEWER: Have you noticed anything that makes the headaches better or worse, like certain foods, stress, sleep patterns, or activities?
+[ 3] PATIENT    : Stress seems to make them worse. Screen time too. Coffee helps a bit. Sleep is poor.
+[ 4] INTERVIEWER: Do you have any other health conditions or take any medications regularly?
+[ 4] PATIENT    : No long-term conditions. Take paracetamol most days and ibuprofen occasionally. No regular prescribed medicines.
+[ 5] INTERVIEWER: Have you had any recent changes in your routine, such as work stress, lack of sleep, or changes in diet?
+[ 5] PATIENT    : Work stress. Long hours at the computer. Sleep is poor. Drink four coffees a day.
+[ 6] INTERVIEWER: Do you have any family history of headaches or migraines?
+[ 6] PATIENT    : My mother has migraines. No one else in the family has had migraines or brain problems.
+[ 7] INTERVIEWER: Thank you for sharing all that information. You’ve described frequent headaches that feel like a tight band around the head, worsened by stress and screen time, and improved slightly by coffee. You also mentioned poor sleep, work-related stress, and a family history of migraines from your mother.  
+
+[HISTORY COMPLETE]

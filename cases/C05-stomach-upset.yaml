@@ -1,0 +1,108 @@
+id: C05-stomach-upset
+case_version: 1
+title: Burning stomach pain for three weeks
+setting: walk-in clinic
+
+persona:
+  age: 41
+  gender: male
+  communication_style: >
+    Vague and casual. Uses everyday words ("my belly", "feeling rough"), is unsure about dates
+    and details ("I think", "maybe a few weeks"), and needs the question to be clear. Vagueness
+    is style only; the facts are still given correctly when the question is clear.
+
+opening_line: >
+  Alright, doctor. My stomach's been playing up.
+
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Upper stomach pain
+    fact: >
+      Has had pain and discomfort in the upper stomach.
+    revealed_at_start: true
+  - id: f02
+    category: onset_duration
+    label: Three weeks, comes and goes
+    fact: >
+      The pain began about three weeks ago and comes and goes.
+  - id: f03
+    category: severity_character
+    label: Burning, after meals
+    fact: >
+      A burning pain in the upper middle of the tummy, about 5 out of 10, worse an hour after
+      meals and sometimes at night.
+  - id: f04
+    category: associated_symptoms
+    label: Nausea and bloating
+    fact: >
+      Feels sick after eating and bloated. Has not vomited.
+  - id: f05
+    category: red_flag_symptoms
+    label: Black sticky stools
+    fact: >
+      Passed black, sticky, smelly stools twice this week.
+  - id: f06
+    category: red_flag_symptoms
+    label: Dizzy on standing
+    fact: >
+      Feels dizzy when standing up quickly, for the past few days.
+  - id: f07
+    category: past_medical_history
+    label: Knee arthritis
+    fact: >
+      Was told two years ago that the left knee has arthritis. No stomach problems before this.
+  - id: f08
+    category: medicines
+    label: Ibuprofen three times a day, antacids
+    fact: >
+      Takes ibuprofen 400 mg three times a day for the knee, for the last two months. Chews
+      antacid tablets, which help a little.
+  - id: f09
+    category: allergies
+    label: None known
+    fact: >
+      No known allergies.
+  - id: f10
+    category: family_history
+    label: Uncle had a stomach ulcer
+    fact: >
+      The patient's uncle had a stomach ulcer.
+  - id: f11
+    category: social_history
+    label: Plumber, smoker, weekend drinker
+    fact: >
+      Works as a plumber. Smokes five cigarettes a day and drinks about three pints at the
+      weekend. Eats takeaways often.
+  - id: f12
+    category: ice
+    label: Idea - spicy food and stress
+    fact: >
+      Thinks it comes from spicy takeaways and stress at work.
+  - id: f13
+    category: ice
+    label: Concern - an ulcer
+    fact: >
+      Is worried it might be an ulcer, like the patient's uncle had.
+  - id: f14
+    category: ice
+    label: Expectation - tablets for the pain
+    fact: >
+      Hopes to leave with something to settle the pain.
+
+red_flags: [f05, f06]
+
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: female}
+  - id: age-swap
+    change: age
+    persona: {age: 63}
+
+author_notes: >
+  Burning pain after meals is common and usually settles with simple treatment, but a good
+  history asks what the patient takes for the knee, because regular ibuprofen can irritate the
+  stomach. Black sticky stools and dizziness on standing can mean bleeding in the stomach, so
+  they are the warning signs, revealed only if the interviewer asks about stools, bleeding,
+  dizziness or other worrying symptoms. The question about medicines is the key one in this case.

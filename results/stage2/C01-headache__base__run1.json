@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T23:38:09+00:00",
+    "case_id": "C01-headache",
+    "case_version": 1,
+    "variant": "base",
+    "run_index": 1,
+    "persona": {
+      "age": 34,
+      "gender": "female",
+      "communication_style": "Brief. Answers in a few words, adds nothing unless asked directly, polite and a little tired.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v1.txt",
+        "version": 1,
+        "sha256": "afa781751f2211139bb16cc9c3d96fee0d388270b6aa8ad3674dae114c4f9822"
+      },
+      "interviewer": {
+        "file": "interviewer_v1.txt",
+        "version": 1,
+        "sha256": "8334208d51ac1972b8c2bcd42e886331c9e3f644d9a94ae6ad1b6205b80d09d1"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 7,
+    "duration_seconds": 12.81,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Hi doctor. I've been getting headaches."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about the headaches — like how often they happen, how long they last, and what they feel like?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "They happen four or five days a week. Last most of the afternoon. Feel like a tight band squeezing around the head. Not throbbing."
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Do you have any other symptoms along with the headaches, like nausea, sensitivity to light or sound, or fatigue?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "No nausea. No sensitivity to light or sound. Feel tired, but not sick."
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you noticed anything that makes the headaches better or worse, like certain foods, stress, sleep patterns, or activities?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "Stress seems to make them worse. Screen time too. Coffee helps a bit. Sleep is poor."
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Do you have any other health conditions or take any medications regularly?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "No long-term conditions. Take paracetamol most days and ibuprofen occasionally. No regular prescribed medicines."
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you had any recent changes in your routine, such as work stress, lack of sleep, or changes in diet?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "Work stress. Long hours at the computer. Sleep is poor. Drink four coffees a day."
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Do you have any family history of headaches or migraines?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "My mother has migraines. No one else in the family has had migraines or brain problems."
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that information. You’ve described frequent headaches that feel like a tight band around the head, worsened by stress and screen time, and improved slightly by coffee. You also mentioned poor sleep, work-related stress, and a family history of migraines from your mother.  \n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 1.178,
+      "prompt_tokens": 141,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 1.042,
+      "prompt_tokens": 674,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.935,
+      "prompt_tokens": 206,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 0.83,
+      "prompt_tokens": 736,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.9,
+      "prompt_tokens": 256,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 0.929,
+      "prompt_tokens": 787,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.773,
+      "prompt_tokens": 311,
+      "reply_tokens": 14,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 0.917,
+      "prompt_tokens": 831,
+      "reply_tokens": 24,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.967,
+      "prompt_tokens": 357,
+      "reply_tokens": 25,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 0.905,
+      "prompt_tokens": 888,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 0.68,
+      "prompt_tokens": 411,
+      "reply_tokens": 13,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 0.819,
+      "prompt_tokens": 930,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 1.857,
+      "prompt_tokens": 453,
+      "reply_tokens": 64,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

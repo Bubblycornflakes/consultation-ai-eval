@@ -1,0 +1,91 @@
+{
+  "model": "qwen3:8b",
+  "environment": {
+    "model": {
+      "model": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size_bytes": 5225388164,
+      "family": "qwen3",
+      "parameter_size": "8.2B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    },
+    "ollama_server_version": "0.32.14",
+    "ollama_python_library": "0.6.3",
+    "python": "3.13.12",
+    "machine": "arm64"
+  },
+  "prompts": {
+    "patient-style question": {
+      "groups": {
+        "temperature 0, seed 42, run 3 times": {
+          "distinct_replies": 1,
+          "runs": 3,
+          "replies": [
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week."
+          ]
+        },
+        "temperature 1.0, seed 42, run 3 times": {
+          "distinct_replies": 1,
+          "runs": 3,
+          "replies": [
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week."
+          ]
+        },
+        "temperature 1.0, seeds 1 to 4": {
+          "distinct_replies": 1,
+          "runs": 4,
+          "replies": [
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week.",
+            "Three weeks ago. Four or five days a week."
+          ]
+        }
+      },
+      "temperature_0_repeatable": true,
+      "same_seed_repeatable_at_temperature_1": true,
+      "different_seeds_give_different_replies": false
+    },
+    "open-ended prompt": {
+      "groups": {
+        "temperature 0, seed 42, run 3 times": {
+          "distinct_replies": 2,
+          "runs": 3,
+          "replies": [
+            "Beneath the stove, it waits in silence,  \nA vessel of steam and whispered tales,  \nIts whistle sings the morning's call,  \nA humble helper in the kitchen's trail.",
+            "Bubbling with steam, it sings all day,  \nA pot of dreams in a quiet way.  \nIts whistle calls the morning light,  \nA humble helper, pure and bright.",
+            "Bubbling with steam, it sings all day,  \nA pot of dreams in a quiet way.  \nIts whistle calls the morning light,  \nA humble helper, pure and bright."
+          ]
+        },
+        "temperature 1.0, seed 42, run 3 times": {
+          "distinct_replies": 1,
+          "runs": 3,
+          "replies": [
+            "Bubbling with steam, it sings all day,  \nA pot of dreams in a quiet way.  \nHeated by fire, it waits and steams,  \nA humble helper in morning's beams.",
+            "Bubbling with steam, it sings all day,  \nA pot of dreams in a quiet way.  \nHeated by fire, it waits and steams,  \nA humble helper in morning's beams.",
+            "Bubbling with steam, it sings all day,  \nA pot of dreams in a quiet way.  \nHeated by fire, it waits and steams,  \nA humble helper in morning's beams."
+          ]
+        },
+        "temperature 1.0, seeds 1 to 4": {
+          "distinct_replies": 4,
+          "runs": 4,
+          "replies": [
+            "Steam rises from the steel, a quiet sigh,  \nIt hums with secrets in the morning light.  \nA pot of warmth for tea or dreams to brew,  \nThe kettle waits, a song in waiting flight.",
+            "Bubbles whisper secrets in the heat,  \nA silent song of steam and steel.  \nIt waits with patience, ready to leap,  \nA humble pot with a soul to keep.",
+            "Beneath the stove, it waits in stillness,  \nA vessel of steam, a quiet singer.  \nWith every whistle, it calls the morning,  \nA humble helper in the kitchen's hymn.",
+            "Bubbling with steam, it sings its tune,  \nA pot of warmth in morning's gleam.  \nIts whistle calls the fire to rise,  \nA humble helper, steadfast and wise."
+          ]
+        }
+      },
+      "temperature_0_repeatable": false,
+      "same_seed_repeatable_at_temperature_1": true,
+      "different_seeds_give_different_replies": true
+    }
+  },
+  "seed_is_honoured": true
+}

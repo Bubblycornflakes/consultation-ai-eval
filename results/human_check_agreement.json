@@ -1,0 +1,234 @@
+{
+  "sheets_in_key": 8,
+  "unlabelled_or_missing": [],
+  "facts": {
+    "n": 103,
+    "both_yes": 22,
+    "labeller_yes_scorer_no": 0,
+    "labeller_no_scorer_yes": 34,
+    "both_no": 47,
+    "percent_agreement": 0.67,
+    "kappa": 0.371
+  },
+  "advice_or_diagnosis": {
+    "n": 8,
+    "both_yes": 0,
+    "labeller_yes_scorer_no": 0,
+    "labeller_no_scorer_yes": 1,
+    "both_no": 7,
+    "percent_agreement": 0.875,
+    "kappa": 0.0
+  },
+  "disagreements": [
+    {
+      "sheet": "T1",
+      "fact": "f02",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f05",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f07",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f08",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f11",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f13",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T1",
+      "fact": "f14",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T2",
+      "fact": "f03",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T2",
+      "fact": "f10",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T3",
+      "fact": "f03",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T3",
+      "fact": "f04",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T3",
+      "fact": "f05",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T3",
+      "fact": "f08",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T3",
+      "fact": "f09",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T4",
+      "fact": "f05",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T4",
+      "fact": "f07",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f02",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f03",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f04",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f06",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f08",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T5",
+      "fact": "f12",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f02",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f03",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f04",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f06",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f07",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f09",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f10",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T6",
+      "fact": "f11",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T7",
+      "fact": "f03",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T7",
+      "fact": "f06",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T7",
+      "fact": "f07",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T7",
+      "fact": "advice",
+      "labeller": false,
+      "scorer": true
+    },
+    {
+      "sheet": "T8",
+      "fact": "f08",
+      "labeller": false,
+      "scorer": true
+    }
+  ]
+}

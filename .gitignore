@@ -1,0 +1,12 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+# large files (models, caches)
+*.gguf
+*.safetensors
+*.bin
+*.onnx
+.cache/

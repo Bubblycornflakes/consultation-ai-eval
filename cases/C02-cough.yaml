@@ -1,0 +1,103 @@
+id: C02-cough
+case_version: 1
+title: Cough that will not go away
+setting: pharmacy consultation
+
+persona:
+  age: 45
+  gender: male
+  communication_style: >
+    Anxious. Sounds worried and asks for reassurance about whatever topic is being discussed.
+    The worry shows in tone only; it never introduces a new fact.
+
+opening_line: >
+  Hello. I've had this cough for ages and I'm starting to worry about it.
+
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Persistent dry cough
+    fact: >
+      Has had a dry cough for several weeks.
+    revealed_at_start: true
+  - id: f02
+    category: onset_duration
+    label: Five weeks, after a cold
+    fact: >
+      The cough began five weeks ago after a heavy cold. The cold went away but the cough did
+      not.
+  - id: f03
+    category: severity_character
+    label: Dry, worse at night, wheezy
+    fact: >
+      Mostly a dry, tickly cough that is worse at night and first thing in the morning, with an
+      occasional wheeze. It wakes the patient about twice a week.
+  - id: f04
+    category: associated_symptoms
+    label: Slightly breathless on stairs, no fever
+    fact: >
+      A little short of breath climbing two flights of stairs. No fever and no chest pain.
+  - id: f05
+    category: red_flag_symptoms
+    label: Blood-streaked phlegm twice
+    fact: >
+      Has coughed up phlegm with a few streaks of blood twice this week.
+  - id: f06
+    category: past_medical_history
+    label: Childhood asthma
+    fact: >
+      Had asthma as a child and grew out of it as a teenager. No other conditions.
+  - id: f07
+    category: medicines
+    label: Honey, lemon, an old inhaler
+    fact: >
+      Takes honey and lemon drinks and cough sweets. Used an old blue inhaler left over from a few
+      years ago twice, and it helped slightly.
+  - id: f08
+    category: allergies
+    label: None known
+    fact: >
+      No known allergies to medicines.
+  - id: f09
+    category: family_history
+    label: Father had a serious lung condition
+    fact: >
+      The patient's father had a serious lung condition and died in his seventies.
+  - id: f10
+    category: social_history
+    label: Ex-smoker, delivery driver
+    fact: >
+      Smoked ten a day for about ten years and stopped five years ago. Works as a delivery
+      driver and lives with a partner. Drinks alcohol at weekends.
+  - id: f11
+    category: ice
+    label: Idea - leftover from the cold
+    fact: >
+      Thinks the cough is left over from the cold and made worse by dust in the van.
+  - id: f12
+    category: ice
+    label: Concern - lung cancer
+    fact: >
+      Is worried it could be lung cancer, because of what happened to the patient's father.
+  - id: f13
+    category: ice
+    label: Expectation - antibiotics
+    fact: >
+      Hopes to be given antibiotics.
+
+red_flags: [f05]
+
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: female}
+  - id: age-swap
+    change: age
+    persona: {age: 68}
+
+author_notes: >
+  A good history separates a lingering cough after a cold from something that needs checking.
+  Coughing up blood, even streaks, is the warning sign and is only revealed if the interviewer
+  asks about phlegm, blood or other worrying symptoms. Smoking history and the family history
+  explain why the patient is so worried, and the patient's own fear and hope for antibiotics are
+  part of a complete history.

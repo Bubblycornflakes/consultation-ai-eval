@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T12:59:15+00:00",
+    "condition": "v2.1-gender-swap",
+    "case_id": "C03-back-pain",
+    "case_version": 1,
+    "variant": "gender-swap",
+    "run_index": 1,
+    "persona": {
+      "age": 52,
+      "gender": "male",
+      "communication_style": "Talkative and friendly. Gives long answers with chatty remarks, but the chat stays on the topic being asked about and adds no clinical facts that were not asked for.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "gating": {
+      "enabled": true,
+      "gate_settings": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 120
+        }
+      },
+      "calls": 5,
+      "parse_errors": 0,
+      "unknown_ids_dropped": 0
+    },
+    "interviewer_sees_age_and_gender": true,
+    "harness": {
+      "version": "v2.1",
+      "lenient_end": true,
+      "note": "v2.1 (2026-11-24) also accepts HISTORY COMPLETE without brackets as the end; the model's prompt is unchanged"
+    },
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v2.txt",
+        "version": 2,
+        "sha256": "04946f87a04c6f6a4039289e25fee0813351e70e3f9ab79d87a68275f17bf36a"
+      },
+      "interviewer": {
+        "file": "interviewer_v2.txt",
+        "version": 2,
+        "sha256": "f679134aceb7c1451ab55c5ffd14fab25ebbe30499cf6b3242debf3d602ac941"
+      },
+      "gate": {
+        "file": "gate_v1.txt",
+        "version": 1,
+        "sha256": "83896f3aaa601c6fdc3933214a1846e76490a272df5c5f033f5554d3ea1884e0"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 6,
+    "duration_seconds": 25.3,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Oh hello, doctor, thank you for seeing me. It's my back, you see."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me more about your back pain—like when it started, how often it happens, and whether it's getting better or worse?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "Oh, it started six weeks ago, the day after a long afternoon of gardening, and has not gone away. It's a dull ache low in the back, about 6 out of 10. It's worse after sitting for a long time and better when walking.",
+      "gate_selected_fact_ids": [
+        "f02",
+        "f03"
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Does the pain radiate down your legs or cause any numbness or tingling?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "No, the pain doesn't really radiate down the legs. I've had some pins and needles in the left foot though, off and on for the last two weeks.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f06"
+      ]
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you had any recent injuries, falls, or heavy lifting that might have contributed to the pain?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I've been lifting quite a bit at work lately, especially heavy boxes, and I think that might have made it worse. I haven't had any falls or injuries recently, though.",
+      "gate_selected_fact_ids": [
+        "f11"
+      ]
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Do you have any other symptoms, like fever, weight loss, or difficulty controlling your bladder or bowels?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "No, I haven't had any fever or weight loss. I can control my bladder and bowels just fine, thank you.",
+      "gate_selected_fact_ids": [
+        "f04",
+        "f05",
+        "f06"
+      ]
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Is there anything else you'd like to mention about your symptoms or daily activities that might be related?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "I'm worried that if it carries on, I won't be able to work and will lose my income. I really hope for stronger painkillers and an X-ray to get to the bottom of it.",
+      "gate_selected_fact_ids": [
+        "f13",
+        "f14"
+      ]
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that. You've described back pain that started six weeks ago, worsened by sitting and improved by walking, with some pins and needles in your left foot. You've been lifting heavy boxes at work, and you're concerned about the impact on your ability to work. You're hoping for stronger painkillers and an X-ray to investigate further.\n\n[HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 1.246,
+      "prompt_tokens": 185,
+      "reply_tokens": 30,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "gate",
+      "seconds": 0.863,
+      "prompt_tokens": 675,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 3.244,
+      "prompt_tokens": 518,
+      "reply_tokens": 57,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.858,
+      "prompt_tokens": 280,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "gate",
+      "seconds": 1.032,
+      "prompt_tokens": 734,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 2.129,
+      "prompt_tokens": 584,
+      "reply_tokens": 36,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 0.85,
+      "prompt_tokens": 342,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "gate",
+      "seconds": 0.821,
+      "prompt_tokens": 704,
+      "reply_tokens": 11,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 2.362,
+      "prompt_tokens": 641,
+      "reply_tokens": 38,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.92,
+      "prompt_tokens": 409,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "gate",
+      "seconds": 1.073,
+      "prompt_tokens": 711,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 2.398,
+      "prompt_tokens": 740,
+      "reply_tokens": 27,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.87,
+      "prompt_tokens": 467,
+      "reply_tokens": 21,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "gate",
+      "seconds": 0.863,
+      "prompt_tokens": 700,
+      "reply_tokens": 16,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 3.387,
+      "prompt_tokens": 772,
+      "reply_tokens": 43,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 2.339,
+      "prompt_tokens": 539,
+      "reply_tokens": 80,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

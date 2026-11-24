@@ -1,0 +1,42 @@
+Case C02-cough (version 1), variant base, run 1, condition v2
+Patient: 45 years, male
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 11 interviewer turns; 47.3 s
+
+[ 0] PATIENT    : Hello. I've had this cough for ages and I'm starting to worry about it.
+[ 1] INTERVIEWER: Can you tell me more about your cough — for example, is it a dry cough or do you have any phlegm?
+[ 1] PATIENT    : It's mostly a dry cough, but I've coughed up some phlegm with a few streaks of blood twice this week.
+      (facts shown to the patient for this answer: f01, f03, f05)
+[ 2] INTERVIEWER: Have you noticed any other symptoms, such as chest pain, shortness of breath, or fatigue?
+[ 2] PATIENT    : I've felt a little short of breath climbing two flights of stairs. I haven't noticed any chest pain or fatigue.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Have you been exposed to any irritants, such as smoke, dust, or chemicals, recently?
+[ 3] PATIENT    : I've been driving a van and think the cough might be left over from a cold, made worse by dust in the van.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Have you had any recent changes in your health, such as weight loss, fever, or night sweats?
+[ 4] PATIENT    : I haven't had any recent changes in my health. No weight loss, fever, or night sweats.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you had any previous lung issues, such as asthma, bronchitis, or pneumonia?
+[ 5] PATIENT    : I had asthma as a child and grew out of it as a teenager. I've never had bronchitis or pneumonia.
+      (facts shown to the patient for this answer: f06)
+[ 6] INTERVIEWER: Have you been around anyone who has been sick recently, such as a cold or flu?
+[ 6] PATIENT    : I've been around a few people who had colds, but I haven't been sick myself.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you noticed any changes in the frequency or severity of your cough over the past week?
+[ 7] PATIENT    : It's been about the same — worse at night and in the morning, with a few wheezes. I've been coughing more since I started driving the van.
+      (facts shown to the patient for this answer: f03)
+[ 8] INTERVIEWER: Have you tried any medications or remedies for the cough, such as over-the-counter cough suppressants or expectorants?
+[ 8] PATIENT    : I've been taking honey and lemon drinks and cough sweets. I used an old blue inhaler twice, and it helped slightly.
+      (facts shown to the patient for this answer: f07)
+[ 9] INTERVIEWER: Have you had any recent changes in your environment, such as moving house, changes in air quality, or new exposures?
+[ 9] PATIENT    : I've been driving a van and think the cough might be left over from a cold, made worse by dust in the van.
+      (facts shown to the patient for this answer: f11)
+[10] INTERVIEWER: Have you noticed any improvement or worsening of your symptoms when you are away from the van or in a cleaner environment?
+[10] PATIENT    : I haven't been away from the van much, but when I was at home earlier this week, the cough was a bit better.
+      (facts shown to the patient for this answer: f11)
+[11] INTERVIEWER: It sounds like your cough may be related to the environment in the van, possibly due to dust or other irritants. I’ll summarize what you’ve shared so far.  
+
+Thank you for sharing your symptoms and concerns. Based on what you’ve told me, your cough is dry but has produced some phlegm with streaks of blood, and it’s worse at night and in the morning. You’ve felt slightly short of breath with exertion, and you believe the cough may be related to driving the van, possibly due to dust exposure. You’ve tried honey, lemon drinks, cough sweets, and an old inhaler, which helped slightly. You noticed some improvement when you were at home earlier this week.  
+
+[HISTORY COMPLETE]

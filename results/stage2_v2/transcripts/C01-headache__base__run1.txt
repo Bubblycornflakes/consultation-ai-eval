@@ -1,0 +1,28 @@
+Case C01-headache (version 1), variant base, run 1, condition v2
+Patient: 34 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 7 interviewer turns; 29.71 s
+
+[ 0] PATIENT    : Hi doctor. I've been getting headaches.
+[ 1] INTERVIEWER: Can you tell me more about the headaches — like how often they happen, how long they last, and whether they're on one side or both?
+[ 1] PATIENT    : They happen four or five days a week. They last most of the afternoon. They're around the whole head, not just one side.
+      (facts shown to the patient for this answer: f02, f03)
+[ 2] INTERVIEWER: Do you have any other symptoms with the headaches, like nausea, sensitivity to light or sound, or any pain that spreads from your head to other parts of your body?
+[ 2] PATIENT    : No. I don't have nausea. No sensitivity to light or sound. No pain spreading from my head.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Have you noticed any specific triggers for your headaches, such as stress, lack of sleep, certain foods, or changes in your routine?
+[ 3] PATIENT    : Yes. Stress and too much screen time.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Do you have any other health conditions, or are you currently taking any medications, supplements, or over-the-counter drugs?
+[ 4] PATIENT    : No long-term conditions. No regular prescribed medicines. I've taken paracetamol most days and ibuprofen on a few days.
+      (facts shown to the patient for this answer: f06, f07)
+[ 5] INTERVIEWER: Have you experienced any recent changes in your lifestyle, such as changes in sleep patterns, diet, or work schedule?
+[ 5] PATIENT    : I've been sleeping about five hours a night. I work at a computer eight to ten hours a day. I drink four coffees a day.
+      (facts shown to the patient for this answer: f10)
+[ 6] INTERVIEWER: Do you have any family history of headaches or migraines?
+[ 6] PATIENT    : My mother has migraines. No one else in the family has had migraines or brain problems.
+      (facts shown to the patient for this answer: f09)
+[ 7] INTERVIEWER: Thank you for sharing all that information. You've described frequent headaches that occur four to five days a week, lasting most of the afternoon, with no associated nausea, light or sound sensitivity, or spreading pain. You mentioned stress and screen time as triggers, and you take paracetamol most days and ibuprofen occasionally. You sleep about five hours a night, work at a computer for eight to ten hours, and drink four coffees a day. Your mother has migraines, but no other family history of headaches or brain issues.  
+
+[HISTORY COMPLETE]

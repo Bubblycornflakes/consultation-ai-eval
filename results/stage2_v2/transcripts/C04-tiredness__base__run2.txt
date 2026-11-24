@@ -1,0 +1,43 @@
+Case C04-tiredness (version 1), variant base, run 2, condition v2
+Patient: 27 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 12 interviewer turns; 36.16 s
+
+[ 0] PATIENT    : Um, hi. I just feel really tired all the time.
+[ 1] INTERVIEWER: How long have you been feeling this way?
+[ 1] PATIENT    : Two months. It's been getting worse slowly.
+      (facts shown to the patient for this answer: f02)
+[ 2] INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like changes in appetite, weight loss or gain, or trouble sleeping?
+[ 2] PATIENT    : I've lost about 4 kg in two months without trying. I wake soaked in sweat two or three nights a week. I've been more thirsty than usual and passing urine more often.
+      (facts shown to the patient for this answer: f05, f06, f07)
+[ 3] INTERVIEWER: Have you experienced any changes in your mood, such as feeling anxious, irritable, or having trouble concentrating?
+[ 3] PATIENT    : I've been feeling low and flat. I find it hard to concentrate. I've lost interest in my hobbies.
+      (facts shown to the patient for this answer: f04)
+[ 4] INTERVIEWER: Have you had any recent changes in your diet, activity level, or stress levels?
+[ 4] PATIENT    : No changes in diet or activity. Work stress has been higher than usual.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you noticed any swelling in your hands, feet, or ankles lately?
+[ 5] PATIENT    : No.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you had any recent changes in your menstrual cycle, such as irregular periods or heavier/lighter bleeding?
+[ 6] PATIENT    : I've had irregular periods. They've been coming less often, maybe once every three weeks.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you experienced any unexplained weight loss, changes in energy levels, or feelings of restlessness or agitation?
+[ 7] PATIENT    : I've lost about 4 kg in two months without trying. I feel really tired all the time. I've been more restless than usual.
+      (facts shown to the patient for this answer: f03, f04, f06)
+[ 8] INTERVIEWER: Have you noticed any changes in your skin, such as dryness, rashes, or unusual hair loss?
+[ 8] PATIENT    : I've been losing hair more than usual. My skin feels drier than before.
+      (facts shown to the patient for this answer: none)
+[ 9] INTERVIEWER: Have you had any recent changes in your thyroid function, such as feeling unusually warm or cold, or any changes in your heart rate?
+[ 9] PATIENT    : I've been feeling warmer than usual. My heart races sometimes, especially when I'm stressed.
+      (facts shown to the patient for this answer: none)
+[10] INTERVIEWER: Have you had any recent changes in your weight, appetite, or energy levels that worry you?
+[10] PATIENT    : I've lost about 4 kg in two months without trying. I feel really tired all the time. I'm worried about making mistakes at work and losing my job.
+      (facts shown to the patient for this answer: f02, f03, f06, f14)
+[11] INTERVIEWER: Have you noticed any changes in your bowel movements, such as constipation, diarrhea, or changes in stool consistency?
+[11] PATIENT    : No.
+      (facts shown to the patient for this answer: none)
+[12] INTERVIEWER: Have you had any recent changes in your sleep patterns, such as difficulty falling asleep, waking up frequently, or not feeling rested even after a full night’s sleep?  
+
+[HISTORY COMPLETE]

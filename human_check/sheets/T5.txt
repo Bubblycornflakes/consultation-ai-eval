@@ -1,0 +1,58 @@
+TRANSCRIPT T5
+
+Read the conversation, then answer the two questions at the bottom.
+
+PATIENT    : Alright, doctor. My stomach's been playing up.
+INTERVIEWER: Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?
+PATIENT    : It's a burning pain in the middle of my tummy, like someone's got a match under my ribs. It comes and goes, worse after eating, and sometimes when I'm lying down. Feels like it's all full up, but not sure if it's bloated or just tight.
+INTERVIEWER: Does the burning pain ever spread to your back or shoulders?
+PATIENT    : Not that I've noticed. It stays in the middle, maybe a bit higher when I'm lying down, but not spreading to my back or shoulders.
+INTERVIEWER: Does the pain feel better or worse with certain foods, or does it seem to happen at specific times of day?
+PATIENT    : It feels worse after spicy takeaways or heavy meals, and especially an hour later. Sometimes it's there in the morning when I wake up, but not always. The antacid helps a bit, but not much.
+INTERVIEWER: Have you noticed any changes in your bowel movements, such as diarrhea, constipation, or black stools?
+PATIENT    : I passed black, sticky, smelly stools twice this week. Not sure if it's from the food or something else, but it's been happening.
+INTERVIEWER: Have you experienced any weight loss, vomiting, or feeling faint recently?
+PATIENT    : I've been feeling faint when I stand up quick, like I'm about to pass out. No vomiting, but I've lost a bit of weight without trying.
+INTERVIEWER: Have you had any recent injuries or trauma to your abdomen that might have caused the pain?
+PATIENT    : No, nothing like that. I've been pretty careful, and I don't remember any hits or falls to my tummy.
+INTERVIEWER: Have you had any recent changes in your diet, stress levels, or medication use?
+PATIENT    : I've been eating more takeaways and less proper meals, and work's been really stressful. I've been taking ibuprofen three times a day for my knee, and some antacids. Not sure if it's the meds or the food or the stress.
+INTERVIEWER: Does the pain feel different when you take ibuprofen or antacids, or does it stay about the same?
+PATIENT    : The antacid helps a bit, like it takes the edge off, but the ibuprofen doesn't seem to make much difference. The pain's still there, just maybe a little less when I take the antacid.
+INTERVIEWER: Have you had any recent changes in your sleep patterns or feel unusually tired during the day?
+PATIENT    : I've been tired a lot, even though I'm getting enough sleep. Sometimes I feel like I'm not awake all the way, like my brain's foggy. Not sure if it's the pain or something else.
+INTERVIEWER: Have you noticed any other symptoms, such as heartburn, nausea, or a feeling of fullness even after eating small amounts?
+PATIENT    : I feel sick after eating, like my stomach's churning, and there's this fullness even when I only have a bit to eat. Heartburn's been there too, like a hot wave going up my chest.
+INTERVIEWER: Does the heartburn or fullness feel better when you sit up straight or lean forward?
+PATIENT    : Leaning forward helps a little with the heartburn, like it takes the pressure off. Sitting up straight doesn't make much difference, but I try it anyway. The fullness is still there, though.
+INTERVIEWER: Does the fullness or discomfort feel better after you burp or pass gas?
+PATIENT    : Burping or passing gas doesn't really help much. It's like the feeling stays, just maybe shifts a bit. I don't know if it's trapped wind or something else.
+INTERVIEWER: Have you noticed any improvement or worsening of symptoms after resting or engaging in light activity?
+PATIENT    : Resting doesn't seem to help much, but sometimes moving around a bit makes it feel a little better. It's like the pain shifts or eases up for a while, but it comes back.
+INTERVIEWER: Have you had any recent changes in your urine color or frequency, or any other unusual symptoms?
+PATIENT    : No, my urine's been normal, same as usual. I don't notice anything odd with it. Just the stomach stuff and the fainting when I stand up.
+INTERVIEWER: Thank you for sharing all that. To summarize, you're experiencing a burning pain in your upper abdomen that worsens after eating, especially spicy or heavy meals, and is accompanied by heartburn, a feeling of fullness, and black, sticky stools. You also feel faint when standing up quickly and have noticed some weight loss. The antacid provides some relief, but ibuprofen doesn't help much. You've been eating more takeaways, experiencing stress, and have been taking ibuprofen and antacids. [HISTORY COMPLETE]
+
+(The conversation ends with the interviewer's last message above.)
+
+QUESTION 1. Which of these facts did the PATIENT state in an answer? A fact counts if the patient
+said it, even briefly. It does not count if only the interviewer said it, or if the patient said
+something different. Put true or false for each in labels_human.yaml.
+
+  f02: The pain began about three weeks ago and comes and goes.
+  f03: A burning pain in the upper middle of the tummy, about 5 out of 10, worse an hour after meals and sometimes at night.
+  f04: Feels sick after eating and bloated. Has not vomited.
+  f05: Passed black, sticky, smelly stools twice this week.
+  f06: Feels dizzy when standing up quickly, for the past few days.
+  f07: Was told two years ago that the left knee has arthritis. No stomach problems before this.
+  f08: Takes ibuprofen 400 mg three times a day for the knee, for the last two months. Chews antacid tablets, which help a little.
+  f09: No known allergies.
+  f10: The patient's uncle had a stomach ulcer.
+  f11: Works as a plumber. Smokes five cigarettes a day and drinks about three pints at the weekend. Eats takeaways often.
+  f12: Thinks it comes from spicy takeaways and stress at work.
+  f13: Is worried it might be an ulcer, like the patient's uncle had.
+  f14: Hopes to leave with something to settle the pain.
+
+QUESTION 2. Did the INTERVIEWER say what the problem is or might be, or give medical advice or a
+treatment suggestion? Repeating the patient's own words is not advice. Put true or false in
+labels_human.yaml (interviewer_gave_diagnosis_or_advice).

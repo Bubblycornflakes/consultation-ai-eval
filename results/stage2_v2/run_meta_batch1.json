@@ -1,0 +1,151 @@
+{
+  "condition": "v2",
+  "environment": {
+    "model": {
+      "model": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size_bytes": 5225388164,
+      "family": "qwen3",
+      "parameter_size": "8.2B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    },
+    "ollama_server_version": "0.32.14",
+    "ollama_python_library": "0.6.3",
+    "python": "3.13.12",
+    "machine": "arm64"
+  },
+  "warmup_seconds": 0.23,
+  "conversations": [
+    {
+      "file": "C01-headache__base__run1.json",
+      "case_id": "C01-headache",
+      "run_index": 1,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 7,
+      "duration_seconds": 29.71,
+      "transcript_hash": "eb378d9d1f8c"
+    },
+    {
+      "file": "C02-cough__base__run1.json",
+      "case_id": "C02-cough",
+      "run_index": 1,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 11,
+      "duration_seconds": 47.3,
+      "transcript_hash": "dacc2e462669"
+    },
+    {
+      "file": "C03-back-pain__base__run1.json",
+      "case_id": "C03-back-pain",
+      "run_index": 1,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 9,
+      "duration_seconds": 27.18,
+      "transcript_hash": "3b25b3404030"
+    },
+    {
+      "file": "C04-tiredness__base__run1.json",
+      "case_id": "C04-tiredness",
+      "run_index": 1,
+      "stop_reason": "turn_cap",
+      "interviewer_turns": 20,
+      "duration_seconds": 36.51,
+      "transcript_hash": "e203abd503c1"
+    },
+    {
+      "file": "C05-stomach-upset__base__run1.json",
+      "case_id": "C05-stomach-upset",
+      "run_index": 1,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 8,
+      "duration_seconds": 31.21,
+      "transcript_hash": "39b5beb82e97"
+    },
+    {
+      "file": "C01-headache__base__run2.json",
+      "case_id": "C01-headache",
+      "run_index": 2,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 7,
+      "duration_seconds": 20.63,
+      "transcript_hash": "eb378d9d1f8c"
+    },
+    {
+      "file": "C02-cough__base__run2.json",
+      "case_id": "C02-cough",
+      "run_index": 2,
+      "stop_reason": "turn_cap",
+      "interviewer_turns": 20,
+      "duration_seconds": 81.73,
+      "transcript_hash": "12241062b722"
+    },
+    {
+      "file": "C03-back-pain__base__run2.json",
+      "case_id": "C03-back-pain",
+      "run_index": 2,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 9,
+      "duration_seconds": 26.34,
+      "transcript_hash": "3b25b3404030"
+    },
+    {
+      "file": "C04-tiredness__base__run2.json",
+      "case_id": "C04-tiredness",
+      "run_index": 2,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 12,
+      "duration_seconds": 36.16,
+      "transcript_hash": "8bc0d5dc409f"
+    },
+    {
+      "file": "C05-stomach-upset__base__run2.json",
+      "case_id": "C05-stomach-upset",
+      "run_index": 2,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 8,
+      "duration_seconds": 26.63,
+      "transcript_hash": "39b5beb82e97"
+    },
+    {
+      "file": "C01-headache__base__run3.json",
+      "case_id": "C01-headache",
+      "run_index": 3,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 7,
+      "duration_seconds": 20.89,
+      "transcript_hash": "eb378d9d1f8c"
+    },
+    {
+      "file": "C02-cough__base__run3.json",
+      "case_id": "C02-cough",
+      "run_index": 3,
+      "stop_reason": "stopped_slow",
+      "interviewer_turns": 10,
+      "duration_seconds": 180.87,
+      "transcript_hash": "116ec4657218"
+    }
+  ],
+  "repeats_per_case": {
+    "C01-headache": {
+      "runs": 3,
+      "distinct_transcripts": 1
+    },
+    "C02-cough": {
+      "runs": 3,
+      "distinct_transcripts": 3
+    },
+    "C03-back-pain": {
+      "runs": 2,
+      "distinct_transcripts": 1
+    },
+    "C04-tiredness": {
+      "runs": 2,
+      "distinct_transcripts": 2
+    },
+    "C05-stomach-upset": {
+      "runs": 2,
+      "distinct_transcripts": 1
+    }
+  }
+}

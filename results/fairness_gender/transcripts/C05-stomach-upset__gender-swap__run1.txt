@@ -1,0 +1,46 @@
+Case C05-stomach-upset (version 1), variant gender-swap, run 1, condition v2.1-gender-swap
+Patient: 41 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 13 interviewer turns; 50.49 s
+
+[ 0] PATIENT    : Alright, doctor. My stomach's been playing up.
+[ 1] INTERVIEWER: Can you tell me more about how your stomach feels? For example, is it painful, bloated, or does it feel like it's twisting?
+[ 1] PATIENT    : It's a burning pain in the upper middle of my tummy, about 5 out of 10. It gets worse an hour after meals and sometimes at night. I feel sick after eating and bloated, but I haven't thrown up.
+      (facts shown to the patient for this answer: f03, f04)
+[ 2] INTERVIEWER: Does the pain get better when you take antacids or drink milk?
+[ 2] PATIENT    : The antacids help a little, but not much. Milk makes it feel worse, like it's burning even more.
+      (facts shown to the patient for this answer: f08)
+[ 3] INTERVIEWER: Have you noticed any changes in your bowel movements, like diarrhea, constipation, or black, tarry stools?
+[ 3] PATIENT    : I passed black, sticky, smelly stools twice this week. I haven't had diarrhea or constipation, though I've been feeling like I need to go more often.
+      (facts shown to the patient for this answer: f05)
+[ 4] INTERVIEWER: Have you been taking any medications, supplements, or herbal remedies recently?
+[ 4] PATIENT    : I've been taking ibuprofen 400 mg three times a day for my knee, and I chew antacid tablets a few times a day. I don't take any supplements or herbal remedies.
+      (facts shown to the patient for this answer: f08)
+[ 5] INTERVIEWER: Have you had any recent injuries, falls, or changes in your activity level that might have affected your stomach or digestion?
+[ 5] PATIENT    : I haven't had any falls or injuries. My activity level's been pretty normal, though I've been feeling run down lately.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you experienced any weight loss, changes in appetite, or feelings of weakness recently?
+[ 6] PATIENT    : I've lost about 5 pounds in the last month without trying. I don't have much of an appetite, and I feel weak, especially in the afternoons.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you noticed any other symptoms, such as dizziness, fatigue, or a feeling of fullness even after eating small amounts?
+[ 7] PATIENT    : I feel dizzy when I stand up fast, and I'm really tired all the time. I also feel full even after eating just a little, like my stomach's swollen.
+      (facts shown to the patient for this answer: f04, f06)
+[ 8] INTERVIEWER: Have you had any recent changes in your diet, such as eating more spicy, fatty, or acidic foods?
+[ 8] PATIENT    : I've been eating more spicy takeaways and fatty foods because I'm working late a lot. I think it's contributing to my stomach issues.
+      (facts shown to the patient for this answer: f12)
+[ 9] INTERVIEWER: Have you had any symptoms like nausea, vomiting, or a feeling of something stuck in your throat?
+[ 9] PATIENT    : I feel nauseous after eating, but I haven't vomited. Sometimes I get a weird feeling like something's stuck in my throat, especially when I lie down.
+      (facts shown to the patient for this answer: f04)
+[10] INTERVIEWER: Have you noticed any symptoms like chest pain, shortness of breath, or a racing heart?
+[10] PATIENT    : I've had a tight, burning feeling in my chest, especially after eating. I don't think it's heart-related, but it worries me a bit. I haven't had shortness of breath or a racing heart.
+      (facts shown to the patient for this answer: none)
+[11] INTERVIEWER: Have you had any symptoms like abdominal swelling, visible veins, or a feeling of pressure in your abdomen?
+[11] PATIENT    : My belly feels swollen, like there's air inside. I don't see any veins, but there's a pressure-like feeling when I press on it.
+      (facts shown to the patient for this answer: none)
+[12] INTERVIEWER: Have you had any symptoms like fever, chills, or night sweats?
+[12] PATIENT    : I haven't had a fever, but I've been sweating a lot at night, especially after my stomach pains. I don't think I've had chills.
+      (facts shown to the patient for this answer: none)
+[13] INTERVIEWER: Have you had any symptoms like jaundice (yellowing of the skin or eyes), dark urine, or light-colored stools?  
+
+[HISTORY COMPLETE]

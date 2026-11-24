@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T23:38:50+00:00",
+    "case_id": "C03-back-pain",
+    "case_version": 1,
+    "variant": "base",
+    "run_index": 1,
+    "persona": {
+      "age": 52,
+      "gender": "female",
+      "communication_style": "Talkative and friendly. Gives long answers with chatty remarks, but the chat stays on the topic being asked about and adds no clinical facts that were not asked for.\n"
+    },
+    "settings": {
+      "interviewer": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      },
+      "patient": {
+        "model": "qwen3:8b",
+        "think": false,
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 42,
+          "num_ctx": 8192,
+          "num_predict": 256
+        }
+      }
+    },
+    "same_settings_for_both_roles": true,
+    "max_interviewer_turns": 20,
+    "slow_limit_seconds": 180,
+    "prompts": {
+      "patient": {
+        "file": "patient_v1.txt",
+        "version": 1,
+        "sha256": "afa781751f2211139bb16cc9c3d96fee0d388270b6aa8ad3674dae114c4f9822"
+      },
+      "interviewer": {
+        "file": "interviewer_v1.txt",
+        "version": 1,
+        "sha256": "8334208d51ac1972b8c2bcd42e886331c9e3f644d9a94ae6ad1b6205b80d09d1"
+      }
+    },
+    "stop_reason": "interviewer_finished",
+    "interviewer_turns": 8,
+    "duration_seconds": 22.93,
+    "thinking": {
+      "think_parameter": false,
+      "think_tags_found_in_any_reply": false,
+      "thinking_field_returned_in_any_reply": false,
+      "note": "thinking text is removed in src/llm.py and never stored"
+    },
+    "environment": {
+      "model": {
+        "model": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size_bytes": 5225388164,
+        "family": "qwen3",
+        "parameter_size": "8.2B",
+        "quantization": "Q4_K_M",
+        "format": "gguf"
+      },
+      "ollama_server_version": "0.32.14",
+      "ollama_python_library": "0.6.3",
+      "python": "3.13.12",
+      "machine": "arm64"
+    }
+  },
+  "transcript": [
+    {
+      "turn": 0,
+      "role": "patient",
+      "text": "Oh hello, doctor, thank you for seeing me. It's my back, you see."
+    },
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "text": "Can you tell me a bit more about how your back feels?"
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "text": "It's a dull ache low in the back, about a six out of ten. It's worse after sitting for a long time and feels better when I'm walking. It also feels stiff for about twenty minutes after I get up in the morning."
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "text": "Does the pain radiate down your legs or cause any numbness or tingling?"
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "text": "No, the pain doesn't go down my legs, and I don't have any numbness or tingling. Though I have had pins and needles in my left foot for the last two weeks, it's not connected to the back pain, I think."
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "text": "Have you had any recent injuries, heavy lifting, or changes in your physical activity that might be related to the back pain?"
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "text": "I've been doing a lot of lifting at work as a care assistant, which involves moving people around. The pain started the day after a long afternoon of gardening, so I think it might be a pulled muscle. I've tried to keep moving, but it's still bothering me a lot."
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "text": "Have you noticed any specific movements or positions that make the pain better or worse?"
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "text": "Walking seems to help a bit, but sitting for too long makes it worse. When I lie down, it feels a little better, but the stiffness comes back when I get up. I also notice it's worse at night, especially when I wake up around three in the morning."
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "text": "Have you had any previous episodes of back pain or a history of back injuries?"
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "text": "No, I haven't had any previous episodes of back pain. My sister had an operation on a slipped disc, but that's her story. I've never had anything like that."
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "text": "Do you take any medications regularly, or have you tried any over-the-counter pain relievers for this discomfort?"
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "text": "I take amlodipine for my blood pressure, and I tried ibuprofen for the back pain, but it only helped a little. I'm hoping for something stronger now, but I don't want to take anything without checking with you."
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "text": "Have you experienced any fever, weight loss, or other symptoms that might be related to the back pain?"
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "text": "No, I haven't had a fever or any weight loss. I'm just worried about the pain getting worse and affecting my work. I'm trying to stay positive but it's really been a struggle."
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "text": "Thank you for sharing all that. To summarize, you're experiencing a dull ache in your lower back, rated around a six out of ten, which is worse after sitting for long periods, in the morning stiffness, and at night. It feels better when you walk or lie down, but the stiffness returns when you get up. You’ve been lifting at work and had gardening the day before the pain started. You take amlodipine for blood pressure and tried ibuprofen, which only helped a little. You don’t have fever, weight loss, or other concerning symptoms. [HISTORY COMPLETE]"
+    }
+  ],
+  "calls": [
+    {
+      "turn": 1,
+      "role": "interviewer",
+      "seconds": 0.552,
+      "prompt_tokens": 151,
+      "reply_tokens": 14,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 1,
+      "role": "patient",
+      "seconds": 3.289,
+      "prompt_tokens": 656,
+      "reply_tokens": 51,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "interviewer",
+      "seconds": 0.798,
+      "prompt_tokens": 224,
+      "reply_tokens": 18,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 2,
+      "role": "patient",
+      "seconds": 1.728,
+      "prompt_tokens": 733,
+      "reply_tokens": 53,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "interviewer",
+      "seconds": 1.008,
+      "prompt_tokens": 303,
+      "reply_tokens": 26,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 3,
+      "role": "patient",
+      "seconds": 1.974,
+      "prompt_tokens": 820,
+      "reply_tokens": 60,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "interviewer",
+      "seconds": 0.87,
+      "prompt_tokens": 397,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 4,
+      "role": "patient",
+      "seconds": 1.929,
+      "prompt_tokens": 905,
+      "reply_tokens": 58,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "interviewer",
+      "seconds": 0.808,
+      "prompt_tokens": 480,
+      "reply_tokens": 17,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 5,
+      "role": "patient",
+      "seconds": 1.367,
+      "prompt_tokens": 988,
+      "reply_tokens": 38,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "interviewer",
+      "seconds": 0.938,
+      "prompt_tokens": 543,
+      "reply_tokens": 23,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 6,
+      "role": "patient",
+      "seconds": 1.698,
+      "prompt_tokens": 1057,
+      "reply_tokens": 52,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "interviewer",
+      "seconds": 0.936,
+      "prompt_tokens": 626,
+      "reply_tokens": 22,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 7,
+      "role": "patient",
+      "seconds": 1.446,
+      "prompt_tokens": 1139,
+      "reply_tokens": 42,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    },
+    {
+      "turn": 8,
+      "role": "interviewer",
+      "seconds": 3.518,
+      "prompt_tokens": 698,
+      "reply_tokens": 124,
+      "done_reason": "stop",
+      "think_tags_in_content": false,
+      "thinking_field_returned": false
+    }
+  ]
+}

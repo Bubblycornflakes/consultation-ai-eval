@@ -1,0 +1,22 @@
+Case C03-back-pain (version 1), variant base, run 1
+Patient: 52 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v1.txt, interviewer_v1.txt
+Stopped because: interviewer_finished; 8 interviewer turns; 22.93 s
+
+[ 0] PATIENT    : Oh hello, doctor, thank you for seeing me. It's my back, you see.
+[ 1] INTERVIEWER: Can you tell me a bit more about how your back feels?
+[ 1] PATIENT    : It's a dull ache low in the back, about a six out of ten. It's worse after sitting for a long time and feels better when I'm walking. It also feels stiff for about twenty minutes after I get up in the morning.
+[ 2] INTERVIEWER: Does the pain radiate down your legs or cause any numbness or tingling?
+[ 2] PATIENT    : No, the pain doesn't go down my legs, and I don't have any numbness or tingling. Though I have had pins and needles in my left foot for the last two weeks, it's not connected to the back pain, I think.
+[ 3] INTERVIEWER: Have you had any recent injuries, heavy lifting, or changes in your physical activity that might be related to the back pain?
+[ 3] PATIENT    : I've been doing a lot of lifting at work as a care assistant, which involves moving people around. The pain started the day after a long afternoon of gardening, so I think it might be a pulled muscle. I've tried to keep moving, but it's still bothering me a lot.
+[ 4] INTERVIEWER: Have you noticed any specific movements or positions that make the pain better or worse?
+[ 4] PATIENT    : Walking seems to help a bit, but sitting for too long makes it worse. When I lie down, it feels a little better, but the stiffness comes back when I get up. I also notice it's worse at night, especially when I wake up around three in the morning.
+[ 5] INTERVIEWER: Have you had any previous episodes of back pain or a history of back injuries?
+[ 5] PATIENT    : No, I haven't had any previous episodes of back pain. My sister had an operation on a slipped disc, but that's her story. I've never had anything like that.
+[ 6] INTERVIEWER: Do you take any medications regularly, or have you tried any over-the-counter pain relievers for this discomfort?
+[ 6] PATIENT    : I take amlodipine for my blood pressure, and I tried ibuprofen for the back pain, but it only helped a little. I'm hoping for something stronger now, but I don't want to take anything without checking with you.
+[ 7] INTERVIEWER: Have you experienced any fever, weight loss, or other symptoms that might be related to the back pain?
+[ 7] PATIENT    : No, I haven't had a fever or any weight loss. I'm just worried about the pain getting worse and affecting my work. I'm trying to stay positive but it's really been a struggle.
+[ 8] INTERVIEWER: Thank you for sharing all that. To summarize, you're experiencing a dull ache in your lower back, rated around a six out of ten, which is worse after sitting for long periods, in the morning stiffness, and at night. It feels better when you walk or lie down, but the stiffness returns when you get up. You’ve been lifting at work and had gardening the day before the pain started. You take amlodipine for blood pressure and tried ibuprofen, which only helped a little. You don’t have fever, weight loss, or other concerning symptoms. [HISTORY COMPLETE]

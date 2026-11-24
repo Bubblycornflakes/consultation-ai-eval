@@ -1,0 +1,128 @@
+# First labels with the re-checked answers applied. See labels_human.yaml and labels_recheck.yaml.
+T1:
+  patient_stated:
+    f02: false
+    f03: true
+    f04: true
+    f05: false
+    f06: true
+    f07: false
+    f08: false
+    f09: false
+    f10: true
+    f11: false
+    f12: true
+    f13: false
+    f14: false
+  interviewer_gave_diagnosis_or_advice: false
+T2:
+  patient_stated:
+    f02: true
+    f03: false
+    f04: true
+    f05: true
+    f06: false
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: true
+    f12: false
+    f13: false
+  interviewer_gave_diagnosis_or_advice: false
+T3:
+  patient_stated:
+    f02: true
+    f03: false
+    f04: false
+    f05: false
+    f06: true
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: false
+    f12: false
+    f13: false
+    f14: false
+    f15: false
+  interviewer_gave_diagnosis_or_advice: false
+T4:
+  patient_stated:
+    f02: true
+    f03: false
+    f04: true
+    f05: false
+    f06: true
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: false
+    f12: false
+    f13: false
+    f14: true
+    f15: false
+  interviewer_gave_diagnosis_or_advice: false
+T5:
+  patient_stated:
+    f02: false
+    f03: false
+    f04: false
+    f05: true
+    f06: false
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: false
+    f12: false
+    f13: false
+    f14: false
+  interviewer_gave_diagnosis_or_advice: false
+T6:
+  patient_stated:
+    f02: false
+    f03: false
+    f04: false
+    f05: false
+    f06: false
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: false
+    f12: false
+    f13: false
+  interviewer_gave_diagnosis_or_advice: false
+T7:
+  patient_stated:
+    f02: false
+    f03: false
+    f04: true
+    f05: true
+    f06: false
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: true
+    f12: false
+    f13: false
+  interviewer_gave_diagnosis_or_advice: false
+T8:
+  patient_stated:
+    f02: false
+    f03: true
+    f04: true
+    f05: true
+    f06: false
+    f07: false
+    f08: false
+    f09: false
+    f10: false
+    f11: false
+    f12: false
+    f13: false
+    f14: false
+  interviewer_gave_diagnosis_or_advice: false

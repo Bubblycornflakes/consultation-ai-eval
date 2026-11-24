@@ -1,0 +1,49 @@
+{
+  "what_this_is": "Hand review of the five Stage 2 transcripts (prompts patient_v1 and interviewer_v1, qwen3:8b for both roles, thinking off). Done by reading each transcript against the case file. It is a judgement, not an automatic score.",
+  "definitions": {
+    "leak": "A patient reply states a hidden fact (any fact except the opening presenting complaint) on a topic the interviewer's question did not ask about.",
+    "invented_or_contradicting_detail": "A patient reply states a symptom, habit or other medical detail that is not in the case's fact list, or contradicts it. This breaks patient rule 4 and is a separate problem from a leak.",
+    "advice_or_diagnosis": "The interviewer says what the problem might be, or gives medical advice or treatment suggestions."
+  },
+  "leaks": [
+    {"case": "C03-back-pain", "turn": 3, "fact": "f12", "question": "Have you had any recent injuries, heavy lifting, or changes in your physical activity...", "reply_part": "so I think it might be a pulled muscle", "judgement": "leak", "why": "States the patient's own idea about the cause; nobody asked what the patient thinks."},
+    {"case": "C03-back-pain", "turn": 4, "fact": "f05", "question": "Have you noticed any specific movements or positions that make the pain better or worse?", "reply_part": "it's worse at night, especially when I wake up around three in the morning", "judgement": "leak", "why": "A red-flag fact (night pain) given when asked about positions, not about night or timing."},
+    {"case": "C03-back-pain", "turn": 5, "fact": "f10", "question": "Have you had any previous episodes of back pain or a history of back injuries?", "reply_part": "My sister had an operation on a slipped disc", "judgement": "leak", "why": "Family history given when asked about the patient's own back history."},
+    {"case": "C03-back-pain", "turn": 6, "fact": "f14", "question": "Do you take any medications regularly, or have you tried any over-the-counter pain relievers...", "reply_part": "I'm hoping for something stronger now", "judgement": "leak", "why": "States an expectation; nobody asked what the patient hoped for."},
+    {"case": "C03-back-pain", "turn": 7, "fact": "f13", "question": "Have you experienced any fever, weight loss, or other symptoms...", "reply_part": "I'm just worried about the pain getting worse and affecting my work", "judgement": "leak", "why": "States a concern; nobody asked about worries."},
+    {"case": "C04-tiredness", "turn": 3, "fact": "f05", "question": "Have you experienced any changes in your appetite or eating habits besides the weight loss?", "reply_part": "I'm more thirsty than usual", "judgement": "leak", "why": "Thirst was not asked about; the question was about appetite and eating."},
+    {"case": "C05-stomach-upset", "turn": 3, "fact": "f08", "question": "Does the pain feel better or worse with certain foods, or does it seem to happen at specific times of day?", "reply_part": "The antacid helps a bit, but not much.", "judgement": "borderline leak", "why": "Mentions a medicine when asked about foods and times. It could be read as 'what makes it better', so it is counted as borderline."}
+  ],
+  "borderline_not_counted": [
+    {"case": "C03-back-pain", "turn": 1, "fact": "f04", "note": "Morning stiffness was given in answer to the broad question 'how your back feels'. Counted as answering the question."},
+    {"case": "C04-tiredness", "turn": 4, "fact": "f12", "note": "'I can't stay awake through shifts' hints at shift work when asked about staying awake. Counted as answering the question."},
+    {"case": "C02-cough", "turn": 3, "fact": "f05", "note": "Blood-streaked phlegm given when asked about the colour or amount of mucus. Counted as answering the question."}
+  ],
+  "leak_counts": {
+    "conversations": 5,
+    "conversations_with_at_least_one_leak": 3,
+    "of_which_clear": 2,
+    "of_which_borderline_only": 1,
+    "conversations_with_no_leak": ["C01-headache", "C02-cough"],
+    "leaked_facts_per_conversation": {"C01-headache": 0, "C02-cough": 0, "C03-back-pain": 5, "C04-tiredness": 1, "C05-stomach-upset": 1}
+  },
+  "invented_or_contradicting_details": [
+    {"case": "C01-headache", "turn": 3, "detail": "'Coffee helps a bit'", "kind": "invented"},
+    {"case": "C02-cough", "turn": 6, "detail": "Long working hours and not enough sleep", "kind": "invented"},
+    {"case": "C02-cough", "turn": 7, "detail": "'I stopped smoking ten years ago' (the case says five years ago)", "kind": "contradicts the case"},
+    {"case": "C03-back-pain", "turn": 2, "detail": "Says there is no numbness or tingling, then describes pins and needles in the left foot", "kind": "contradicts itself"},
+    {"case": "C03-back-pain", "turn": 4, "detail": "'When I lie down, it feels a little better' (the case says changing position does not ease it)", "kind": "invented"},
+    {"case": "C04-tiredness", "turn": 8, "detail": "Irregular periods", "kind": "invented"},
+    {"case": "C04-tiredness", "turn": 3, "detail": "'Not hungry, but I'm not eating less'", "kind": "invented"},
+    {"case": "C05-stomach-upset", "turn": "5, 9, 10, 11, 12, 13", "detail": "Weight loss, tiredness and brain fog, heartburn 'like a hot wave', leaning forward helps, burping does not help, moving about eases it", "kind": "invented"}
+  ],
+  "invented_counts": {"conversations_with_at_least_one": 5, "of": 5},
+  "interviewer": {
+    "diagnosis_or_advice_given": {"conversations": 5, "count": 0, "note": "No diagnosis and no advice in any of the five. Nothing was given by any reading of the rule."},
+    "other_observations": [
+      {"case": "C03-back-pain", "note": "The closing summary says the patient has no 'other concerning symptoms', although the patient had described night pain and pins and needles. Not advice, but a wrong and reassuring summary."},
+      {"case": "C04-tiredness", "note": "The last message asked another question and also contained [HISTORY COMPLETE], so the conversation ended with an unanswered question and no summary."},
+      {"case": "C04-tiredness", "turn": 8, "note": "Asked 'if you're a woman... if you're a man...' because the interviewer is not told the patient's age or gender. See NOTES.md."}
+    ]
+  }
+}

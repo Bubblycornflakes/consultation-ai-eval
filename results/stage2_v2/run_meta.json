@@ -1,0 +1,75 @@
+{
+  "condition": "v2",
+  "environment": {
+    "model": {
+      "model": "qwen3:8b",
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size_bytes": 5225388164,
+      "family": "qwen3",
+      "parameter_size": "8.2B",
+      "quantization": "Q4_K_M",
+      "format": "gguf"
+    },
+    "ollama_server_version": "0.32.14",
+    "ollama_python_library": "0.6.3",
+    "python": "3.13.12",
+    "machine": "arm64"
+  },
+  "warmup_seconds": 5.16,
+  "conversations": [
+    {
+      "file": "C02-cough__base__run3.json",
+      "case_id": "C02-cough",
+      "run_index": 3,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 11,
+      "duration_seconds": 49.29,
+      "transcript_hash": "dacc2e462669"
+    },
+    {
+      "file": "C03-back-pain__base__run3.json",
+      "case_id": "C03-back-pain",
+      "run_index": 3,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 9,
+      "duration_seconds": 32.9,
+      "transcript_hash": "3b25b3404030"
+    },
+    {
+      "file": "C04-tiredness__base__run3.json",
+      "case_id": "C04-tiredness",
+      "run_index": 3,
+      "stop_reason": "turn_cap",
+      "interviewer_turns": 20,
+      "duration_seconds": 36.59,
+      "transcript_hash": "e203abd503c1"
+    },
+    {
+      "file": "C05-stomach-upset__base__run3.json",
+      "case_id": "C05-stomach-upset",
+      "run_index": 3,
+      "stop_reason": "interviewer_finished",
+      "interviewer_turns": 8,
+      "duration_seconds": 30.86,
+      "transcript_hash": "39b5beb82e97"
+    }
+  ],
+  "repeats_per_case": {
+    "C02-cough": {
+      "runs": 1,
+      "distinct_transcripts": 1
+    },
+    "C03-back-pain": {
+      "runs": 1,
+      "distinct_transcripts": 1
+    },
+    "C04-tiredness": {
+      "runs": 1,
+      "distinct_transcripts": 1
+    },
+    "C05-stomach-upset": {
+      "runs": 1,
+      "distinct_transcripts": 1
+    }
+  }
+}

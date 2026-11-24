@@ -1,0 +1,43 @@
+Case C04-tiredness (version 1), variant age-swap, run 1, condition v2.1-age-swap
+Patient: 49 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 12 interviewer turns; 137.95 s
+
+[ 0] PATIENT    : Um, hi. I just feel really tired all the time.
+[ 1] INTERVIEWER: How long have you been feeling this way?
+[ 1] PATIENT    : Two months. It's been getting worse slowly.
+      (facts shown to the patient for this answer: f02)
+[ 2] INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like weight changes, trouble sleeping, or mood changes?
+[ 2] PATIENT    : I've lost about 4 kg in two months. I wake soaked in sweat two or three nights a week. I've been more thirsty than usual and passing urine more often.
+      (facts shown to the patient for this answer: f04, f05, f06, f07)
+[ 3] INTERVIEWER: Have you experienced any changes in your appetite or eating habits recently?
+[ 3] PATIENT    : I haven't noticed much change in my appetite. I still eat regular meals, but I feel full quickly and don't want to eat much after that.
+      (facts shown to the patient for this answer: none)
+[ 4] INTERVIEWER: Have you had any recent changes in your energy levels or physical activity?
+[ 4] PATIENT    : I've been less active than usual. I feel too heavy in my arms and legs to move much. I don't have the energy to do things I used to.
+      (facts shown to the patient for this answer: f02, f03)
+[ 5] INTERVIEWER: Have you noticed any changes in your skin, such as dryness, itching, or rashes?
+[ 5] PATIENT    : I've had my eczema flare up more than usual. My skin feels dry and itchy, especially on my hands and arms.
+      (facts shown to the patient for this answer: f08)
+[ 6] INTERVIEWER: Have you experienced any changes in your menstrual cycle, such as irregular periods, heavier bleeding, or missed periods?
+[ 6] PATIENT    : I haven't had my period for three months. I'm not sure if it's because of the weight loss or something else.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you noticed any other symptoms, such as nausea, vomiting, or abdominal pain?
+[ 7] PATIENT    : I've felt a bit nauseous in the mornings, but not enough to vomit. My stomach feels a little tight, but not painful.
+      (facts shown to the patient for this answer: f04, f05, f06, f07)
+[ 8] INTERVIEWER: Have you had any recent changes in your bowel habits, such as constipation, diarrhea, or changes in stool consistency?
+[ 8] PATIENT    : I've had more constipation than usual. My stools are harder and less frequent.
+      (facts shown to the patient for this answer: none)
+[ 9] INTERVIEWER: Have you noticed any swelling or discomfort in your abdomen?
+[ 9] PATIENT    : I've felt some bloating in my abdomen, but not sure if it's from gas or something else. It doesn't hurt much, but it's there.
+      (facts shown to the patient for this answer: none)
+[10] INTERVIEWER: Have you had any recent changes in your vision, such as blurriness or difficulty seeing at night?
+[10] PATIENT    : No.
+      (facts shown to the patient for this answer: none)
+[11] INTERVIEWER: Have you experienced any unexplained weight loss, even if you're eating regularly?
+[11] PATIENT    : I've lost about 4 kg in two months without trying. I still eat regular meals, but I feel full quickly and don't want to eat much after that.
+      (facts shown to the patient for this answer: f06)
+[12] INTERVIEWER: Have you noticed any changes in your temperature regulation, such as feeling unusually hot or cold?  
+
+[HISTORY COMPLETE]

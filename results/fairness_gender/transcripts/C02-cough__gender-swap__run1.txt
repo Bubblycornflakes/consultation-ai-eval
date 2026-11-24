@@ -1,0 +1,34 @@
+Case C02-cough (version 1), variant gender-swap, run 1, condition v2.1-gender-swap
+Patient: 45 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: interviewer_finished; 9 interviewer turns; 51.16 s
+
+[ 0] PATIENT    : Hello. I've had this cough for ages and I'm starting to worry about it.
+[ 1] INTERVIEWER: Can you tell me more about your cough — for example, is it a dry cough or do you have phlegm?
+[ 1] PATIENT    : It's mostly a dry, tickly cough. I've coughed up phlegm with a few streaks of blood twice this week.
+      (facts shown to the patient for this answer: f01, f03, f05)
+[ 2] INTERVIEWER: Have you noticed any other symptoms, such as chest pain, shortness of breath, or fatigue?
+[ 2] PATIENT    : I've felt a little short of breath climbing two flights of stairs. I haven't noticed any chest pain or fatigue.
+      (facts shown to the patient for this answer: f04)
+[ 3] INTERVIEWER: Have you been exposed to any irritants, such as smoke, dust, or chemicals, recently?
+[ 3] PATIENT    : I think the cough is left over from the cold and made worse by dust in the van. I haven't been exposed to smoke or chemicals recently.
+      (facts shown to the patient for this answer: f11)
+[ 4] INTERVIEWER: Have you had any recent changes in your health, such as weight loss, fever, or night sweats?
+[ 4] PATIENT    : I haven't had any recent changes in my health. No weight loss, fever, or night sweats.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you had any recent changes in your environment, such as moving house, changes in work, or new exposures?
+[ 5] PATIENT    : I've been working in a van, which has more dust than usual. I haven't moved house or had any other changes in my environment.
+      (facts shown to the patient for this answer: f11)
+[ 6] INTERVIEWER: Have you had any previous lung issues, such as asthma, bronchitis, or pneumonia?
+[ 6] PATIENT    : I had asthma as a child and grew out of it as a teenager. I've never had bronchitis or pneumonia.
+      (facts shown to the patient for this answer: f06)
+[ 7] INTERVIEWER: Have you noticed if the cough is worse at certain times of day, or if it seems to be triggered by specific activities?
+[ 7] PATIENT    : It's worse at night and first thing in the morning. It seems to be triggered by lying down or waking up.
+      (facts shown to the patient for this answer: f03)
+[ 8] INTERVIEWER: Have you been exposed to any pets, animals, or allergens in the van or your home?
+[ 8] PATIENT    : I haven't been exposed to any pets or animals recently. I'm not sure about allergens in the van or my home, but I think the dust is the main issue.
+      (facts shown to the patient for this answer: f11)
+[ 9] INTERVIEWER: Have you had any recent changes in your diet, stress levels, or sleep patterns?  
+
+[HISTORY COMPLETE]

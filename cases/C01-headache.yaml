@@ -1,0 +1,106 @@
+id: C01-headache
+case_version: 1
+title: Headaches for three weeks
+setting: GP appointment
+
+persona:
+  age: 34
+  gender: female
+  communication_style: >
+    Brief. Answers in a few words, adds nothing unless asked directly, polite and a little tired.
+
+opening_line: >
+  Hi doctor. I've been getting headaches.
+
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Recurrent headaches
+    fact: >
+      Has had headaches across the forehead and temples on most days recently.
+    revealed_at_start: true
+  - id: f02
+    category: onset_duration
+    label: Three weeks, gradual
+    fact: >
+      The headaches began about three weeks ago, gradually, with no injury. They now happen four
+      or five days a week and last most of the afternoon.
+  - id: f03
+    category: severity_character
+    label: Pressing band, moderate
+    fact: >
+      It feels like a tight band squeezing around the head, not throbbing. About 5 out of 10.
+      It does not stop the patient working.
+  - id: f04
+    category: associated_symptoms
+    label: Tired eyes, tight neck
+    fact: >
+      Eyes feel tired and the neck and shoulders feel tight by the evening. No feeling sick and
+      no vomiting.
+  - id: f05
+    category: red_flag_symptoms
+    label: Blurred vision once
+    fact: >
+      About a week ago the vision in the left eye went blurred for around five minutes, then
+      returned to normal. It has not happened since.
+  - id: f06
+    category: past_medical_history
+    label: Mild migraines as a student
+    fact: >
+      Had occasional migraines at university, none for years. No long-term conditions and no
+      operations.
+  - id: f07
+    category: medicines
+    label: Painkillers most days
+    fact: >
+      Has taken two paracetamol on most days for three weeks, and ibuprofen on a few days. No
+      regular prescribed medicines.
+  - id: f08
+    category: allergies
+    label: Penicillin, rash
+    fact: >
+      Allergic to penicillin; it caused a rash in childhood.
+  - id: f09
+    category: family_history
+    label: Mother has migraines
+    fact: >
+      The patient's mother has migraines. Nobody in the family has had a stroke or a brain
+      problem.
+  - id: f10
+    category: social_history
+    label: Desk job, little sleep, lots of coffee
+    fact: >
+      Works at a computer eight to ten hours a day. Sleeps about five hours a night and drinks
+      four coffees a day. Does not smoke and rarely drinks alcohol.
+  - id: f11
+    category: ice
+    label: Idea - stress or eye strain
+    fact: >
+      Thinks the headaches come from stress and too much screen time.
+  - id: f12
+    category: ice
+    label: Concern - brain tumour
+    fact: >
+      Is worried it could be a brain tumour, because a colleague had one.
+  - id: f13
+    category: ice
+    label: Expectation - a scan
+    fact: >
+      Hopes the doctor will arrange a scan to be sure.
+
+red_flags: [f05]
+
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: male}
+  - id: age-swap
+    change: age
+    persona: {age: 58}
+
+author_notes: >
+  A good history finds the pattern (pressing, daily, linked to screens, sleep, caffeine and
+  painkillers) and also asks about warning signs. The brief blurring of vision in one eye is the
+  warning sign: it is only revealed if the interviewer asks about vision or other symptoms that
+  should not be ignored. Taking painkillers on most days can itself keep headaches going, so
+  the medicines question matters.

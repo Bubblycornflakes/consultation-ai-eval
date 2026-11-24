@@ -1,0 +1,69 @@
+Case C04-tiredness (version 1), variant base, run 3, condition v2
+Patient: 27 years, female
+Model: qwen3:8b, thinking off, temperature 0, seed 42
+Prompts: patient_v2.txt, interviewer_v2.txt, gate_v1.txt (fact gating on)
+Stopped because: turn_cap; 20 interviewer turns; 36.59 s
+
+[ 0] PATIENT    : Um, hi. I just feel really tired all the time.
+[ 1] INTERVIEWER: How long have you been feeling this way?
+[ 1] PATIENT    : Two months. It's been getting worse slowly.
+      (facts shown to the patient for this answer: f02)
+[ 2] INTERVIEWER: Have you noticed any other symptoms along with the tiredness, like changes in appetite, weight, mood, or trouble sleeping?
+[ 2] PATIENT    : I've lost interest in my hobbies. I've been more thirsty and passing urine more often. I've lost about 4 kg in two months. I wake up sweaty two or three nights a week.
+      (facts shown to the patient for this answer: f04, f05, f06, f07)
+[ 3] INTERVIEWER: Have you experienced any changes in your energy levels during the day, such as feeling sluggish or having trouble concentrating?
+[ 3] PATIENT    : Yes. My arms and legs feel heavy. I find it hard to concentrate. I rate my energy level 3 out of 10.
+      (facts shown to the patient for this answer: f03, f04)
+[ 4] INTERVIEWER: Have you noticed any changes in your skin, such as dryness, rashes, or unusual hair loss?
+[ 4] PATIENT    : I've been losing hair from my scalp. My skin feels dry, especially on my hands.
+      (facts shown to the patient for this answer: none)
+[ 5] INTERVIEWER: Have you had any recent changes in your diet, exercise routine, or stress levels?
+[ 5] PATIENT    : I've been eating less. I haven't been exercising. I've been working longer hours, but I don't feel more stressed.
+      (facts shown to the patient for this answer: none)
+[ 6] INTERVIEWER: Have you had any recent changes in your menstrual cycle, such as irregular periods or heavier/lighter bleeding?
+[ 6] PATIENT    : I haven't had my period for two months.
+      (facts shown to the patient for this answer: none)
+[ 7] INTERVIEWER: Have you experienced any swelling in your hands, feet, or face recently?
+[ 7] PATIENT    : No.
+      (facts shown to the patient for this answer: none)
+[ 8] INTERVIEWER: Have you had any recent illnesses, infections, or feverish episodes?  
+
+HISTORY COMPLETE
+[ 8] PATIENT    : No.
+      (facts shown to the patient for this answer: none)
+[ 9] INTERVIEWER: HISTORY COMPLETE
+[ 9] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[10] INTERVIEWER: HISTORY COMPLETE
+[10] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[11] INTERVIEWER: HISTORY COMPLETE
+[11] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[12] INTERVIEWER: HISTORY COMPLETE
+[12] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[13] INTERVIEWER: HISTORY COMPLETE
+[13] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[14] INTERVIEWER: HISTORY COMPLETE
+[14] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[15] INTERVIEWER: HISTORY COMPLETE
+[15] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[16] INTERVIEWER: HISTORY COMPLETE
+[16] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[17] INTERVIEWER: HISTORY COMPLETE
+[17] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[18] INTERVIEWER: HISTORY COMPLETE
+[18] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[19] INTERVIEWER: HISTORY COMPLETE
+[19] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)
+[20] INTERVIEWER: HISTORY COMPLETE
+[20] PATIENT    : I don't know.
+      (facts shown to the patient for this answer: none)

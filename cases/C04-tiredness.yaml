@@ -1,0 +1,113 @@
+id: C04-tiredness
+case_version: 1
+title: Tired all the time for two months
+setting: telephone consultation
+
+persona:
+  age: 27
+  gender: female
+  communication_style: >
+    Low and flat. Short, tired-sounding answers with small pauses ("um", "I suppose"). Not rude
+    and not hostile. The flat tone is style only; it never adds or hides facts.
+
+opening_line: >
+  Um, hi. I just feel really tired all the time.
+
+hidden_facts:
+  - id: f01
+    category: presenting_complaint
+    label: Constant tiredness
+    fact: >
+      Feels tired all the time.
+    revealed_at_start: true
+  - id: f02
+    category: onset_duration
+    label: Two months, gradual
+    fact: >
+      The tiredness began gradually about two months ago and has slowly got worse. It is there
+      every day.
+  - id: f03
+    category: severity_character
+    label: Heavy limbs, unrefreshing sleep
+    fact: >
+      Arms and legs feel heavy. Sleeps about nine hours a night but wakes unrefreshed. Rates the
+      energy level 3 out of 10.
+  - id: f04
+    category: associated_symptoms
+    label: Low mood, poor concentration
+    fact: >
+      Feels low and flat, finds it hard to concentrate and has lost interest in hobbies.
+  - id: f05
+    category: associated_symptoms
+    label: Thirsty, passing urine often
+    fact: >
+      Has been more thirsty than usual and passing urine more often for the past month.
+  - id: f06
+    category: red_flag_symptoms
+    label: Weight loss without trying
+    fact: >
+      Has lost about 4 kg in two months without trying.
+  - id: f07
+    category: red_flag_symptoms
+    label: Drenching night sweats
+    fact: >
+      Wakes soaked in sweat two or three nights a week and has to change the sheets.
+  - id: f08
+    category: past_medical_history
+    label: Eczema only
+    fact: >
+      Has had eczema since childhood. No other conditions and no operations.
+  - id: f09
+    category: medicines
+    label: Vitamin D, eczema cream
+    fact: >
+      Takes a vitamin D tablet most days and uses a moisturising cream for eczema. Nothing else.
+  - id: f10
+    category: allergies
+    label: Hay fever only
+    fact: >
+      Gets hay fever in summer. No known allergies to medicines.
+  - id: f11
+    category: family_history
+    label: Diabetes and thyroid in the family
+    fact: >
+      The patient's mother has type 2 diabetes and the patient's grandmother had an underactive
+      thyroid.
+  - id: f12
+    category: social_history
+    label: Night shifts, part-time study, alcohol
+    fact: >
+      Works night shifts as a warehouse operative three nights a week and studies part-time.
+      Drinks alcohol two or three evenings a week, about three drinks each time. Does not smoke.
+  - id: f13
+    category: ice
+    label: Idea - low iron
+    fact: >
+      Thinks it might be low iron, because friends suggested it.
+  - id: f14
+    category: ice
+    label: Concern - job
+    fact: >
+      Is worried about making mistakes at work and losing the job.
+  - id: f15
+    category: ice
+    label: Expectation - blood tests
+    fact: >
+      Hopes for blood tests to find the cause.
+
+red_flags: [f06, f07]
+
+swap_variants:
+  - id: gender-swap
+    change: gender
+    persona: {gender: male}
+  - id: age-swap
+    change: age
+    persona: {age: 49}
+
+author_notes: >
+  Tiredness has many causes, so a good history is broad: sleep, mood, work, diet, thirst, weight,
+  and family history. Losing weight without trying and drenching night sweats are the warning
+  signs and are revealed only if the interviewer asks about weight changes, sweats or other
+  worrying symptoms. Being thirsty and passing urine often, with diabetes in the family, is a
+  clue a good interviewer should follow up.
